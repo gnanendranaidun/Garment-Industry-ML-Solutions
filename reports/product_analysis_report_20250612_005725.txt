@@ -1,0 +1,163 @@
+Product Analysis Report
+==================================================
+
+Performance Analysis
+------------------------------
+
+Section-wise Statistics:
+                  SMV        Target        production        Performance %            
+                 mean   std    mean    std       mean    std          mean   std count
+Sections                                                                              
+Body             0.69  0.31  102.79  44.19      84.05  33.27          0.86  0.17    22
+Body Assembly    0.88  0.42   80.79  37.38      65.72  22.28          0.87  0.19    25
+Collar           0.38  0.08  137.63   6.78     150.00   0.00          1.09  0.06     4
+Lining           0.88  0.36   80.78  34.95      62.70  20.10          0.87  0.23    20
+Sleeve           0.81  0.35   90.85  44.13      80.38  38.59          0.88  0.09    13
+Sleeve Assembly  1.05  0.32   63.91  26.34      50.33  18.85          0.84  0.26    15
+
+Overall Statistics:
+         SMV  Target  production  Performance %
+count  99.00   99.00       99.00          99.00
+mean    0.83   86.73       72.18           0.87
+std     0.37   39.98       32.56           0.20
+min     0.25   30.00       25.00           0.21
+25%     0.56   55.84       45.00           0.80
+50%     0.72   83.33       75.00           0.87
+75%     1.08  108.14       80.00           0.96
+max     1.71  240.00      150.00           1.68
+
+Quadrant Analysis
+------------------------------
+
+Quadrant Statistics:
+         Performance %             Sections Present Operations
+                 count  mean   std  nunique            nunique
+Quadrant                                                      
+1.0                 41  1.03  0.15        6                 37
+2.0                 35  0.84  0.03        5                 29
+3.0                  9  0.74  0.03        4                  8
+4.0                 16  0.50  0.23        5                 16
+
+Quadrant Distribution:
+Quadrant
+1.0    41
+2.0    35
+3.0     9
+4.0    16
+Name: count, dtype: int64
+
+Improvement Areas
+------------------------------
+
+Low-performing Sections:
+- Lining: 0.73%
+- Sleeve Assembly: 0.74%
+- Body: 0.75%
+- Sleeve: 0.76%
+- Body Assembly: 0.87%
+- Collar: 1.09%
+
+Low-performing Operations:
+- Arm hole tape attach: 0.00%
+- Breast pkt ends cut+seam open and iron: 0.00%
+- Button to vent sleeve attachements: 0.00%
+- Fusible band on front blind stitch: 0.00%
+- Hind arm seam close complete : 0.00%
+- Label attaching zigzag : 0.00%
+- Top armhole ironing+pressing: 0.21%
+- Flap iron & matching : 0.33%
+- Breast pkt attach+cutting: 0.44%
+- Hind arm seam with vent for Fabric seam: 0.44%
+- Main lining seam: 0.45%
+- Collar matching: 0.48%
+- Lining sleeve seam: 0.52%
+- Internal pocket seam(N.3 pockets): 0.55%
+- Body iron fiexi operator: 0.57%
+- Sweat shield attach : 0.60%
+- Gorge+Lapel and collar corner seam ironing: 0.61%
+- D-Bartack on pkt edges(3 pkts): 0.62%
+- Seam iron: 0.63%
+- Lining bottom turn up and blind stitching: 0.65%
+- Pocket bone trimming: 0.67%
+- Side part to front part: 0.68%
+- Front Edge Step Cut: 0.71%
+- Front dart seam: 0.72%
+- Shoulder seam open & iron fusing+pressing: 0.73%
+- Sleeves seam: 0.75%
+- Unbasting+seam cleaning: 0.75%
+- Gorge+Lapel and collar corner seam: 0.76%
+- Sleeve lining elbow patch: 0.76%
+- Front dart marking and cutting: 0.76%
+- Lining neck close: 0.79%
+- Washcare lable attach withh loop att+Traingle flapatt: 0.79%
+- Center back lining seam: 0.80%
+- Back sides+center back ironing+pressing (side vent): 0.81%
+- Pick trim & turn: 0.81%
+- Lapel step seam with jig: 0.81%
+- Center back seam: 0.82%
+- Sleeve vent Button hole Indexor: 0.82%
+- Shoulder seam: 0.83%
+- Sleeve head roll attaching: 0.83%
+- Under collar on collar hole zig-zag seam: 0.83%
+- Facing+lapel reverse pressing: 0.84%
+- Facing to lining seam : 0.84%
+- Fore arm pressing: 0.84%
+- Front dart ironing+pressing: 0.85%
+- Sleeve vent seam : 0.86%
+- flap seam: 0.86%
+- Chest piece attaching+fusing: 0.86%
+- Shoulder pad Pressing: 0.87%
+- Lining to fabric armhole fastening: 0.87%
+- Stitch on Armhole: 0.87%
+- Sleeve lining inseam overlock : 0.87%
+- Saddle stitch: 0.88%
+- Pocket iron: 0.89%
+- Sleeves matching to body: 0.90%
+- Internal lining pocket sewing and cutting(N.3 pockets): 0.90%
+- Center back lining guzatt attach: 0.90%
+- Facing Ironing: 0.91%
+- Cuff closing & lining inseam: 0.91%
+- Front pkt+breast pkt ironing: 0.92%
+- Sleeve head roll ready +  gathering: 0.93%
+- Front pkt bag close: 0.93%
+- Front pkt+flap cut and welting: 0.94%
+- Pressing of top Sleeve vent: 0.94%
+- Forearm sleeve seam + Button folding and fastening: 0.94%
+- Fullness on armhole decreasing by ironing: 0.95%
+- Flap revolve and pressing: 0.95%
+- Lining attach to sleeve vent : 0.96%
+- Breast pkt bag close: 0.96%
+- Side part seam ironing+pressing: 0.97%
+- Lining to body bottom vent: 0.98%
+- Vent Kinnary+Collar kinnary: 1.00%
+- Facing+bottom turn up bordering with iron: 1.00%
+- Back to side seam: 1.00%
+- Lining Sleeve to Elbow forearm fastening: 1.04%
+- Undercollar to top collar attach zigzag: 1.05%
+- Stand to top collar seam: 1.07%
+- Stand To Top Collar iron: 1.07%
+- Take out tacks+Facing seam open and iron: 1.09%
+- Bottom fold & iron: 1.10%
+- Zig-Zag seam on breast pkt sides: 1.10%
+- Facing seam: 1.17%
+- Side panel lining guzatt attach: 1.17%
+- Collar Pick Ready  : 1.18%
+- Lining Matching To Body: 1.36%
+- Button hole & bartack: 1.40%
+- Side panel lining attach: 1.68%
+
+
+Recommendations
+------------------------------
+- Section 'Body' has low average performance (0.75%) with 25.0 operators. Consider additional training or process optimization.
+- Section 'Body Assembly' has low average performance (0.87%) with 25.0 operators. Consider additional training or process optimization.
+- Section 'Collar' has low average performance (1.09%) with 4.0 operators. Consider additional training or process optimization.
+- Section 'Lining' has low average performance (0.73%) with 24.0 operators. Consider additional training or process optimization.
+- Section 'Sleeve' has low average performance (0.76%) with 15.0 operators. Consider additional training or process optimization.
+- Section 'Sleeve Assembly' has low average performance (0.74%) with 17.0 operators. Consider additional training or process optimization.
+- Operation 'Facing+bottom turn up bordering with iron' has consistently low performance (1.00%) across 3.0 operators. Review work method and consider process improvement.
+- Operation 'Internal pocket seam(N.3 pockets)' has consistently low performance (0.55%) across 3.0 operators. Review work method and consider process improvement.
+- Operation 'Lining to body bottom vent' has consistently low performance (0.98%) across 3.0 operators. Review work method and consider process improvement.
+- Operation 'Sleeves seam' has consistently low performance (0.75%) across 3.0 operators. Review work method and consider process improvement.
+
+==================================================
