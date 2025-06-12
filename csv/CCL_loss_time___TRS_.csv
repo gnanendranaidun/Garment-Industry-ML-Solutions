@@ -1,0 +1,21 @@
+Line ,Date of Gap,Check,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Act,Unnamed: 8,Unnamed: 9
+,, (Target Vs Actual),,,Control point,,,,
+,,MP/CP,Target,Actual,Self Control,Other Dept Control,Reason for Gap,,"Reason Category
+(Key word from Reason for Gap)"
+LINE-3,2025-02-15,Balancing time,20,40,Yes,,"operator unavailability Balancing delay due to bus late coming 40 mins Line-3 operator balanced with other line 
+Skill unavailability-10 operation",,N - Skill Unavailability
+LINE-4,2025-02-14,Balancing time,20,25,Yes,,"25 min loss Balancing delay due operator absenteesim was more than 8%(11.11%) unavailability of MP button hole,Rht fly blind hem,trmming",,P - Absenteesim More than 8%
+LINE-4,2025-02-19,Loss time,,,,Cutting,W/O 62766  this w/o (Line match issue at 18-10-2024 at  6.15 pm to 19-10-2024 at 11.35 am because of Fabric issue.,,E6-Checks Line Matching Issue
+LINE-4,,Loss time,,,,Cutting,W/O 62767 this w/o Loding delay 1.00pm to 1.30 pm  because of (Control sheet & Lable not given) to cutting section,,E - Cutting defects
+LINE-4,2025-02-16,Balancing time,20,24,yes,HR,"operator unavailability Balancing delay due to bus late coming 24 mins 
+Skill unavailability- 2 operation",,
+LINE-4,2025-02-22,Balancing time,,,yes,HR,"46 min loss due to (colour shade issue at 11.00 am to 11.46 am) because cutting delay & loding delay 
+WO-62940",,E - Cutting defects
+LINE-5,2025-02-21,Balancing time,20,54,yes,HR,"operator unavailability Balancing delay due to bus late coming 54 mins Line-5 operator balanced with other line 
+Skill unavailability-5 operation",,N - Skill Unavailability
+LINE-6,2025-02-14,Balancing time,20,26,yes,HR,"26 min loss Balancing delay due operator absenteesim was more than 8%(11.11%) unavailability of (Fly bartack,Loop top bar tack,Fit label,Loop attach,Seat seam Checks,Side stitch checks) operation  
+Skill loss-6",,P - Absenteesim More than 8%
+LINE-6,2025-02-16,Balancing time,20,24,yes,HR,"operator unavailability Balancing delay due to bus late coming 24 mins 
+Skill unavailability- 3 operation",,N - Skill Unavailability
+LINE-2,2025-04-11,Loss time,0,60,,Cutting,No feeding for parts due to cutting loading delay,,G - No feeding from material 
+,,Total Loss time in contracted hours,,253,,,,,

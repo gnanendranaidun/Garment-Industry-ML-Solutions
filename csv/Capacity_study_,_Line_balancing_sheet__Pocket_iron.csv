@@ -1,0 +1,15 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15
+,Front pocket iron,,,,,,,,,,,,,,
+,Reason for selecting this opearation,Don’t have capacity,,,,,,,,,,,,,
+,Date,,,,,,,,,,,,,,
+,Line,Line 2A,,Average cycle time,,47.0,46.0,47.0,46.0,48.0,48.0,48.0,48.0,47.25,
+,TK. NO,12660,,Average cycle time (90% eff),,0.8662500000000001,,,,,,,,Before Actual,
+,Operator name ,Geetha,,Capacity @ 15% allowance,,69.26406926406926,,,,,,,,55,
+,Operation,Time  (min),5.0,10,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60,Total 
+,Front pocket iron,PCS,5.0,5,6.0,6.0,6.0,5.0,6.0,6.0,6.0,6.0,6.0,5,68
+,Power cut,0.65,,,,,,,,,,,,,
+,Pcs taking,1.67,,,,,,,,,,,,,
+,Rework,1.21,,,,,,,,,,,,,
+,Total time utilized ,56.47,,,,,,,,,,,,,
+,total time wasted,3.53,,,,,,,,,,,,,
+,If wasted time utilised,72.07503607503608,,,,,,,,,,,,,

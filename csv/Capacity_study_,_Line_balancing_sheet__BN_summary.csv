@@ -1,0 +1,12 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11
+,S. No,Token Num ,Operator Name,Section,Bottleneck Operation,Capacity,Actual,Target ,Category,Action to be taken ,Responsibility 
+,1,016717,Sugali Naik,Sleeve assembly,Sleeve attach ,26,25,35,Do not having capacity ,VAS study & method correction,Vijay & yellamma
+,2,011558,Ratnamma,Body,Dart ironing  ,70,55,65,Having capacity but not not perfroming,Snap study & Hourly Prodn tracking,Yellamma trainer
+,3,013464,Nirmala,Sleeve ,Sleeve lining seam ,89,57,65,Do not having capacity ,VAS study & work place re engineering,Vijay 
+,4,007955,PRABHA,Body,Front edge 15 Cm tape attach ,90,85,125,Do not having capacity ,VAS study & work place re engineering,Vijay 
+,5,017080,Gowramma,Body assembly,Frontedge cut,90,90,125,Having capacity but not not perfroming,VAS study & method correction,Vijay & yellamma
+,6,013768,Lakshmi,Body assembly,Collar open seam ironing,95,90,125,Do not having capacity ,VAS study & Layout study,Vijay 
+,7,008875,Manjula,Sleeve ,Sleeve Inseam ,96,58,65,Do not having capacity ,VAS study & method correction,Vijay & yellamma
+,8,015945,Kumar,Body assembly,Neck close,109,55,65,Do not having capacity ,VAS study & method correction,Vijay & yellamma
+,9,016699,Sowmya,Body assembly,Cotton bias tape attach ,118,110,125,Do not having capacity ,VAS study & work place re engineering,Vijay 
+,10,016340,Najma,Lining,Main lable zig zag ,167,110,125,Having capacity but not not perfroming,Snap study & Hourly Prodn tracking,Yellamma trainer

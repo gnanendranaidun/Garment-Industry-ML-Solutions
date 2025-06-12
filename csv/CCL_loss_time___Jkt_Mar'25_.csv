@@ -1,0 +1,400 @@
+Line ,Date of Gap,Check,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Act,Unnamed: 8
+,, (Target Vs Actual),,,Control point,,,
+,,MP/CP,Target,Actual,Self Control,Other Dept Control,Reason for Gap,"Reason Category
+(Key word from Reason for Gap)"
+Line-1B,2025-03-04,Loss time,0,60,No,Maintenance,"3-3.30( no lining loading),4-4.30(machine problem)Total-60 min loss","J - Machine breakdown
+G - No feeding from material "
+Line-1B,2025-03-06,Loss time,0,1920,Yes,Maintenance,"2 hrs machine setting so from lining matching to front edge iron was idle,40 pcs collar felt wrong cut & trims are not there","J - Machine breakdown
+G - No feeding from material "
+Line-1B,2025-03-20,Loss time,0,240,Yes,Maintenance,"3.30 to 5.30 Welting machine problem,3.30 to 4.30 1 operation=60
+4.30 to 5.30 2 operations=120",J - Machine breakdown
+Line-1B,2025-03-22,Loss time,0,510,Yes,Cutting,"From 12.00 to 4.00 no loading=240
+From 1.30 to 4.00 Dart seam,Dart iron & Side panel was idle=270",G - No feeding from material
+Line-2A,2025-03-03,Loss time,0,725,,Maintenance,"
+In sleeve section
+indexor machine problem for loose thread and button hole Measurement issuses then parts will be change
+4.30 to 5.30=60mins
+ alternate machine arranged  . we can't able to do production level 120 pcs Because Line L2A & L2B combination . Repeated Indexor machine problem.
+1. sleeve no loading from cutting ( 12.45-3.30) -165mins
+Total = 225 mins lose
+
+In Body section
+1. dart cutting & marking - 1:30-3:30=120mins
+2. Dart seam - 3.30-4.30 =60mins
+Total =180 mins lose
+
+In Lining section 
+1. Lining Welting  machine problem -9:00-2:30 =300 mins ( needle down, cross cut )
+2. lining welting -3.30-4.30 -60 mins ( 4 time Needle cut)
+
+Total = 360 mins lose
+
+","J - Machine breakdown
+G - No feeding from material "
+Line-2A,2025-03-05,Loss time,0,390,,"Yes
+Maintenance & Cutting","
+
+In Body section
+1. Stitch on armhole machine problem ( needle cut & edge not occur)- 1:30-3:30=120mins
+2. Welting machine problem needle cut - 9.30-10.30 =60mins
+Total =180 mins lose
+
+In Lining section 
+1. Lining facing attach -3:00-5:30 =90mins 
+2. lining Wash care  label -3.30-4.30 -60 mins
+3. Lining welting 4.30-5.30 -60 mins ( 4 time Needle cut)
+
+Total = 210 mins lose
+
+","J - Machine breakdown
+G - No feeding from material "
+Line-2A,2025-03-06,Loss time,0,585,,Maintenance & Cutting,"
+In sleeve section
+
+1. sleeve no loading from cutting ( 12.45-2.00) -45mins
+Total = 45 mins lose
+
+In Body section
+1. dart cutting & marking - 11:30-2:30=180mins
+2. Dart seam - 1.30-3.30 =120mins
+3. centerback - 2.00-2.30=30mins
+4. Body Welting machine problem ( thread cut ) -12.00-3.30=180
+
+Total =390 mins lose
+
+
+
+In Lining section 
+1. Lining Welting  machine problem -9:00-10:00 =60 mins ( needle down, cross cut )
+2. lining facing attach = 12: 15 - 2:15=90 mins
+
+Total = 150 mins lose
+
+","J - Machine breakdown
+G - No feeding from material "
+Line-2A,2025-03-07,Loss time,0,633,,"
+Maintenance & Cutting","In slv section yesterday ATSUG0042-518 QTY has been loaded but today upto-10:48 to 1:30 button is not given-168 mins
+In body section, Body welting machine problem(frequently thread cut) body commitment 610,we achieved 290,so 320 pieces drop-465 min
+Total loss time-633 mins","J - Machine breakdown
+G - No feeding from material "
+Line-2A,2025-03-11,Loss time,0,390,,"
+Maintenance ","
+In Lining section, Body welting machine problem(frequently needle down and extra cut ) - 9.30-4.30
+Total mins loss- 390 mins","J - Machine breakdown
+"
+Line-2A,2025-03-12,Loss time,0,390,,"
+Maintenance ","
+In Lining section, Body welting machine problem(frequently needle down and extra cut ) - 9.30-4.30
+Total mins loss- 390 mins","J - Machine breakdown
+"
+Line-2A,2025-03-13,Loss time,0,780,,"Yes
+Maintenance & Store","In slv section yesterday ATSUG0023-836 QTY has no button upto-10:00 to 2:00 button is not given from stores -210 mins
+
+In body section, Body welting machine problem(frequently thread cut) - 9.30-12.30
+Total mins loss- 180 mins
+
+In Lining section, Body welting machine problem(frequently needle down and extra cut ) - 9.30-4.30
+Total mins loss- 390 mins","J - Machine breakdown
+G - No feeding from material "
+Line-2A,2025-03-14,Loss time,0,120,,"Yes
+Trims Store","In slv section  ATSUG004SL-601 QTY has no thread matching  upto-9:00 to 11:00 button is not given from stores -120mins continuous problem store no matching thread and button so 2 hr indexor operation stop
+
+","
+G - No feeding from material "
+Line-2A,2025-03-16,Loss time,0,300,,"Yes
+Maintenance ","
+In sleeve section
+Overlock machine problem for thread cut and fabric is not moving in the machine Knife is not sharp issuses then parts will be knife is sharping
+1.30 to 5.30=300mins
+  . we can't able to do production level 150 pcs Because Line L2A & L2B combination .  
+
+
+","J - Machine breakdown
+"
+Line-2A,2025-03-17,Loss time,0,3690,,"Yes
+ Cutting & Store","
+In sleeve section
+
+1. sleeve no loading from cutting ( 11.00-12.00) -60mins
+2.Trims problem no matching thread for indexor operation(9.00-10.00), (2.00-6.00)-360 mins
+Total = 360 mins lose
+
+In Body section
+1. dart cutting & marking - 10:30-11:30=60mins &2.30 -4.30  -120 mins 
+Total -180mins
+2. Dart seam - 11.00-12.00 =60mins,3.30-5.30- 120 mins
+Total = 180 mins
+3. centerback - 3.30-4.30=60 mins
+Total =2250  mins lose
+
+
+
+In Lining section 
+
+1. lining facing attach,center back side panel wash care label attach and welting no loading = 2: 30 - 5:30=180mins
+Total = 1080 mins lose
+
+Total = 3690
+","
+G - No feeding from material "
+Line-2A,2025-03-18,Loss time,0,2340,,"Yes
+ Cutting","
+In sleeve section
+
+1. sleeve no loading from cutting ( 3.30-5.30) -120mins
+
+In Body section
+1. dart cutting & marking - 10:30-11:30=60mins &3.30 -5.30  -120 mins 
+Total -180mins
+2. Dart seam - 11.00-12.00 =60mins,3.30-5.30- 120 mins
+Total = 180 mins
+3. centerback - 3.30-4.30=60 mins
+Total =1260  mins lose
+
+In Lining section 
+
+1. lining facing attach,center back side panel wash care label attach and welting no loading = 3: 00 - 5:30=180mins
+2. For silver creast WO no trims is given 
+Total = 1080 mins lose
+
+Total = 2340
+","
+G - No feeding from material "
+Line-2A,2025-03-25,Loss time,0,495,,"Yes
+ Cutting","
+In sleeve section
+
+1. sleeve no loading from cutting ( 9.00-11.00, 1.30-2.30,3.30 - 4.30) -240mins
+
+In Body section
+1. dart cutting & marking - 3:15-6:30=195mins 
+Total -195mins
+2. Dart seam - 5.30-6.30 =60 mins
+Total =255 mins lose
+","
+G - No feeding from material "
+Line-2A,2025-03-26,Loss time,0,1185,,"Yes
+ Cutting","
+In sleeve section
+
+1. sleeve no loading from cutting ( 9.00-2.30) -300mins
+
+In Body section
+1. dart cutting & marking - 9:00-1:00=240mins 
+2. Dart seam - 9.00-1.45 =255 mins
+3.Dart Iron - 9.00-2.00 -270
+Total =255 mins lose
+
+In Lining Section 
+Silver creast loading has be done in 25-03-2025 WO (86591,86592) - 129,314 Quantity loaded in 11.15AM but Lining pocket lining not given for 26-03-2025 upto 2.55PM, No feeding material
+12.30- 2.30 - 360Mins","
+G - No feeding from material "
+Line-2A,2025-03-27,Loss time,0,2910,,"Yes
+Maintenance & Store","
+In sleeve section
+
+1. sleeve no button given from store, so button ,sleeve inseam, inseam iron, sleeve cuff closing and sleeve tacking operator no feeding ( 1.05-3.30) -750mins
+
+In Body section
+1. Body welting machine problem(fusing not cutted) - 11.00-5.30 -300mins 8mp = 2400 mins
+2. Dart Saddle stitch weaving effect -3.15-5.30 -150mins
+
+In Lining Section 
+In Lining Section 
+Silver creast loading has be done in 25-03-2025 WO (86591,86592) - 129,314 Quantity loaded in 11.15AM but Lining pocket lining not given for 26-03-2025 upto 2.55PM, No feeding material
+12.30- 2.30 - 360Mins","J - Machine breakdown
+G - No feeding from material "
+Line-2A,2025-03-28,Loss time,0,1260,,"Yes
+Maintenance & Store","
+In sleeve section
+
+1. sleeve no button given from store, so button ,sleeve inseam, inseam iron, sleeve cuff closing and sleeve tacking operator no feeding ( 9.30 -10.00) -150mins
+
+In Body section
+1. Body welting machine problem(fusing not cutted) - 9.10-10.10 -60mins 8mp = 480 mins
+2. Line 1 WO given to L2A to clear WO within this month but loading has been given from 10.30-12.00 -90 mins WO -89188 - 944
+Total -570 mins
+
+In Lining Section 
+In Lining Section 
+Silver creast loading has be done in 27-03-2025 WO -86605-288 wash care label not given 9.00-10.30 -90 mins so welting, pocket bag stop 6x90- 540 mins lose","J - Machine breakdown
+G - No feeding from material "
+Line-2B,2025-03-13,Loss time,0,0,,"Yes
+Maintenance","
+
+In Body section
+Logo machine fabric  setting problem 10.00 to 12.30 =150mins
+","J - Machine breakdown
+"
+Line-2B,2025-03-14,Loss time,0,740,,"Yes
+Store","
+
+In Body section trims issuses
+Breast pkt zigzag=2.45 to 4.20=95mins
+In lining section trims issuses
+(VSBZGO145SL)Goldseal,W.no(86248)
+loop change it 60 pcs
+3.00 to 4.30=90mins",H - No feeding from trims
+Line-2B,2025-03-15,Loss time,0,2695,,"Yes
+Store","
+
+In Lining section trims issuses for
+Brand label zigzag=10.05 to 11.15=70mins
+(VSBZGO145SL)Goldseal,W.no(86248)
+
+3.00 to 4.30=90mins",H - No feeding from trims
+Line-2B,,,,,,"Yes
+Maintenance","In sleeve section machine for 
+3 thread overlock (thread not cut then fabric couldn't able to move machine jam=1.15 to 5.00=225mins","J - Machine breakdown
+"
+Line-2B,2025-03-18,Loss time,0,900,,"Yes
+Cutting","
+
+In Body section loading issuses
+1.Flap seam=10.00 to 11.00=60mins
+2.Breast pkt ready=11.00 to 12.30=90mins
+3.Dart cutting=11.00 to 1.30=150 mins
+
+",G - No feeding from material 
+Line-2B,2025-03-19,Loss time,0,4150,,"Yes
+Cutting","
+
+In Body section loading issuses
+1.Dart cutting=9.55to 1.00=180 mins
+2.Center back seam-10.40 to 2.00=200mins
+3.Dart seam-11.30 TO 2.00=150mins
+4.Dart iron-12.00 to 2.00=120mins
+5.Side panel attach-11.00 to 2.30=210mins
+6.Side panel iron-1.00 to2.00=60mins
+7.Armhole tape attach-12.45 to 2.20=95mins
+8.Breast pkt ready-10.00 to 1.00=150mins
+9.Breast pkt open seam iron-2.30 to 3.30=60mins
+10.Flap seam-10.00 to2.30=270mins
+11.Flap pressing-2.30 to 3.30=60mins
+12.Flap dummy stitch-1.30 to 2.30=60mins
+13.Pkt lining facing-3.30 to 4.30=60mins
+In lining section loading issuse
+1.Front facing seam-11.35 to 2.00=145mins
+2.Facing iron-11.35 to 2.00=145mins
+3.Wash care label-1.30 to 2.30=60mins
+4.Welting-10.30 to 11.00=30mins
+
+",G - No feeding from material 
+Line-2B,,,0,,,"Yes
+Storage","In lining section trims issuses
+1.Wash care label-10.00 to 11.00=60mins
+2.Brand label-2.30 to 3.20=20mins
+Goldseal(VDSUG0241) W.no(87220)",H - No feeding from trims
+Line-2B,2025-03-20,Loss time,0,1230,,"Yes
+Cutting","
+
+In Body section loading issuses
+1.Dart cutting=3.00to 4.00=60 mins
+2.Dart seam-2.45 to 4.10=85mins
+3.Dart iron-4.15 to 4.25=10mins
+4.Flap seam-2.10 to4.10=120mins
+
+In lining section loading issuse
+1.Front facing seam-3.00 to 4.20=80mins
+2.Facing iron-4.20 to 4.45=25mins
+
+",G - No feeding from material 
+Line-2B,,,0,,,"Yes
+Cutting","In body,lining and sleeve loading time 4.00 then collar loading time 5.00 clock
+In body section cutting issuses
+Goldseal(VDSUG0313SL)W.no(86515) qty(259) Grey colour folding issuses for 50pcs to return cutting department.
+Same goldseal and w.no lining and sleeve section folding issuses
+Sleeve-25pcs
+Lining-48pcs then 10 pcs folding problem 16 pcs sortage problem.
+In body section 
+Goldseal(VDSUG0313) W.no(83793) qty(247) notch folding problem 177 pcs thus why 2 hrs drop in body and lining section.",
+Line-2B,2025-03-22,Loss time,0,6960,,"Yes
+Cutting","In lining section 
+Goldseal(AHBZG0299RG) W.no(84151) Qty(659) cutting issuses(center back bottom parts  one side correct opposite side  wrong for bias cutting issuses)
+Thus why 4 hrs drop for lining section  then body assembly 1.00 to 3.00 batch full dry ",E - Cutting defects
+Line-2B,2025-03-25,Loss time,0,1650,,"Yes
+Cutting","In body section loading issuses
+1.Center back seam-12.10 to 2.10=120mins
+2.Dart seam-3.45 to 4.20=35mins
+3.Dart iron-3.40 to 4.10=30mins
+4.Side panel attach-4.00 to 4.30=30mins
+5.Arm hole stitch-4.00 to 4.30=30mins
+6.Side panel iron-4.45 to 5.15=30mins
+7.Flap seam-1.00 to 2.00=60mins
+8.Flap pressing-3.00 to 3.40=40mins
+9.Flap dummy stitch-3.00  to 3.40=40mins
+10.Flap turn-3.00 to 3.45=45mins",G - No feeding from material  defects
+Line-2B,2025-03-26,Loss time,0,90,,"Yes
+Cutting","In body section loading issuses
+27 operation idel-3.00 to 5.30=150mins
+In lining section loading issuses
+20 operation idel-10.00 to 11.00=60mins",G - No feeding from material 
+Line-2B,2025-03-27,Loss time,0,120,,"Yes
+Cutting","In collar section loading issuses
+Goldseal-AOBZG0028SL W.no(88868)
+1.Collar stand-3.30 to 5.30=120mins
+In body section loading issuse
+Open wip-1264 but 
+26.03.2025-Goldseal(AOBZG0028SL) W.n0(88867) qty-300 but received 120 pcs
+Next day 9.30=180pcs
+3.00=128pcs
+3.40=112pcs
+4.30=60pcs",G - No feeding from material 
+Line-3,2025-03-05,Loss time,0,7620,,Cutting,"In lining section loading issue (W.O-84736/G.S-LP174)9.00-12.00=180 MINS&1.30-2.30=60MINS TOTAL=240MINS
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In body section loading issue (W.O-84736/G.S-LP174)12.30-1.00=30mins&1.30-2.00=30mins TOTAL=60MINS
+",G - No feeding from material 
+Line-3,2025-03-07,Loss time,0,510,,Cutting,"In lining section loading issue (W.O-83916/G.S-VD98)12.00-12.30=30 MINS&1.00-1.30=30MINS TOTAL=60MINS
+",G - No feeding from material 
+Line-3,,,,,,Cutting,In body section loading issue (W.O-83916/G.S-VD98)2.00-3.30=90MINS,G - No feeding from material 
+Line-3,2025-03-08,Loss time,0,240,,Cutting,"In Lining section loading issue (W.O-85527/G.S-PE51)3.30-4.00=30MINS
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In Body section loading issue (W.O-85527/G.S-PE51)2.30-3.30=60mins
+",G - No feeding from material 
+Line-3,2025-03-14,Loss time,0,1980,,Cutting,"In Lining section loading issue (W.O-85990/G.S-VH266)12.00-1.00&2.30-4.30=180MINS
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In Body section loading issue (W.O-85990/G.S-VH266)2.30-3.30=60mins
+",G - No feeding from material 
+Line-3,2025-03-22,Loss time,0,1730,,Cutting,"In Lining section loading issue (W.O-88196/G.S-VH266)12.30-2.30=120mins&3.10-3.30=20mins total=140mins
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In body section loading issue (W.O-88196/G.S-VH266)12.00-2.30=150mins
+",G - No feeding from material 
+Line-3,2025-03-26,Loss time,0,6600,,Cutting,"In Lining section loading issue (W.O-89028/G.S-VH81)2.30-5.30=180mins
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In body section loading issue (W.O-89028/G.S-VH266)3.30-5.30=120mins
+",G - No feeding from material 
+Line-3,2025-03-27,Loss time,0,2040,,Cutting,"In Lining section loading issue (W.O-89186/G.S-LY91)10.30-11.00=30mins&11.30-12.00=30mins&4.30-5.30=60mins total=120mins
+",G - No feeding from material 
+,,,,,,Cutting,"In body section loading issue (W.O-89186/G.S-LY91)11.00-12.00=60MINS&4.30-5.30=60MINS TOTAL=120 MINS
+",G - No feeding from material 
+Line-4,2025-03-10,Loss time,0,4320,,Store,"No feeding from Store for Shoulder pad 
+1:30 to 3:30
+2 hours production dropped in body assembly.",H - No feeding from trims
+w/c-1,2025-03-13,Loss time,0,360,,"Yes
+Storage","Gold seal(ATWCG0007SL ) W.no(86586) Qty-759
+Brand label zigzag 12.00 to 1.00=60mins",G - No feeding from material 
+w/c-1,,,,1050,,"Yes
+Maintenance","Welting machine problem for thread winding
+9.00 to 11.30=150mins",J - Machine breakdown
+w/c-1,2025-03-24,Loss time,0,9600,,"Yes
+Cutting","In body section loading issuses
+25 operation idel-9.00 to 3.50=420mins
+In lining section loading issuses
+15 operation idel-9.00 to 3.50=420mins",G - No feeding from material 
+w/c-1,2025-03-25,Loss time,0,9600,,"Yes
+Cutting","In body section loading issuses
+25 operation idel-1.00 to 5.10=240mins
+In lining section loading issuses
+15 operation idel-1.00 to 5.10=240mins",G - No feeding from material 
+w/c-1,2025-03-26,Loss time,0,9870,,"Yes
+Cutting","In body section loading issuses
+27 operation idel-3.00 to 5.30=150mins
+In lining section loading issuses
+20 operation idel-10.00 to 11.00=60mins",G - No feeding from material 
+w/c-1,2025-03-27,Loss time,0,21450,,"Yes
+Cutting","In body section loading issuses
+30 operation idel-9.00 to 3.00=330mins
+In lining section loading issuses
+15operation idel-9.00 to 3.00=330mins
+In  assembly section loading issuses 20 operation idel-9.00 to 3.00=330mins",G - No feeding from material 
+,,Total Loss time in contracted hours,,114428,,,,

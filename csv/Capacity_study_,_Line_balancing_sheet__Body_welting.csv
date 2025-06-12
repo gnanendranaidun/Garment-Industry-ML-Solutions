@@ -1,0 +1,15 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Unnamed: 7,Unnamed: 8,Unnamed: 9,Unnamed: 10,Unnamed: 11,Unnamed: 12,Unnamed: 13,Unnamed: 14,Unnamed: 15
+,Body 2 pkt welting,,,,,,,,,,,,,,
+,Reason for selecting this opearation,Having capacity but not doing,,,,,,,,,,,,,
+,Date,27/10/16,,,,,,,,,,,,,
+,Line,Line 2A,,Average cycle time,,42.0,43.0,41.0,43.0,41.0,39.0,41.0,43.0,41.625,
+,TK. NO,16347,,Average cycle time (90% eff),,0.763125,,,,,,,,Before Actual,
+,Operator name ,Bindu madavi,,Capacity @ 15% allowance,,78.62407862407862,,,,,,,,55,
+,Operation,Time  (min),5.0,10,15.0,20.0,25.0,30.0,35.0,40.0,45.0,50.0,55.0,60,Total 
+,Body welting,PCS,6.0,8,6.0,6.0,6.0,5.0,6.0,6.0,5.0,7.0,6.0,6,73
+,Thread cut,2,,,,,,,,,,,,,
+,power cut,1.23,,,,,,,,,,,,,
+,Pcs taken,1.65,,,,,,,,,,,,,
+,Total time utilized ,55.12,,,,,,,,,,,,,
+,total time wasted,4.88,,,,,,,,,,,,,
+,If wasted time utilised,79.3947583947584,,,,,,,,,,,,,

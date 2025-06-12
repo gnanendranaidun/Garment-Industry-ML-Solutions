@@ -1,0 +1,10 @@
+Unnamed: 0,Unnamed: 1,Unnamed: 2,Unnamed: 3,Unnamed: 4
+,,,,
+Sum of Actual,Column Labels,,,
+Row Labels,Dec'24,Jan'25,Nov'24,Grand Total
+Cutting defects,450,,97,547
+Machine breakdown,145,120,2525,2790
+Machine setting delay,571,,,571
+No feeding from Cutting,26962,34744,21895,83601
+No feeding from trims,1262,,355,1617
+Grand Total,29390,34864,24872,89126

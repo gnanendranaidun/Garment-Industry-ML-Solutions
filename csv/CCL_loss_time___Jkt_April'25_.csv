@@ -1,0 +1,91 @@
+Line ,Date of Gap,Check,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Act,Unnamed: 8
+,, (Target Vs Actual),,,Control point,,,
+,,MP/CP,Target,Actual,Self Control,Other Dept Control,Reason for Gap,"Reason Category
+(Key word from Reason for Gap)"
+Line-1A,02/04/2025,Loss time,0,19680,,Cutting,"Loading delay
+29/03/2025 from 12.30 to 02/04/2025 to 12 o clock body section idle (23 operators) 
+29/03/2025 from 12.00 to 02/04/2025 to 12 o clock lining section idle (18 operators)",Loading delay
+Line-1A,03/04/2025,Loss time,0,300,,Trims store,"Trims quality isuue
+Sleeve button not match with shell fabric
+ sleeve section 5 operations idle from 02/04/2025 (5 o clock) to 03/04/2025 (9.30)",Trims store quality issue
+Line-1B,2025-04-05 00:00:00,Loss time,0,300,Yes,Maintenance/Quality,"Flap outline: 11.30-11.35 (5 Min)(Quality issue)
+Patch diamond making: 11.40-11.50(10 mins) (Quality issue)
+Patch attach:12.10-12.20 & 1.00-1.40(Total:30 min)(Method issue)
+Slv placket attach:4.40 to 5.10(30 min)
+Total loss time=75*4=300",L - Style change over loss ( Batch setting)
+Line-1B,2025-04-07 00:00:00,Loss time,0,960,Yes,Maintenance,"Cuff attach:10.00-1.30(180 min)
+Welting-2.20-4.30 (from welting,front pkt bag close-2,pkt iron,side seam & shoulder seam) (130*6=780)
+Total loss time=960 mins)","L - Style change over loss ( Batch setting)
+J - Machine breakdown"
+Line-1B,2025-04-17 00:00:00,Loss time,0,480,Yes,Store,"In lining from 11:00 to 3:30 washcare label,hangerloop, and brand label was not received from store.So, washcare label attach & welting operations were loss 
+Loss time-240 min
+Total loss time-240*2=480min",H - No feeding from trims
+Line-1B,2025-04-28 00:00:00,Loss time,0,105,Yes,Maintenance,"In body assembly section lapel pressing one side Panel problem(Buck press not received) 
+105*1=105",J - Machine breakdown
+Line-2A,2025-04-02 00:00:00,Loss time,0,135,,"Yes
+ Store Department","Trims delay  brand label 12.00 - 12.45 - 45 mins LYG0091 - 690 
+1. Brand label, pocket iron main lining seam",H - No feeding from trims
+Line-2A,2025-04-05 00:00:00,Loss time,0,960,,"Yes
+ Store Department","Trims delay  Button is not given from store department  11.35 - 4.00 - 240 mins  after that also Button is not matching  WO 86595 - 182 Quantity 
+1. Button, inseam iron , lining  inseam , Lining tacking",H - No feeding from trims
+Line-2A,2025-04-10 00:00:00,Loss time,0,210,,"Yes
+Cutting Department","1. In sleeve Assembly Head Roll ready, head roll not given from Cutting from (09-04-25) 3.30 PM to (10-04 -25) 10.30 AM 
+Total -210 mins",G - No feeding from material 
+Line-2A,2025-04-12 00:00:00,Loss time,0,180,,"Yes
+Maintenance Department","1. In Body section body welting machine problem ( Needle cut, Extra corner cut/ excess cut, Welting machine betal not working ) from 2.00 PM to 3.30 PM.
+2. In Body Assembly Lapel Pressing machine break down ( machine dismantle) -3.30PM to 5.30 PM","I - Machine setting delay
+J - Machine breakdown"
+Line-2A,2025-04-28 00:00:00,Loss time,0,180,,"Yes
+Maintenance Department","In body assembly section lapel pressing both side Panel problem(Buck press not received) 
+9.15AM -12.15AM - 180 mins","
+J - Machine breakdown"
+Line-2B,02.04.2025,Loss time,0,1575,,"Yes
+Cutting","In body section loading issus
+1.Dart seam-3.45 to 5.30=105mins
+2.Center back seam-4.30 to 5.30=60mins
+3.Flap seam-3.45 to 5.30=105mins
+4.Pkt lining facing seam-4.30 to 5.30=60mins
+5.Breast pkt ready-11.00 to 2.30=210mins",G - No feeding from material 
+Line-2B,03.04.2025,Loss time,0,2025,,"Yes
+Cutting","In body section loading issuse
+1.Dart seam-9.00 to 10.30=90mins+45mins
+2.Center back seam-9.00 to 10.30=90mins
+3.Dart seam-9.20 to 10.50=90mins
+4.Dart iron-10.00 to 11.00=60mins
+5.Side panel attach-10.30 to 11.00=30mins
+6.Arm hole tape-10.30 to 11.10=40mins
+7.Flap seam-9.00 to 10.00=100mins+40mins
+8.Pkt lining facing seam-9.00 to 10.00=60mins
+9.Breast pkt ready-9.00 to 10.30=90mins",G - No feeding from material 
+Line-2B,17.04.2025,Loss time,0,60,,"Yes
+Maintainence",In lining section center back +side panel machine problem for Needle bar jam andNeedle hook set damaged thus why one hrs production drop.,J - Machine breakdown
+Line-2B,19.04.2025,Loss time,0,36,,"Yes
+Maintainence",In lining section welting machine problem for fabric setting thus why one hrs 30 pcs readuce then alternate machine gave same problem face it.,J - Machine breakdown
+Line-2B,21.04.2025,Loss time,0,60,,"Yes
+Maintainence","In Body Section, Body welting machine problem needle cut  so program change from 2.40 PM to 3.20 PM=30mins",J - Machine breakdown
+Line-3,2025-04-19 00:00:00,Loss time,0,90,,"Yes
+Maintenance Department",In sleeve assembly section button hole mechine problem.mechine setting delayed due to knitted fabric quallity problem,"I - Machine setting delay
+J - Machine breakdown"
+Line-3,2025-04-21 00:00:00,Loss time,0,60,,"Yes
+Maintenance Department","In Lining Section, welting machine setting delay  due to quality problem ( bone uneven and bone reverse) ","I - Machine setting delay
+J - Machine breakdown"
+Line-3,2025-04-25 00:00:00,Loss time,1,180,,"yes
+cutting",In Lining section loading problem (W.O-92352/VH361)2.30-5.00=180mins,G - No feeding from material 
+Line-3,,,,240,,"yes
+cutting",In Body section loading problem (W.O-92352/VH361)11.00-4.30=240mins,
+Line-4,2025-04-10 00:00:00,Loss time,0,75,,Maintenance,"In Lining section Stroble tape attach machine is breakdowm from 12:30 to 1:45 .
+
+So the production is  dropped from commitment .
+","In Lining section Stroble tape attach machine is breakdowm from 12:30 to 1:45 .
+
+So the production is  dropped from commitment .
+"
+Line-4,2025-04-21 00:00:00,Loss time,0,180,,Maintenance,"In (WO-90987 velvet fabric)
+Lapel pressing machine is delayed in setting due to velevt fabric. 
+","In (WO-90987 velvet fabric)
+Lapel pressing machine is delayed in setting due to velevt fabric. 
+"
+Line-4,2025-04-23 00:00:00,Loss time,0,120,,Maintenance,"In lining section welting machine was breakdown from 12:30 to 2:30 
+","In lining section welting machine was breakdown from 12:30 to 2:30 
+"
+,,Total Loss time in contracted hours,,28191,,,,
