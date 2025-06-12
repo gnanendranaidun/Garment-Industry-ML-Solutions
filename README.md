@@ -1,121 +1,138 @@
-# Garment Industry ML Solutions
+# Garment ML Dashboard
 
-This repository contains machine learning solutions for various aspects of the garment industry, including production optimization, sales forecasting, and quality control.
+A comprehensive web-based dashboard for garment manufacturing analytics, quality control, and machine learning predictions.
 
-## Dataset Overview
+## Features
 
-1. **Production Line Data** (`Capacity study, Line balancing sheet.xlsx`)
-   - Production capacity metrics
-   - Line balancing information
-   - Worker efficiency data
-   - Production timing data
+- **Production Monitoring**
+  - Real-time production metrics
+  - Production trends visualization
+  - Efficiency analysis
+  - Line balancing insights
 
-2. **Loss Time Analysis** (`CCL loss time_.xlsx`)
-   - Production downtime records
-   - Machine breakdown data
-   - Maintenance schedules
-   - Efficiency loss metrics
+- **Quality Control**
+  - Quality metrics tracking
+  - Defect analysis
+  - Quality trends visualization
+  - Defect type distribution
 
-3. **Store Performance** (`Stores - Data sets for AI training program.xlsx`)
-   - Sales data
-   - Inventory levels
-   - Customer transactions
-   - Store performance metrics
+- **Machine Learning Predictions**
+  - Production optimization
+  - Quality prediction
+  - Parameter optimization
+  - Confidence scoring
 
-4. **Quadrant Analysis** (`Quadrant data - AI.xlsx`)
-   - Product categorization
-   - Performance metrics
-   - Market positioning data
+- **Simulation Tools**
+  - Production simulation
+  - Quality impact analysis
+  - Parameter optimization
+  - What-if scenarios
 
-## ML Applications
+## Prerequisites
 
-### 1. Production Optimization
-- **File**: `production_optimization.py`
-- **Features**:
-  - Line balancing prediction
-  - Production capacity forecasting
-  - Worker efficiency analysis
-  - Bottleneck detection
+- Python 3.8 or higher
+- pip (Python package installer)
+- Virtual environment (recommended)
 
-### 2. Sales Forecasting
-- **File**: `sales_forecasting.py`
-- **Features**:
-  - Store-level sales prediction
-  - Product demand forecasting
-  - Seasonal trend analysis
-  - Inventory optimization
+## Installation
 
-### 3. Quality Control
-- **File**: `quality_control.py`
-- **Features**:
-  - Defect prediction
-  - Quality metrics analysis
-  - Production quality optimization
-  - Anomaly detection
-
-### 4. Loss Time Analysis
-- **File**: `loss_time_analysis.py`
-- **Features**:
-  - Downtime prediction
-  - Maintenance scheduling
-  - Root cause analysis
-  - Efficiency optimization
-
-### 5. Product Analysis
-- **File**: `product_analysis.py`
-- **Features**:
-  - Product categorization
-  - Performance prediction
-  - Market positioning
-  - Trend analysis
-
-## Setup and Installation
-
-1. Create a virtual environment:
+1. Clone the repository:
 ```bash
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
+git clone <repository-url>
+cd garment-ml-dashboard
 ```
 
-2. Install required packages:
+2. Create and activate a virtual environment:
+```bash
+# Windows
+python -m venv venv
+.\venv\Scripts\activate
+
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
-
-Each ML module can be run independently:
-
-```bash
-python production_optimization.py
-python sales_forecasting.py
-python quality_control.py
-python loss_time_analysis.py
-python product_analysis.py
+4. Set up environment variables:
+Create a `.env` file in the root directory with the following content:
+```
+SECRET_KEY=your-secret-key
+DATABASE_URL=sqlite:///garment_ml.db
 ```
 
-## Model Performance
+## Running the Application
 
-Each module includes:
-- Model evaluation metrics
-- Performance visualizations
-- Prediction accuracy reports
-- Optimization recommendations
+1. Start the Flask development server:
+```bash
+flask run
+```
 
-## Data Preprocessing
+2. Access the dashboard at `http://localhost:5000`
 
-- Data cleaning scripts
-- Feature engineering
-- Data normalization
-- Missing value handling
+## Project Structure
 
-## Output
+```
+garment-ml-dashboard/
+├── app.py                 # Main Flask application
+├── requirements.txt       # Python dependencies
+├── .env                  # Environment variables
+├── static/              # Static files
+│   ├── css/            # CSS styles
+│   └── js/             # JavaScript files
+├── templates/           # HTML templates
+├── models/             # ML models
+├── data/               # Data files
+└── venv/               # Virtual environment
+```
 
-Each module generates:
-- Prediction results
-- Performance metrics
-- Visualization plots
-- Optimization recommendations
+## Data Structure
+
+The application uses the following data structure:
+
+- Production Data:
+  - Date
+  - Product ID
+  - Total Units
+  - Good Units
+  - Defect Units
+  - Temperature
+  - Pressure
+  - Speed
+  - Humidity
+
+- Quality Metrics:
+  - Quality Score
+  - Defect Rate
+  - Defect Types
+  - Parameter Impact
+
+## API Endpoints
+
+- `/api/production-data` - Get production data
+- `/api/quality-metrics` - Get quality metrics
+- `/api/predictions` - Get ML predictions
+- `/api/optimization` - Get optimal parameters
+- `/api/quality-trends` - Get quality trends
+- `/api/defect-analysis` - Get defect analysis
+
+## Machine Learning Models
+
+The application uses the following ML models:
+
+1. Production Model:
+   - Predicts production output based on parameters
+   - Uses historical data for training
+   - Provides confidence scores
+
+2. Quality Model:
+   - Predicts quality metrics
+   - Identifies parameter impacts
+   - Suggests optimizations
 
 ## Contributing
 
@@ -127,4 +144,15 @@ Each module generates:
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details. 
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Support
+
+For support, please open an issue in the GitHub repository or contact the development team.
+
+## Acknowledgments
+
+- Flask framework
+- Plotly for visualizations
+- scikit-learn for ML models
+- Bootstrap for UI components 

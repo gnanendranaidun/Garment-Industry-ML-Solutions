@@ -1,0 +1,304 @@
+Line ,Date of Gap,Check,Unnamed: 3,Unnamed: 4,Unnamed: 5,Unnamed: 6,Act,Unnamed: 8
+,, (Target Vs Actual),,,Control point,,,
+,,MP/CP,Target,Actual,Self Control,Other Dept Control,Reason for Gap,"Reason Category
+(Key word from Reason for Gap)"
+Line-1A,2025-02-10,Loss time,0,300,,Cutting,"Loading delay from cutting section 
+Body section 2 operation idle from 3 to 5.30
+",G - No feeding from material 
+Line-1A,2025-02-11,Loss time,0,875,,Cutting,"Loading delay from cutting section 
+Body section 5 operation idle from 2.35 to 4.45
+Lining section 4 operations from 4 to 4.45",G - No feeding from material 
+Line-1A,2025-02-12,Loss time,0,1710,,Cutting,"Loading delay from cutting section 
+Body section 18 operation idle from 11 to 12.10
+Lining section 15 operations from 11.30 to 12",G - No feeding from material 
+Line-1A,2025-02-13,Loss time,0,696,,Cutting,"Loading delay from cutting section 
+Body section 6 operation idle from 10 to 11
+Lining section 9 operations from 10 to 11.10",G - No feeding from material 
+Line-1A,2025-02-19,Loss time,0,400,,Maintenance,"Sleeve attach machine breakdown from 12.45 to 1.20
+Under collar zigzag machine breakdown from 12.30 to 1.30",J - Machine breakdown
+Line-1B,2025-02-18,Loss time,0,1670,,Maintenance,"Batch setting(New style)
+button hole m/c-165 min,4 operations are idle
+Centre back side panel--750min,5 operations are idle
+lining side seam-260 min,4 operations are not balanced",L - Style change over loss ( Batch setting)
+Line-1B,2025-02-22,Loss time,0,2700,,Cutting,"No loading
+From 12.30 to 4.30  Dart cutting-Side panel 5 operations are idle
+From 12.30-5.30 canvas loading is not there,5 operations are idle",G - No feeding from material 
+Line-1B,2025-02-24,Loss time,0,210,,Maintenance,"Machine breakdown-
+Under Collar zigzag m/c breakdown for 30 min
+7 operations are idle",J - Machine breakdown
+Line-1B,2025-02-25,Loss time,0,130,,Cutting,"Head roll is not there from 9-11:10, So, head roll ready operation is idle",G - No feeding from material 
+Line-1B,2025-02-28,Loss time,0,45,,Maintenance,Body welting machine problem for 45 min. ,J - Machine breakdown
+Line-2A,2025-02-20,Loss time,0,120,,"Yes
+Maintenance","
+In sleeve section
+indexor machine problem for loose thread and button hole Measurement issuses then parts will be change
+11.30 to 1.30=120 mins
+ alternate machine arranged  . we can't able to do production level 150 pcs Because Line L2A & L2B combination . Repeated Indexor machine problem.",J - Machine breakdown
+Line-2A,2025-02-21,Loss time,0,480,,"Yes
+Maintenance","In sleeve section
+indexor machine problem for loose thread and button hole Measurement issuses then parts will be change
+9.30 to 5.30 alternate machine arranged  . we can't able to do production level 150 pcs Because Line L2A & L2B combination . Repeated Indexor machine problem.",J - Machine breakdown
+Line-2A,2025-02-24,Loss time,0,120,,"Yes
+Maintenance","In Lining section 
+welting - 3.30-5.30
+Lining 3 pocket welting machine  Knife cut 120 mins production is drop balanced with another machine 60 piece drop",J - Machine breakdown
+Line-2A,2025-02-25,Loss time,0,180,,"Yes
+Maintenance","In Lining section
+welting - 10.30- 12.30
+Lining 3 pocket welting machine  Knife cut 180 mins production is drop balanced with another machine 100 piece drop",J - Machine breakdown
+Line-2B,2025-02-06,Loss time,0,1350,,"Yes
+Maintenance","In sleeve assembly section button hole machine problem for skip stitch(netted fabric ) then arrange one more machine but couldn't able to cut thread (manual  cut for buttonhole thread) 10.22 to 11.30=60mins
+12.30 to 4.00=210mins
+In body assembly section shoulder seam machine problem for hook set block
+(05.02.2025) evening problem
+9.00 to 11.00=120mins
+In sleeve section inseam machine problem (motor burn it)
+3.00 to4.30=60mins",J - Machine breakdown
+Line-2B,2025-02-12,Loss time,0,345,,"Yes
+Cutting","In Body section loading issuses
+Dart cutting-4.45 to 5.30=45mins
+Flap seam-5.20 to 5.30=10mins
+Breast pkt ready iron-4.30 to 5.30=60mins",G - No feeding from material 
+Line-2B,2025-02-13,Loss time,0,3770,,"Yes
+Cutting","In body section loading issuse
+Dart cutting-12.50 to 2.30=130mins
+Center back seam-1.45 to 3.00=75mins
+Dart seam-2.50 to 3.30=40mins
+Dart iron-3.40 to 4.30=40mins
+Side panel attach-4.00 to 4.45=45mins
+Armhole tape attach-3.14 to 3.30=16mins
+Breast pkt ready -1.00 to 3.20=140mins
+Flap seam-2.00 to 4.20=140mins
+Flap pressing-2.30 to 4.30=120mins
+Dummy stitch-2.30 to 4.30=120mins
+In lining section loading issuse
+Front facing seam-3.00 to 4.30=90mins
+Facing iron-3.10 to 4.40=100mins
+In sleeve section loading issuse
+Indexor-4.30 to 5.30=60mins",G - No feeding from material 
+Line-2B,2025-02-14,Loss time,0,131670,,"Yes
+Cutting","In body section loading issuse
+Dart cutting-10.42 to 2.30=195mins
+Center back seam-11.02 to 2.30=182mins
+Dart seam-11.30to 2.30=180mins
+Dart iron-11.30 to 2.30=180mins
+Side panel attach-12.30to 2.45=135mins
+Armhole tape attach-12.30 to 2.55=145mins
+Side panel iron-2.00 to 3.00=60mins
+Breast pkt ready -11.00to 2.30=210mins
+Breast pkt attach-1.30 to 3.05=155mins
+Breast pkt open seam iron-1.30 to 3.05=155mins
+Breast pkt bag close-2.00 to 3.10=70mins
+Flap seam-12.20 to 3.20=180mins
+Flap pressing-2.30 to 4.30=120mins
+Dummy stitch-2.30 to 4.30=120mins
+Flap matching-1.15 to 3.30=165mins
+Body welting-2.25 to 3.50=75mins
+Bone cut-2.25 to 3.50=75mins
+Pkt lining-11.00 to 2.00=180mins",G - No feeding from material 
+Line-2B,,,,,,"Yes
+Maintenance","In lining section 
+Lining welting machine problem
+9.30-12.30=180mins
+welting Floder cut thus why problem issuse",J - Machine breakdown
+Line-2B,2025-02-17,Loss time,0,660,,"Yes
+Cutting","In Body section loading issuse
+Dart cutting-12.40 to 1.30=70mins
+Breast pkt ready-11.00 to 2.00=180mins
+Flap seam-1.10 to 2.10=60mins
+In lining section loading issuses
+Goldseal(VDBZG0316) W.no(78946)
+loading it 15.02.2025 but received Front facing pipping -9.10 to 11.00=110mins
+Triangle flap-9.10 to 10.45=95mins",G - No feeding from material 
+Line-2B,2025-02-18,Loss time,0,2940,,"Yes
+Cutting","In Body section loading issuse
+1.Dart cutting-12.30 to 3.30=180 mins
+2.Center back seam-1.50 to 3.45=115mins
+3.Dart seam-1.40 to 3.45=105 mins
+4.Dart iron-2.30 to 3.50=80mins
+5.Side panel-2.50 to 4.00=70mins
+6.Armhole tape-3.00 to 4.10=70mins
+7.Side panel iron-3.30 to 4.30=60mins
+8.Breast pkt ready-12.00 to 3.30=210mins
+9.Breast pkt attach-3.30 to 4.45=75mins
+10.Flap seam-1.40 to 4.00=100mins
+11.Fap pressing-3.30 to 4.30=60mins
+12.Flap dummy stitch-2.30 to 3.30=60mins
+In lining section loading issuse
+13.Welting-3.30 to 5.30=120mins
+14.Bone cut-5.00 to 5.30=30mins",G - No feeding from material 
+Line-2B,2025-02-19,Loss time,0,360,,"Yes
+Cutting","In Body section loading issuse
+Dart cutting-9.40 to 10.10=30 mins
+Flap seam-10.10 to 10.35=25mins",G - No feeding from material 
+Line-2B,,,,,,"Yes
+Store","In Lining and sleeve section trims issuse
+Goldseal(LYBZG0091) W.no(82882) 898Qty
+10.00 loading received batch trims received 12.30=150mins
+
+",G - No feeding from material 
+Line-2B,2025-02-20,Loss time,0,120,,"Yes
+Maintenance","
+In sleeve section
+indexor machine problem for loose thread and button hole Measurement issuses then parts will be change
+11.30 to 1.30=120 mins
+ alternate machine arranged  . we can't able to do production level 150 pcs Because Line L2A & L2B combination . Repeated Indexor machine problem.",J - Machine breakdown
+Line-2B,2025-02-21,Loss time,0,280,,"Yes
+Cuuting","In body section loading issuse
+Breast pkt ready-9.10 to 11.00=110mins
+Flap seam-10.30 to 11.00=30mins
+Front panel parts fusing open for 70 pcs Goldseal( LYBZG009) W.NO (82881)",G - No feeding from material 
+Line-2B,,,,860,,"Yes
+Maintenance","In sleeve section
+indexor machine problem for loose thread and button hole Measurement issuses then parts will be change
+9.30 to 5.30 alternate machine arranged  . we can't able to do production level 150 pcs Because Line L2A & L2B combination . Repeated Indexor machine problem.",J - Machine breakdown
+Line-2B,,,,1280,,"Yes
+Cutting","In body section loading issuse
+Dart cutting-4.00 to 5.10=70mins
+Dart seam-4.30 to 5.30=60mins
+Dart iron-5.00 to 5.30=30mins
+Center back seam- 5.00 to 5.30=30mins
+Side panel seam-5.00 to 5.30=30 mins
+Arm hole tape -5.25 to 5.30=5mins
+Flap seam-3.40 to 5.30=110mins
+Breast pkt ready iron-4.00 to 5.30=90mins",G - No feeding from material 
+Line-2B,2025-02-24,Loss time,0,1463,,"Yes
+Cutting","In body section loading issuses
+Dart cutting-9.25 to 9.42=17mins
+Dart seam-9.10 to 9.40=30mins
+Dart iron-9.15 to 9.45=30mins
+Center back seam-9.10 to 9.40=30mins
+Side panel attach-9.30 to 10.00=30mins
+Armhole tape attach-9.10 to 10.30=80mins
+Side panel iron-10.00 to 11.00=60mins
+Breast pkt attach-9.30 to 11.30=120mins
+Breast pkt open seam iron-9.30 to 11.30=120mins
+Breast pkt bag close-9.30 to 11.30=120mins
+Breast pkt zigzag-9.30 to 11.30=120mins
+Flap seam-9.10 to 10.00=50mins
+Flap pressing-9.10 to 10.00=50mins
+Flap dummy stitch-9.10 to 10.00=50mins
+Pkt lining facing seam-9.10 to 10.40=90mins
+Welting matching-10.00 to 11.00=60mins
+Welting-10.00 to 11.00=60mins
+Bone cut-10.00 to 11.00=60mins",G - No feeding from material 
+Line-2B,,,,900,,"Yes
+Maintenance","In collar section Side Lining Attach machine problem for over stitch thus why drop 11.00 to 2.00=180mins
+",J - Machine breakdown
+Line-2B,2025-02-25,Loss time,0,35,,"Yes
+Store","In sleeve section
+Goldseal(VDSUG0247SL),(VDSUG0246SL) W.no(83114) ,(83115) 450,150qts
+Mental Button delay for store 11.45 to 12.15=35mins",G - No feeding from material 
+Line-2B,2025-02-26,Loss time,0,5150,,"Yes
+Cutting","In Body section loading issuses
+Dart cutting-11.00 to 3.00=240
+Dart seam-12.20 to 3.40=240mins
+Dart iron-1.00 to 3.45=165mis
+Side panel-2.00 to 3.45=105mins
+Center back seam-11.20 to 3.30=290mins
+Arm hole tape -2.00 to3.50=110mins
+Side panel iron-2.30 to3.55=85mins
+Breast pkt ready -11.00 to 3.00=240mins
+Breast pkt attach-2.30 to 4.15=105mins
+Breast pkt open seam iron-2.45 to 4.20=185mins
+Breast pkt bag close-3.00 to 4.25=85mins
+Breast pkt zigzag-3.30 to 4.10=40mins
+Flap seam-2.35 to 3.00=95mins
+Flap pressing-2.40 to 3.30=130mins
+Flap dummy stitch-3.30 to 4.00=30mins
+Flap matching-3.30 to 4.10=40mins
+Pkt lining facing seam-2.30 to 3.30=60mins
+",G - No feeding from material 
+Line-2B,2025-02-27,Loss time,0,50,,"Yes
+Store","In body section trims issuse
+Breast pkt zigzag=4.30 to 5.20",G - No feeding from material 
+Line-2B,,,,4160,,"Yes
+Cutting","In Body section loading issuses
+Dart cutting-1.00 to 3.40=160mins
+Dart seam-3.00to 4.00=60mins
+Dart iron-3.15to 4.15=60mis
+Side panel-3.40 to 4.00=20mins
+Center back seam-3.00 to 4.00=60mins
+Arm hole tape -3.54 to 4.10=16mins
+Side panel iron-3.30 to4.30=60mins
+Breast pkt ready -12.30 to 3.30=180mins
+
+Flap seam-3.30 to 4.30=60mins
+Canvas loading issuses-9.00 to 10.00=60mins Goldseal(VDSUG0316) W.no(83116) 351 qts
+In lining section loading issuses
+Front facing seam-3.30 to 4.30=60mins
+Facing iron-3.30 to 4.30=60mins
+Wash care label-4.30 to 5.00=30mins
+Brand label-2.30 4
+
+",G - No feeding from material 
+Line-2B,,,,2600,,"Yes
+Cutting","In Body section loading issuses
+Dart cutting-3.00 to 4.30=90mins
+Dart seam-4.00to 4.40=40mins
+Dart iron-4.20to 4.50=30mis
+Side panel-4.30 to 4.50=20mins
+Center back seam-4.00 to 4.30=30mins
+Arm hole tape -4.40 to 5.00=20mins
+Side panel iron-5.10 to5.30=20mins
+Breast pkt ready -2.00 to 4.00=120mins
+Flap seam-4.00 to 4.30=30mins
+In lining section loading issuses
+Goldseal(LPBZG0062SL) W.no(83473) Qts(982) size label,loop
+Wash care label-9.10 to 12.00=170mins
+
+
+",G - No feeding from material 
+Line-3,2025-02-13,Loss time,0,720,,Cutting,"In lining section loading issue (W.O-81664/G.S-LP174)2.30-3.30=60 MINS&3.30-4.00=30MINS TOTAL=90MINS
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In body section loading issue (W.O-81664/G.S-LP174)12.30-1.00=30mins&2.30-3.00=30mins&3.30-4.00=30mins TOTAL=90MINS
+",G - No feeding from material 
+Line-3,2025-02-14,Loss time,0,480,,Cutting,"In bodysection loading issue (W.O-80337/G.S-VH266) 12.00-1.00=60MINS
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In lining section loading issue (W.O-80337/G.S-VH266) 12.00-1.00=60MINS
+",G - No feeding from material 
+Line-3,2025-02-15,Loss time,0,450,,Cutting,"In lining section loading issue (W.O-81754/G.S-VD98) 12.00-1.00=60MINS&2.00-2.30=30 MINS 
+TOTAL=90 MINS
+",G - No feeding from material 
+Line-3,2025-02-17,Loss time,0,300,,Cutting,"In Body section loading issue (W.O-81165/G.S-PI266) 2.00-2.30=30MINS&3.00-3.30=30 MINS 
+TOTAL=60 MINS
+",G - No feeding from material 
+Line-3,2025-02-18,Loss time,0,300,,Cutting,"In Lining section loading issue (W.O-82130/G.S-AT04) 2.00-2.30=30MINS&5.00-5.30=30 MINS 
+TOTAL=60 MINS
+",G - No feeding from material 
+Line-3,2025-02-20,Loss time,0,2970,,Cutting,"In Lining section loading issue (W.O-82596/G.S-VH361)(W.O-82324/AT51-82324)10.00-10.30=30mins 11.30-12.00=30 mins12.00-1.00=60mins 2.00-2.30=30mins 4.30-5.30=60 mins
+total=225mins",G - No feeding from material 
+Line-3,,,,,,Cutting,"In body section loading issue (W.O-82596/G.S-AT51)12.00-1.00=60mins 2.00-2.30=30mins
+total=90mins
+",G - No feeding from material 
+Line-3,2025-02-21,Loss time,0,450,,Cutting,"In Lining section loading issue (W.O-82679/G.S-VH266)3.30-5.00=90MINS
+TOTAL=60 MINS
+",G - No feeding from material 
+Line-3,2025-02-24,Loss time,0,690,,Cutting,"In Lining section loading issue (W.O-82328/G.S-AT51)2.30-3.30=60mins 4.00-4.30=30mins
+total=90mins
+TOTAL=60 MINS
+",G - No feeding from material 
+Line-3,,,,,,Cutting,"In body section loading issue (W.O-82328/G.S-AT51)3.00-3.30=30mins
+total=90mins
+",G - No feeding from material 
+Line-3,2025-02-25,Loss time,0,450,,Cutting,"In body section loading issue (W.O-82462/G.S-LP249) 10.30-11.00=30MINS&11.00-12.00=60 MINS 
+TOTAL=90MINS
+TOTAL=90 MINS
+",G - No feeding from material 
+Line-3,2025-02-27,Loss time,0,270,,Cutting,"In Lining section loading issue (W.O-83962/G.S-PI266) 1.30-2.00=30mins&2.30-3.00=30mins&3.30-4.00=30mins
+total=90mins
+TOTAL=90MINS
+TOTAL=90 MINS
+",G - No feeding from material 
+Line-4,2025-02-04,Loss time,0,2160,,Maintenance,"In body asembly Shoulder pad pressing Machine bfreakdown from 3:00 to 5:30 
+but spare machine was given by Maintence at 4:00.",J - Machine breakdown
+Line-4,2025-02-19,Loss time,0,8640,,Cutting,"From cutting section there is no feeding for chest canvas From 9:00 to 10:45 & 12:20 to 2:00
+
+From body section 48 Manpower were idol for 3hours.",G - No feeding from material 
+Line-4,2025-02-20,Loss time,0,1680,,Cutting,"From cutting section there is no feeding for chest canvas From 11:30 to 1:30
+
+From body section 28 Manpower were idol for 3hours.",G - No feeding from material 
+Line-4,,Loss time,0,600,,Store,"From store department there is no feeding for Bias cutting From bias cutting they didn't Workorder piping on time (82371,82372)
+So From 1:30 to 3:50 the production is stopped from Lining Section.
+",G - No feeding from material 
+,,Total Loss time in contracted hours,,187789,,,,

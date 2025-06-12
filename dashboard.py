@@ -5,18 +5,16 @@ import plotly.express as px
 import plotly.graph_objects as go
 from datetime import datetime
 import os
-from production_optimization import ProductionOptimizer
-from loss_time_analysis import LossTimeAnalyzer
-from quality_control import QualityController
-from product_analysis import ProductAnalyzer
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
+from pathlib import Path
+from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
+from sklearn.preprocessing import StandardScaler, LabelEncoder
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error, accuracy_score
 import joblib
-import random
 
 # Set page config
 st.set_page_config(
-    page_title="Garment Industry Analytics Dashboard",
+    page_title="Garment Industry ML Dashboard",
     page_icon="👔",
     layout="wide",
     initial_sidebar_state="expanded"
@@ -58,718 +56,807 @@ st.markdown("""
         border-radius: 8px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+    .prediction-box {
+        background-color: #e3f2fd;
+        color: #0d47a1;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .model-info {
+        background-color: #fff3e0;
+        color: #e65100;
+        padding: 15px;
+        margin-bottom: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
     </style>
 """, unsafe_allow_html=True)
 
-# --- Page Functions ---
-# Define all page functions first so they are available when `pages` dict is created
+@st.cache_data
+def load_csv_data():
+    csv_dir = Path('csv')
+    data = {}
+    
+    # Load Stores data
+    stores_files = {
+        'material_outward': 'Stores_-_Data_sets_for_AI_training_program__Material_outward.csv',
+        'material_inhouse': 'Stores_-_Data_sets_for_AI_training_program__Material_Inhouse.csv',
+        'stock_entry': 'Stores_-_Data_sets_for_AI_training_program__Stock_Entry_&_Location.csv',
+        'fdr_fra': 'Stores_-_Data_sets_for_AI_training_program__FDR_&_FRA_tracker.csv',
+        'inward_grn': 'Stores_-_Data_sets_for_AI_training_program__Inward_&_GRN.csv'
+    }
+    
+    for key, file in stores_files.items():
+        try:
+            data[key] = pd.read_csv(csv_dir / file)
+            # st.success(f"Successfully loaded {file}") # Removed logging
+        except Exception as e:
+            # st.warning(f"Error loading {file}: {str(e)}") # Removed logging
+            pass # Keep pass to suppress errors silently during loading
+    
+    # Load Loss Time data
+    loss_time_files = [f for f in os.listdir(csv_dir) if 'CCL_loss_time' in f]
+    data['loss_time'] = {}
+    for file in loss_time_files:
+        try:
+            data['loss_time'][file] = pd.read_csv(csv_dir / file)
+            # st.success(f"Successfully loaded {file}") # Removed logging
+        except Exception as e:
+            # st.warning(f"Error loading {file}: {str(e)}") # Removed logging
+            pass # Keep pass to suppress errors silently during loading
+    
+    # Load Capacity Study data
+    capacity_files = [f for f in os.listdir(csv_dir) if 'Capacity_study' in f]
+    data['capacity'] = {}
+    for file in capacity_files:
+        try:
+            data['capacity'][file] = pd.read_csv(csv_dir / file, header=7)
+            # st.success(f"Successfully loaded {file}") # Removed logging
+        except Exception as e:
+            # st.warning(f"Error loading {file}: {str(e)}") # Removed logging
+            pass # Keep pass to suppress errors silently during loading
+    
+    # Load Quadrant data
+    quadrant_files = [f for f in os.listdir(csv_dir) if 'Quadrant_data' in f]
+    data['quadrant'] = {}
+    for file in quadrant_files:
+        try:
+            data['quadrant'][file] = pd.read_csv(csv_dir / file)
+            # st.success(f"Successfully loaded {file}") # Removed logging
+        except Exception as e:
+            # st.warning(f"Error loading {file}: {str(e)}") # Removed logging
+            pass # Keep pass to suppress errors silently during loading
+    
+    return data
 
-def home_page():
-    st.title("Garment Industry ML Dashboard")
-    st.markdown("""
-    Welcome to the Garment Industry ML Dashboard. This application provides insights and recommendations
-    across various aspects of garment manufacturing using machine learning.
+class MLPredictor:
+    def __init__(self):
+        self.models = {}
+        self.scalers = {}
+        self.label_encoders = {}
+        self.model_info = {}
+    
+    def train_production_prediction(self, data):
+        try:
+            # Define potential target columns for time data
+            time_cols = ['Cycle Time(CT)', 'SMV', 'Time (min)']
+            target_col = None
+            for col in time_cols:
+                if col in data.columns:
+                    target_col = col
+                    break
+            
+            if target_col is None:
+                st.warning("Could not find a suitable time-related column for production prediction training. Looked for: " + ', '.join(time_cols))
+                return None
 
-    Use the navigation sidebar on the left to explore different modules:
-    - **Production Optimization:** Analyze and optimize production line balancing and efficiency.
-    - **Loss Time Analysis:** Identify and address critical loss time patterns.
-    - **Quality Control:** Monitor and improve product quality through defect analysis.
-    - **Product Analysis:** Understand product performance and operator competency.
-    - **Worker Allocation:** Simulate and optimize worker assignments for tasks.
+            # Prepare features
+            X = data[['Operation tack time', 'Req.Tack time']].dropna()
+            y = data[target_col].dropna()
+            
+            if len(X) > 0 and len(y) > 0:
+                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                
+                # Scale features
+                scaler = StandardScaler()
+                X_train_scaled = scaler.fit_transform(X_train)
+                
+                # Train model
+                model = RandomForestRegressor(
+                    n_estimators=100,
+                    max_depth=10,
+                    random_state=42
+                )
+                model.fit(X_train_scaled, y_train)
+                
+                # Store model and scaler
+                self.models['production'] = model
+                self.scalers['production'] = scaler
+                
+                # Calculate and store model info
+                y_pred = model.predict(scaler.transform(X_test))
+                mse = mean_squared_error(y_test, y_pred)
+                feature_importance = dict(zip(X.columns, model.feature_importances_))
+                
+                self.model_info['production'] = {
+                    'mse': mse,
+                    'feature_importance': feature_importance,
+                    'n_samples': len(X),
+                    'features': list(X.columns),
+                    'target': target_col
+                }
+                
+                return model.score(scaler.transform(X_test), y_test)
+        except Exception as e:
+            st.error(f"Error in production prediction training: {str(e)}")
+        return None
+    
+    def train_quality_prediction(self, data):
+        try:
+            # Prepare features
+            X = data[['Operation', 'Operator', 'Time']].dropna()
+            y = data['Defects'].dropna()
+            
+            if len(X) > 0 and len(y) > 0:
+                # Encode categorical features
+                label_encoders = {}
+                for col in ['Operation', 'Operator']:
+                    label_encoders[col] = LabelEncoder()
+                    X[col] = label_encoders[col].fit_transform(X[col])
+                
+                X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+                
+                # Train model
+                model = RandomForestClassifier(
+                    n_estimators=100,
+                    max_depth=10,
+                    random_state=42
+                )
+                model.fit(X_train, y_train)
+                
+                # Store model and encoders
+                self.models['quality'] = model
+                self.label_encoders['quality'] = label_encoders
+                
+                # Calculate and store model info
+                y_pred = model.predict(X_test)
+                accuracy = accuracy_score(y_test, y_pred)
+                feature_importance = dict(zip(X.columns, model.feature_importances_))
+                
+                self.model_info['quality'] = {
+                    'accuracy': accuracy,
+                    'feature_importance': feature_importance,
+                    'n_samples': len(X),
+                    'features': list(X.columns),
+                    'target': 'Defects'
+                }
+                
+                return accuracy
+        except Exception as e:
+            st.error(f"Error in quality prediction training: {str(e)}")
+        return None
+    
+    def predict_production_time(self, operation_time, req_time):
+        if 'production' in self.models:
+            try:
+                X = np.array([[operation_time, req_time]])
+                X_scaled = self.scalers['production'].transform(X)
+                prediction = self.models['production'].predict(X_scaled)[0]
+                return prediction, self.model_info['production']
+            except Exception as e:
+                st.error(f"Error in production prediction: {str(e)}")
+        return None, None
+    
+    def predict_quality(self, operation, operator, time):
+        if 'quality' in self.models:
+            try:
+                # Encode categorical features
+                X = pd.DataFrame({
+                    'Operation': [operation],
+                    'Operator': [operator],
+                    'Time': [time]
+                })
+                
+                for col, encoder in self.label_encoders['quality'].items():
+                    X[col] = encoder.transform(X[col])
+                
+                prediction = self.models['quality'].predict(X)[0]
+                return prediction, self.model_info['quality']
+            except Exception as e:
+                st.error(f"Error in quality prediction: {str(e)}")
+        return None, None
+
+def show_model_info(model_info):
+    if model_info:
+        st.markdown("""
+        <div class="model-info">
+            <h3>Model Information</h3>
+            <ul>
+                <li>Number of samples: {}</li>
+                <li>Features: {}</li>
+                <li>Target variable: {}</li>
+            </ul>
+            <h4>Model Performance</h4>
+            <ul>
+                {}
+            </ul>
+            <h4>Feature Importance</h4>
+            <ul>
+                {}
+            </ul>
+        </div>
+        """.format(
+            model_info['n_samples'],
+            ', '.join(model_info['features']),
+            model_info['target'],
+            ''.join([f'<li>{k}: {v:.4f}</li>' for k, v in model_info.items() if k not in ['n_samples', 'features', 'target', 'feature_importance']]),
+            ''.join([f'<li>{k}: {v:.4f}</li>' for k, v in model_info['feature_importance'].items()])
+        ), unsafe_allow_html=True)
+
+def production_live_demo(data, ml_predictor):
+    st.subheader("Production Time Prediction Demo")
+        st.markdown("""
+    This demo predicts the production time based on operation tack time and required tack time.
+    It uses a **Random Forest Regressor** model. The model learns the relationship between
+    input features and actual production time from historical data.
     """)
+    
+    col1, col2 = st.columns(2)
+    with col1:
+        operation_time = st.number_input("Operation Tack Time (min)", min_value=0.0, value=1.0)
+        req_time = st.number_input("Required Tack Time (min)", min_value=0.0, value=1.0)
+    
+    if st.button("Predict Production Time"):
+        if 'production' in ml_predictor.models:
+            prediction, model_info = ml_predictor.predict_production_time(operation_time, req_time)
+            if prediction is not None:
+                st.markdown(f"""
+                <div class="prediction-box">
+                    <h3>Predicted Production Time: {prediction:.2f} minutes</h3>
+                    <p>Calculation: The Random Forest Regressor combines predictions from multiple decision trees. Each tree considers the input features (Operation Tack Time, Required Tack Time) to estimate the production time. The final prediction is an average of all individual tree predictions.</p>
+                </div>
+                """, unsafe_allow_html=True)
+                show_model_info(model_info)
+            else:
+                st.warning("Failed to get a production time prediction. Model might not be trained or input values are invalid.")
+        else:
+            st.warning("Production prediction model is not trained. Please ensure relevant data is available.")
 
-    st.subheader("Overall Data Status")
-    # Display a summary of loaded data or data issues
-    # This part can be enhanced to show which files loaded successfully and which had errors
-    st.info("Data loading status will be displayed here once data is loaded.")
+def quality_live_demo(data, ml_predictor):
+    st.subheader("Quality Prediction Demo")
+    st.markdown("""
+    This demo predicts the quality outcome (e.g., Good/Needs Improvement) based on operation, operator, and time.
+    It uses a **Random Forest Classifier** model. This model classifies the quality based on patterns learned from historical data of operations, operators, and their associated defects.
+    """)
+    
+    col1, col2, col3 = st.columns(3)
+    with col1:
+        # Ensure 'Operation' column exists in some relevant data for selection
+        # Using 'Operation' from the first capacity file for demonstration purposes
+        operations = []
+        if 'capacity' in data and data['capacity']:
+            first_capacity_file_key = list(data['capacity'].keys())[0]
+            if 'Operation' in data['capacity'][first_capacity_file_key].columns:
+                operations = data['capacity'][first_capacity_file_key]['Operation'].dropna().unique().tolist()
+        
+        if operations:
+            operation = st.selectbox("Operation", operations)
+        else:
+            operation = st.text_input("Operation (e.g., Sewing)")
+            st.warning("'Operation' column not found in capacity data. Please enter manually.")
 
+    with col2:
+        operator = st.text_input("Operator ID")
+    with col3:
+        time = st.number_input("Operation Time (min)", min_value=0.0, value=1.0)
+    
+    if st.button("Predict Quality"):
+        if 'quality' in ml_predictor.models:
+            try:
+                prediction, model_info = ml_predictor.predict_quality(operation, operator, time)
+                if prediction is not None:
+                    st.markdown(f"""
+                    <div class="prediction-box">
+                        <h3>Predicted Quality: {'Good' if prediction == 1 else 'Needs Improvement'}</h3>
+                        <p>Calculation: The Random Forest Classifier uses input features (Operation, Operator, Time) to classify the outcome. Each tree in the forest votes on the quality category, and the final prediction is based on the majority vote.</p>
+                    </div>
+                    """, unsafe_allow_html=True)
+                    show_model_info(model_info)
+                else:
+                    st.warning("Failed to get a quality prediction. Model might not be trained or input values are invalid.")
+            except Exception as e:
+                st.error(f"An error occurred during quality prediction: {str(e)}")
+        else:
+            st.warning("Quality prediction model is not trained. Please ensure relevant data is available.")
 
-def production_optimization_page(analyzers):
+def inventory_live_demo(data):
+    st.subheader("Inventory Analysis Demo")
+    
+    if 'stock_entry' in data:
+        df = data['stock_entry']
+        
+        # Show data info
+        st.markdown("""
+        <div class="model-info">
+            <h3>Data Information</h3>
+            <ul>
+                <li>Number of records: {}</li>
+                <li>Columns: {}</li>
+            </ul>
+        </div>
+        """.format(
+            len(df),
+            ', '.join(df.columns)
+        ), unsafe_allow_html=True)
+        
+        # Material type distribution
+        fig = px.pie(df, names='Material', title='Material Type Distribution')
+        st.plotly_chart(fig)
+        
+        # Stock level trends
+        if 'Updated Date' in df.columns:
+            df['Updated Date'] = pd.to_datetime(df['Updated Date'])
+            stock_trend = df.groupby('Updated Date')['Stock Qty'].sum().reset_index()
+            fig = px.line(stock_trend, x='Updated Date', y='Stock Qty', title='Stock Level Trends')
+            st.plotly_chart(fig)
+
+def production_optimization_page(data):
     st.title("Production Optimization")
-    st.markdown("""
-    ### Understanding Production Optimization
-    This module helps in analyzing and optimizing the garment production process, focusing on line balancing,
-    operation efficiency, and bottleneck identification.
-    **ML Algorithms:** While not explicitly using complex ML models like deep learning, the optimization process can be framed as an optimization problem (e.g., using Integer Linear Programming or heuristic algorithms). For predictive maintenance of machines, regression models could be employed. For worker performance prediction, historical data can be used with regression models to forecast future efficiency.
-    **Further Predictions/Optimizations:**
-    - **Predictive Maintenance:** Predict machine breakdowns based on operational data to schedule maintenance proactively.
-    - **Dynamic Line Rebalancing:** Automatically adjust line configurations in real-time based on fluctuating demand or operator availability.
-    - **Optimal Buffer Stock:** Predict optimal buffer stock levels between operations to minimize idle time and maximize flow.
-    """)
-
-    production_data = analyzers.get('production', {}).get('data', {})
-    production_optimizer = analyzers.get('production', {}).get('analyzer')
-
-    if production_data:
-        st.subheader("Operation Statistics")
-        st.markdown("""
-        **Analysis:** This section provides descriptive statistics for operations, identifying maximum, minimum,
-        and average times, which helps in understanding performance variability.
-        **Features Used:** All numeric columns representing operation times (e.g., 'Operation tack time', 'Req.Tack time', 'Time (min)').
-        **Calculation Logic:** Pandas `describe()` function on numeric columns.
-        """)
-
-        # Display statistics for each sheet
-        for sheet_name, df in production_data.items():
-            st.markdown(f"#### Sheet: {sheet_name}")
-            if df is not None and not df.empty:
-                # Dynamically find timing columns
-                timing_cols = [col for col in df.columns if 'time' in col.lower() or 'tack' in col.lower() or 'min' in col.lower()]
-                timing_cols = [col for col in timing_cols if pd.api.types.is_numeric_dtype(df[col])]
-
-                if not timing_cols:
-                    st.info(f"No numeric timing columns found in {sheet_name}.")
-                    continue
-
-                st.dataframe(df[timing_cols].describe())
-            else:
-                st.info(f"No data or empty data for sheet: {sheet_name}.")
-
-        st.subheader("Bottleneck Identification")
-        st.markdown("""
-        **Analysis:** Identifies operations with the highest processing times, which are potential bottlenecks.
-        **Features Used:** Operation times.
-        **Calculation Logic:** Maximum value of each timing column, sorted in descending order.
-        """)
-
-        for sheet_name, df in production_data.items():
-            st.markdown(f"#### Sheet: {sheet_name}")
-            if df is not None and not df.empty:
-                timing_cols = [col for col in df.columns if 'time' in col.lower() or 'tack' in col.lower() or 'min' in col.lower()]
-                timing_cols = [col for col in timing_cols if pd.api.types.is_numeric_dtype(df[col])]
-
-                if not timing_cols:
-                    st.info(f"No numeric timing columns found in {sheet_name} for bottleneck analysis.")
-                    continue
-
-                # Ensure relevant columns are present before proceeding
-                required_cols = [col for col in ['Operation', 'Operation tack time', 'Req.Tack time'] if col in df.columns]
-
-                if not required_cols:
-                    st.warning(f"Skipping bottleneck analysis for sheet {sheet_name}: Required columns like 'Operation', 'Operation tack time', 'Req.Tack time' not found.")
-                    continue
-                
-                # Dynamically check and use existing columns for bottleneck identification
-                cols_to_check = [col for col in ['Operation tack time', 'Req.Tack time'] if col in df.columns]
-                if not cols_to_check:
-                    st.info(f"No valid tack time columns found for bottleneck analysis in {sheet_name}.")
-                    continue
-
-                # Drop rows with NaN in the selected timing columns
-                df_cleaned = df.dropna(subset=cols_to_check)
-                if df_cleaned.empty:
-                    st.info(f"No valid data after dropping NaNs for bottleneck analysis in {sheet_name}.")
-                    continue
-
-                # Convert relevant columns to numeric, coercing errors
-                for col in cols_to_check:
-                    df_cleaned[col] = pd.to_numeric(df_cleaned[col], errors='coerce')
-                df_cleaned = df_cleaned.dropna(subset=cols_to_check) # Drop NaNs again after coercion
-
-                if not df_cleaned.empty:
-                    # Aggregate max time per operation or row
-                    # This part might need adjustment based on how 'Operation' relates to 'tack times'
-                    # Assuming 'Operation' is a unique identifier or a grouping key
-                    if 'Operation' in df_cleaned.columns:
-                        # For each operation, find the max tack time across relevant columns
-                        df_cleaned['Max_Tack_Time'] = df_cleaned[cols_to_check].max(axis=1)
-                        bottlenecks = df_cleaned.groupby('Operation')['Max_Tack_Time'].max().sort_values(ascending=False)
-                    else:
-                        # Fallback if 'Operation' column is missing: consider max across rows directly
-                        bottlenecks = df_cleaned[cols_to_check].max().sort_values(ascending=False)
-                        st.warning(f"'Operation' column not found in {sheet_name}. Bottlenecks identified based on max values in timing columns.")
-                    
-                    if not bottlenecks.empty:
-                        st.dataframe(bottlenecks.head())
-                    else:
-                        st.info(f"No bottlenecks identified in {sheet_name}.")
-                else:
-                    st.info(f"No valid data for bottleneck analysis after cleaning in {sheet_name}.")
-            else:
-                st.info(f"No data or empty data for sheet: {sheet_name}.")
-
-        st.subheader("Line Balancing Optimization")
-        st.markdown("""
-        **Analysis:** Evaluates the balance of work across operations, identifying inefficiencies and suggesting improvements.
-        **Features Used:** Operation times, cycle times.
-        **Calculation Logic:** Compares current cycle time to a target cycle time, and calculates line efficiency.
-        """)
-        if production_optimizer:
-            optimization_results = production_optimizer.optimize_line_balancing()
-            if optimization_results:
-                for sheet_name, results in optimization_results.items():
-                    st.markdown(f"#### Sheet: {sheet_name}")
-                    st.write(f"Current Cycle Time: {results.get('current_cycle_time', 'N/A'):.2f}")
-                    st.write(f"Target Cycle Time: {results.get('target_cycle_time', 'N/A'):.2f}")
-                    st.write(f"Line Efficiency: {results.get('efficiency', 'N/A'):.2f}%")
-                    if results.get('optimization_needed') is not None and not results['optimization_needed'].empty:
-                        st.write("Operations needing optimization:")
-                        st.write(results['optimization_needed'][results['optimization_needed']].index.tolist())
-                    else:
-                        st.info(f"No specific operations needing optimization identified for {sheet_name}.")
-            else:
-                st.info("No optimization results available.")
-        else:
-            st.info("Production optimizer not initialized. Optimization results not available.")
-
-        st.subheader("Optimization Recommendations")
-        if production_optimizer:
-            recommendations = production_optimizer.generate_recommendations()
-            if recommendations:
-                for sheet_name, sheet_recs in recommendations.items(): # This assumes recommendations is a dict of lists
-                    if sheet_recs:
-                        st.markdown(f"**Recommendations for {sheet_name}:**")
-                        for rec in sheet_recs:
-                            st.markdown(f'<div class="insight-box">{rec}</div>', unsafe_allow_html=True)
-                    else:
-                        st.info(f"No specific recommendations generated for {sheet_name} at this time.")
-            else:
-                st.info("No specific recommendations generated for production optimization at this time.")
-        else:
-            st.info("Production optimizer not initialized. Recommendations not available.")
-
-        st.subheader("Detailed Analysis")
-        if production_data:
-            selected_sheet = st.selectbox("Select Sheet", list(production_data.keys()))
-            if selected_sheet:
-                df = production_data[selected_sheet]
-                st.dataframe(df)
-        else:
-            st.info("No sheets available in production data for detailed analysis.")
-
-    else:
-        st.error("No production optimization data available. Please check the data files and ensure 'Capacity study , Line balancing sheet.xlsx' is correctly formatted.")
-
-
-def loss_time_analysis_page(analyzers):
-    st.title("Loss Time Analysis")
-    st.markdown("""
-    ### Understanding Loss Time Analysis
-    This module focuses on identifying, quantifying, and analyzing the causes of production loss times
-    to help improve efficiency and productivity.
-    **ML Algorithms:**
-    - **Classification Models (e.g., Random Forest, Gradient Boosting):** Can predict the *reason* for loss time based on various operational parameters (e.g., machine type, shift, product).
-    - **Regression Models (e.g., Linear Regression, Ridge Regression):** Can predict the *duration* of loss time events.
-    - **Clustering (e.g., K-Means):** Can group similar loss time events or patterns to identify common underlying issues.
-    - **Time Series Forecasting (e.g., ARIMA, Prophet):** Can forecast future loss time occurrences or durations based on historical trends.
-    **Further Predictions/Optimizations:**
-    - **Root Cause Prediction:** Predict the most likely root causes of recurring loss times.
-    - **Preventive Action Recommendation:** Suggest specific preventive actions to mitigate predicted loss times.
-    - **Impact Assessment:** Quantify the financial or operational impact of different loss time categories.
-    """)
-
-    loss_time_data = analyzers.get('loss_time', {}).get('data', {})
-    loss_time_analyzer = analyzers.get('loss_time', {}).get('analyzer')
-
-    if loss_time_data:
-        st.subheader("Loss Time Patterns by Line")
-        st.markdown("""
-        **Analysis:** Aggregates loss time data by production line, showing total loss time, frequency, and average duration.
-        **Features Used:** 'Line ', 'Act' (actual loss time).
-        **Calculation Logic:** Grouping by 'Line ' and calculating count, sum, mean, and standard deviation of 'Act'.
-        """)
-
-        for sheet_name, df in loss_time_data.items():
-            st.markdown(f"#### Sheet: {sheet_name}")
-            if df is not None and not df.empty:
-                df_cleaned = df.dropna(subset=['Line ', 'Act'])
-                df_cleaned['Act'] = pd.to_numeric(df_cleaned['Act'], errors='coerce')
-                df_cleaned = df_cleaned.dropna(subset=['Act'])
-
-                if not df_cleaned.empty:
-                    line_stats = df_cleaned.groupby('Line ')['Act'].agg(['count', 'sum', 'mean', 'std']).round(2)
-                    st.dataframe(line_stats)
-                else:
-                    st.info(f"No valid data after cleaning for loss time patterns by line in {sheet_name}.")
-            else:
-                st.info(f"No data or empty data for sheet: {sheet_name}.")
-
-        st.subheader("Loss Time Patterns by Reason")
-        st.markdown("""
-        **Analysis:** Breaks down loss time by reason category, identifying the most common and impactful reasons for delays.
-        **Features Used:** 'Unnamed: 8' (assumed to be loss reason), 'Act'.
-        **Calculation Logic:** Grouping by 'Unnamed: 8' and calculating count, sum, mean, and standard deviation of 'Act'.
-        """)
-
-        for sheet_name, df in loss_time_data.items():
-            st.markdown(f"#### Sheet: {sheet_name}")
-            if df is not None and not df.empty:
-                df_cleaned = df.dropna(subset=['Unnamed: 8', 'Act'])
-                df_cleaned['Act'] = pd.to_numeric(df_cleaned['Act'], errors='coerce')
-                df_cleaned = df_cleaned.dropna(subset=['Act'])
-
-                if not df_cleaned.empty:
-                    reason_stats = df_cleaned.groupby('Unnamed: 8')['Act'].agg(['count', 'sum', 'mean', 'std']).round(2)
-                    st.dataframe(reason_stats)
-
-                    # Plotting top reasons
-                    top_reasons_plot = reason_stats.sort_values(by='sum', ascending=False).head(10)
-                    fig = px.bar(top_reasons_plot, y='sum', x=top_reasons_plot.index,
-                                 title=f'Top 10 Loss Reasons in {sheet_name}',
-                                 labels={'sum': 'Total Loss Time (minutes)', 'index': 'Loss Reason'},
-                                 color_discrete_sequence=px.colors.qualitative.Dark24)
-                    st.plotly_chart(fig, use_container_width=True)
-                else:
-                    st.info(f"No valid data after cleaning for loss time patterns by reason in {sheet_name}.")
-            else:
-                st.info(f"No data or empty data for sheet: {sheet_name}.")
-
-        st.subheader("Critical Loss Issues")
-        st.markdown("""
-        **Analysis:** Identifies the top loss time reasons that contribute most significantly to overall production delays.
-        **Features Used:** 'Unnamed: 8', 'Act'.
-        **Calculation Logic:** Summing 'Act' by 'Unnamed: 8' and identifying top contributors.
-        """)
-
-        if loss_time_analyzer:
-            critical_issues_results = loss_time_analyzer.identify_critical_issues()
-            if critical_issues_results:
-                for sheet_name, results in critical_issues_results.items():
-                    st.markdown(f"#### Sheet: {sheet_name}")
-                    if results.get('critical_issues') is not None and not results['critical_issues'].empty:
-                        st.write("Top Critical Issues:")
-                        for reason, time in results['critical_issues'].items():
-                            impact = results['impact_percentage'].get(reason, 'N/A')
-                            st.markdown(f'<div class="insight-box">- **{reason}**: {time:.2f} minutes ({impact}% of total loss time)</div>', unsafe_allow_html=True)
-                    else:
-                        st.info(f"No critical issues identified for {sheet_name} at this time.")
-            else:
-                st.info("No critical issues results available.")
-        else:
-            st.info("Loss time analyzer not initialized. Critical issues not available.")
-
-        st.subheader("Loss Time Recommendations")
-        if loss_time_analyzer:
-            recommendations = loss_time_analyzer.generate_recommendations()
-            if recommendations:
-                for sheet_name, sheet_recs in recommendations.items():
-                    if sheet_recs:
-                        st.markdown(f"**Recommendations for {sheet_name}:**")
-                        for rec in sheet_recs:
-                            st.markdown(f'<div class="insight-box">{rec}</div>', unsafe_allow_html=True)
-                    else:
-                        st.info(f"No specific recommendations generated for {sheet_name} at this time.")
-            else:
-                st.info("No specific recommendations generated for loss time at this time.")
-        else:
-            st.info("Loss time analyzer not initialized. Recommendations not available.")
-
-        st.subheader("Detailed Analysis")
-        if loss_time_data:
-            selected_sheet = st.selectbox("Select Sheet", list(loss_time_data.keys()))
-            if selected_sheet:
-                df = loss_time_data[selected_sheet]
-                st.dataframe(df)
-        else:
-            st.info("No sheets available in loss time data for detailed analysis.")
-    else:
-        st.error("No loss time analysis data available. Please check the data files and ensure 'CCL loss time_.xlsx' is correctly formatted.")
-
-
-def quality_control_page(analyzers):
-    st.title("Quality Control")
-    st.markdown("""
-    ### Understanding Quality Control
-    This module analyzes inspection data and Factory Return Authorization (FRA) data to identify quality issues,
-    track defect trends, and provide recommendations for improvement.
-    **ML Algorithms:**
-    - **Classification Models (e.g., Support Vector Machines, Logistic Regression):** Can predict the likelihood of a product being defective based on manufacturing parameters or inspection results.
-    - **Anomaly Detection (e.g., Isolation Forest, One-Class SVM):** Can identify unusual patterns in inspection data that indicate potential quality deviations or fraudulent returns.
-    - **Time Series Forecasting:** Can predict future defect rates or return volumes.
-    **Further Predictions/Optimizations:**
-    - **Defect Cause Prediction:** Predict the most probable causes of new defects based on historical patterns and product specifications.
-    - **Early Warning System:** Develop an alert system that notifies about potential quality issues before they escalate.
-    - **Supplier Quality Scorecard:** Predict supplier quality performance based on past delivery and defect data.
-    """)
-
-    quality_data = analyzers.get('quality', {}).get('data', {})
-    quality_controller = analyzers.get('quality', {}).get('analyzer')
-
-    if quality_data:
-        st.subheader("Inspection Data Analysis")
-        st.markdown("""
-        **Analysis:** Provides an overview of inspection results, including pass rates and distribution of defects.
-        **Features Used:** 'QTY PASSED', 'QTY REJECTED'.
-        **Calculation Logic:** Calculates pass rate as (QTY PASSED / (QTY PASSED + QTY REJECTED)) * 100.
-        """)
+    
+    if 'capacity' in data:
+        # Select capacity study file
+        capacity_file = st.selectbox("Select Capacity Study File", list(data['capacity'].keys()))
+        df = data['capacity'][capacity_file]
         
-        if 'Master_Inspection_Sheet' in quality_data and not quality_data['Master_Inspection_Sheet'].empty:
-            inspection_df = quality_data['Master_Inspection_Sheet'].copy()
-            if 'QTY PASSED' in inspection_df.columns and 'QTY REJECTED' in inspection_df.columns:
-                inspection_df['QTY PASSED'] = pd.to_numeric(inspection_df['QTY PASSED'], errors='coerce').fillna(0)
-                inspection_df['QTY REJECTED'] = pd.to_numeric(inspection_df['QTY REJECTED'], errors='coerce').fillna(0)
-
-                total_inspected = inspection_df['QTY PASSED'].sum() + inspection_df['QTY REJECTED'].sum()
-                total_passed = inspection_df['QTY PASSED'].sum()
-                pass_rate = (total_passed / total_inspected * 100) if total_inspected > 0 else 0
-                
-                st.write(f"Overall Pass Rate: {pass_rate:.2f}%")
-
-                # Plotting defects distribution
-                defect_reasons = inspection_df.columns[inspection_df.columns.str.contains('REASON', case=False) & ~inspection_df.columns.str.contains('REJECTED', case=False)].tolist()
-                if defect_reasons:
-                    defect_counts = inspection_df[defect_reasons].sum().sort_values(ascending=False)
-                    fig = px.bar(defect_counts, x=defect_counts.index, y=defect_counts.values,
-                                title='Top Defect Reasons',
-                                labels={'x': 'Defect Reason', 'y': 'Count'},
-                                color_discrete_sequence=px.colors.qualitative.Set2)
-                    st.plotly_chart(fig, use_container_width=True)
-                else:
-                    st.info("No defect reason columns found in 'Master_Inspection_Sheet'.")
-            else:
-                st.info("Required columns 'QTY PASSED' or 'QTY REJECTED' not found in 'Master_Inspection_Sheet'.")
-        else:
-            st.info("No 'Master_Inspection_Sheet' found or it is empty in quality data.")
-
-        st.subheader("FRA Data Analysis")
+        # Show data info
         st.markdown("""
-        **Analysis:** Examines Factory Return Authorization (FRA) data to understand reasons for returns, quantities involved, and closure times.
-        **Features Used:** 'FRA Reason', 'FRA Qty', 'Total Days \n(Taken for Closure)'.
-        **Calculation Logic:** Aggregating quantity by reason and calculating average closure time.
-        """)
-        if 'FDR & FRA tracker' in quality_data and not quality_data['FDR & FRA tracker'].empty:
-            fra_df = quality_data['FDR & FRA tracker'].copy()
-            if 'FRA Reason' in fra_df.columns and 'FRA Qty' in fra_df.columns:
-                fra_df['FRA Qty'] = pd.to_numeric(fra_df['FRA Qty'], errors='coerce').fillna(0)
-                fra_df['Total Days \n(Taken for Closure)'] = pd.to_numeric(fra_df['Total Days \n(Taken for Closure)'], errors='coerce')
-                
-                reason_qty = fra_df.groupby('FRA Reason')['FRA Qty'].sum().sort_values(ascending=False)
-                st.write("Quantity by FRA Reason:")
-                st.dataframe(reason_qty)
-
-                avg_closure_time = fra_df['Total Days \n(Taken for Closure)'].mean()
-                st.write(f"Average Days for Closure: {avg_closure_time:.2f}")
-
-                fig = px.pie(names=reason_qty.index, values=reason_qty.values,
-                             title='Distribution of FRA Reasons',
-                             color_discrete_sequence=px.colors.qualitative.Pastel)
-                st.plotly_chart(fig, use_container_width=True)
-            else:
-                st.info("Required columns 'FRA Reason' or 'FRA Qty' not found in 'FDR & FRA tracker' sheet.")
-        else:
-            st.info("No 'FDR & FRA tracker' sheet found or it is empty in quality data.")
-
-        st.subheader("Quality Issue Identification")
-        st.markdown("""
-        **Analysis:** Pinpoints the major quality issues based on their frequency and impact.
-        **Features Used:** 'FRA Reason', 'FRA Qty'.
-        **Calculation Logic:** Identifies top reasons by total quantity rejected.
-        """)
-        if quality_controller:
-            issue_results = quality_controller.identify_quality_issues()
-            if issue_results and issue_results.get('top_issues') is not None:
-                st.write("Top 5 Quality Issues:")
-                for reason, qty in issue_results['top_issues'].items():
-                    st.markdown(f'<div class="insight-box">- **{reason}**: {qty:.2f} units</div>', unsafe_allow_html=True)
-            else:
-                st.info("No major quality issues identified at this time.")
-        else:
-            st.info("Quality controller not initialized. Issue identification not available.")
-
-        st.subheader("Quality Improvement Recommendations")
-        if quality_controller:
-            recommendations = quality_controller.generate_recommendations()
-            if recommendations:
-                # Check if recommendations is a list or a dictionary
-                if isinstance(recommendations, dict):
-                    for sheet_name, sheet_recs in recommendations.items():
-                        if sheet_recs:
-                            st.markdown(f"**Recommendations for {sheet_name}:**")
-                            for rec in sheet_recs:
-                                st.markdown(f'<div class="insight-box">{rec}</div>', unsafe_allow_html=True)
-                        else:
-                            st.info(f"No specific recommendations generated for {sheet_name} at this time.")
-                elif isinstance(recommendations, list):
-                    # If it's a list of recommendations (as in quality_control.py)
-                    for rec in recommendations:
-                        st.markdown(f'<div class="insight-box">{rec}</div>', unsafe_allow_html=True)
-                else:
-                    st.info("Recommendations are in an unexpected format.")
-            else:
-                st.info("No specific recommendations generated for quality control at this time.")
-        else:
-            st.info("Quality controller not initialized. Recommendations not available.")
+        <div class="model-info">
+            <h3>Data Information</h3>
+            <ul>
+                <li>Number of records: {}</li>
+                <li>Columns: {}</li>
+            </ul>
+        </div>
+        """.format(
+            len(df),
+            ', '.join(df.columns)
+        ), unsafe_allow_html=True)
         
-        st.subheader("Detailed Analysis")
-        if quality_data:
-            selected_sheet = st.selectbox("Select Sheet", list(quality_data.keys()))
-            if selected_sheet:
-                df = quality_data[selected_sheet]
-                st.dataframe(df)
-        else:
-            st.info("No sheets available in quality data for detailed analysis.")
-
-    else:
-        st.error("No quality control data available. Please check the data files and ensure 'Stores - Data sets for AI training program.xlsx' is correctly formatted.")
-
-
-def product_analysis_page(analyzers):
-    st.title("Product Analysis")
-    st.markdown("""
-    ### Understanding Product Analysis
-    This module analyzes your 'Quadrant data - AI.xlsx' focusing on operator performance and
-    categorization into quadrants to understand product-wise performance variations.
-    **ML Algorithms:** KMeans Clustering is explicitly used in the `product_analysis.py` module to group operators into performance clusters (e.g., for the 'Competency Matrix' analysis). Other unsupervised learning methods like PCA could be used for dimensionality reduction.
-    **Further Predictions:**
-    - **Performance Trajectory Prediction:** Predict future performance levels of operators based on their historical data.
-    - **Training Needs Identification:** Identify operators who might benefit from specific training interventions based on their quadrant classification.
-    - **Optimal Team Formation:** Group operators with complementary skills for specific tasks or production lines to maximize output.
-    """)
-
-    product_data = analyzers.get('product', {}).get('data', {})
-    product_analyzer = analyzers.get('product', {}).get('analyzer')
-
-    if product_data:
-        col1, col2 = st.columns(2)
-
+        # Summary metrics
+        col1, col2, col3 = st.columns(3)
         with col1:
-            st.subheader("Operator Performance Distribution")
-            st.markdown("""
-            **Analysis:** This chart shows the distribution of operator performance percentages, helping to identify performance clusters.
-            **Features Used:** 'Performance %'.
-            **Calculation Logic:** A histogram of the 'Performance %' column to show value distribution and frequency.
-            """)
-            if 'Competency Matrix' in product_data and not product_data['Competency Matrix'].empty:
-                competency_df = product_data['Competency Matrix'].copy()
-                if 'Performance %' in competency_df.columns:
-                    competency_df['Performance %'] = pd.to_numeric(competency_df['Performance %'], errors='coerce')
-                    fig = px.histogram(competency_df, x='Performance %', nbins=20,
-                                    title='Distribution of Operator Performance',
-                                    color_discrete_sequence=px.colors.qualitative.Pastel)
-                    st.plotly_chart(fig, use_container_width=True)
-                else:
-                    st.info("Required column 'Performance %' not found in 'Competency Matrix' sheet.")
-            else:
-                st.info("No 'Competency Matrix' sheet found or it is empty in product data.")
-
+            total_operations = len(df)
+            st.metric("Total Operations", total_operations)
         with col2:
-            st.subheader("Quadrant Breakdown")
-            st.markdown("""
-            **Analysis:** This pie chart visualizes the distribution of operators across different performance quadrants (e.g., High Performer, Average, Low Performer).
-            **Features Used:** 'Quadrant'.
-            **Calculation Logic:** Counting the occurrences of each unique value in the 'Quadrant' column.
-            """)
-            if 'Quadrant details' in product_data and not product_data['Quadrant details'].empty:
-                quadrant_df = product_data['Quadrant details'].copy()
-                if 'Quadrant' in quadrant_df.columns:
-                    quadrant_counts = quadrant_df['Quadrant'].value_counts().reset_index()
-                    quadrant_counts.columns = ['Quadrant', 'Count']
-                    fig = px.pie(quadrant_counts, values='Count', names='Quadrant',
-                                title='Operator Distribution by Quadrant')
-                    st.plotly_chart(fig, use_container_width=True)
-                else:
-                    st.info("Required column 'Quadrant' not found in 'Quadrant details' sheet.")
+            # Define potential target columns for time data
+            time_cols = ['Cycle Time(CT)', 'SMV', 'Time (min)']
+            selected_time_col = None
+            for col in time_cols:
+                if col in df.columns:
+                    selected_time_col = col
+                    break
+            
+            if selected_time_col is not None:
+                avg_time = df[selected_time_col].mean()
+                st.metric("Average Time", f"{avg_time:.2f} min")
             else:
-                st.info("No 'Quadrant details' sheet found or it is empty in product data.")
-
-        st.subheader("Performance Improvement Recommendations")
-        if product_analyzer:
-            recommendations = product_analyzer.generate_recommendations()
-            if recommendations:
-                # Check if recommendations is a list or a dictionary
-                if isinstance(recommendations, dict):
-                    for sheet_name, sheet_recs in recommendations.items():
-                        if sheet_recs:
-                            st.markdown(f"**Recommendations for {sheet_name}:**")
-                            for rec in sheet_recs:
-                                st.markdown(f'<div class="insight-box">{rec}</div>', unsafe_allow_html=True)
-                        else:
-                            st.info(f"No specific recommendations generated for {sheet_name} at this time.")
-                elif isinstance(recommendations, list):
-                    # If it's a list of recommendations (as in product_analysis.py)
-                    for rec in recommendations:
-                        st.markdown(f'<div class="insight-box">{rec}</div>', unsafe_allow_html=True)
-                else:
-                    st.info("Recommendations are in an unexpected format.")
+                st.warning("Could not find a suitable time-related column for average time calculation. Looked for: " + ', '.join(time_cols))
+                avg_time = None
+        with col3:
+            if selected_time_col is not None:
+                total_time = df[selected_time_col].sum()
+                st.metric("Total Time", f"{total_time:.2f} min")
             else:
-                st.info("No specific recommendations generated for product analysis at this time.")
-        else:
-            st.info("Product analyzer not initialized. Recommendations not available.")
+                total_time = None
         
-        st.subheader("Detailed Analysis")
-        if product_data:
-            selected_sheet = st.selectbox("Select Sheet", list(product_data.keys()))
-            if selected_sheet:
-                df = product_data[selected_sheet]
-                st.dataframe(df)
+        # Operation time distribution
+        st.subheader("Operation Time Distribution")
+        if selected_time_col is not None:
+            fig = px.histogram(df, x=selected_time_col, title=f'Operation Time Distribution ({selected_time_col})')
+            st.plotly_chart(fig)
         else:
-            st.info("No sheets available in product data for detailed analysis.")
+            st.info("Cannot display Operation Time Distribution: no suitable time column found.")
+        
+        # Bottleneck analysis
+        st.subheader("Bottleneck Analysis")
+        if selected_time_col is not None and avg_time is not None:
+            bottlenecks = df[df[selected_time_col] > avg_time * 1.5] 
+            if not bottlenecks.empty:
+                st.dataframe(bottlenecks[['Operation', selected_time_col]]) 
+            else:
+                st.info("No significant bottlenecks identified.")
+        else:
+            st.info("Cannot perform Bottleneck Analysis: no suitable time column or average time found.")
+        
+        # Line balancing visualization
+        st.subheader("Line Balancing")
+        if selected_time_col is not None and avg_time is not None:
+            fig = px.bar(df, x='Operation', y=selected_time_col, title='Operation Times') 
+            fig.add_hline(y=avg_time, line_dash="dash", line_color="red", 
+                         annotation_text="Average Time")
+            st.plotly_chart(fig)
+        else:
+            st.info("Cannot display Line Balancing: no suitable time column or average time found.")
 
-    else:
-        st.error("No product analysis data available. Please check the data files and ensure 'Quadrant data - AI.xlsx' is correctly formatted.")
+def quality_control_page(data):
+    st.title("Quality Control")
 
+    if 'loss_time' in data:
+        # Select loss time file
+        loss_time_file = st.selectbox("Select Loss Time File", list(data['loss_time'].keys()))
+        df = data['loss_time'][loss_time_file]
 
-def worker_allocation_page(analyzers):
-    st.title("Worker Allocation")
+        # Show data info
     st.markdown("""
-    ### Understanding Worker Allocation
+        <div class="model-info">
+            <h3>Data Information</h3>
+            <ul>
+                <li>Number of records: {}</li>
+                <li>Columns: {}</li>
+            </ul>
+        </div>
+        """.format(
+            len(df),
+            ', '.join(df.columns)
+        ), unsafe_allow_html=True)
+        
+        # Summary metrics
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            total_issues = len(df)
+            st.metric("Total Issues", total_issues)
+        with col2:
+            if 'Time' in df.columns:
+                total_time = df['Time'].sum()
+                st.metric("Total Loss Time", f"{total_time:.2f} min")
+        with col3:
+            if 'Defects' in df.columns:
+                total_defects = df['Defects'].sum()
+                st.metric("Total Defects", total_defects)
+        
+        # Issue type distribution
+        if 'Issue_Type' in df.columns:
+            st.subheader("Issue Type Distribution")
+            fig = px.pie(df, names='Issue_Type', title='Issue Type Distribution')
+            st.plotly_chart(fig)
+        
+        # Time trend
+        if 'Date' in df.columns and 'Time' in df.columns:
+            st.subheader("Loss Time Trend")
+            df['Date'] = pd.to_datetime(df['Date'])
+            time_trend = df.groupby('Date')['Time'].sum().reset_index()
+            fig = px.line(time_trend, x='Date', y='Time', title='Loss Time Trend')
+            st.plotly_chart(fig)
+
+def worker_performance_page(data):
+    st.title("Worker Performance Analysis")
+
+    if 'quadrant' in data:
+        # Select Quadrant data file
+        competency_file = 'Quadrant_data_-_AI__Competency_Matrix.csv'
+        quadrant_details_file = 'Quadrant_data_-_AI__Quadrant_details.csv'
+
+        if competency_file in data['quadrant'] and quadrant_details_file in data['quadrant']:
+            df_competency = data['quadrant'][competency_file]
+            df_details = data['quadrant'][quadrant_details_file]
+
+            st.subheader("Competency Matrix Data Overview")
+            st.dataframe(df_competency.head())
+
+            st.subheader("Quadrant Details Data Overview")
+            st.dataframe(df_details.head())
+
+            # Example: Visualize skill distribution (requires appropriate column names)
+            st.subheader("Skill Distribution (Example)")
+            if 'Skill' in df_competency.columns:
+                skill_dist = df_competency['Skill'].value_counts().reset_index()
+                skill_dist.columns = ['Skill', 'Count']
+                fig = px.bar(skill_dist, x='Skill', y='Count', title='Distribution of Skills')
+                st.plotly_chart(fig)
+            else:
+                st.info("'Skill' column not found in Competency Matrix for visualization.")
+
+            st.subheader("Insights and ML Algorithm Suggestions")
+            st.markdown("""
+            Based on the Quadrant data, we can infer insights related to worker skill levels, training needs, and overall workforce capabilities.
+            
+            **Applicable Machine Learning Algorithms:**
+            -   **Classification:** To categorize workers into different performance tiers or identify those who might need specific training.
+            -   **Clustering:** To group workers with similar skill sets or performance patterns, which can aid in team formation and targeted development programs.
+            
+            **How it helps the Garment Industry:**
+            -   **Optimized Training Programs:** Identify specific skill gaps and tailor training to maximize impact.
+            -   **Improved Resource Allocation:** Place the right workers in the right operations based on their strengths.
+            -   **Performance Benchmarking:** Establish internal benchmarks for different roles and identify high-performers.
+            -   **Succession Planning:** Identify potential leaders and prepare them for future roles.
+            """)
+
+        else:
+            st.warning(f"Required Quadrant data files ({competency_file}, {quadrant_details_file}) not found.")
+
+def worker_allocation_page():
+    st.title("Worker Allocation")
+
+    st.markdown("""
     This section focuses on optimizing worker deployment based on various factors such as skill, performance, and task requirements.
     This aims to maximize productivity and minimize idle time.
-    **ML Algorithms:** For real-world worker allocation, this can involve complex optimization algorithms (e.g., Linear Programming, Integer Programming) to find the best assignment of workers to tasks under various constraints. More advanced scenarios might use Reinforcement Learning to dynamically adapt allocations based on real-time feedback. Predictive models (e.g., regression) could estimate task completion times.
-    **How Workers are Allocated (Simulated Logic):** In this simulation, workers are assigned to tasks based on a simple matching algorithm. Tasks are prioritized (High > Medium > Low), and then by required skill level. Workers are selected based on meeting or exceeding the required skill level, with higher performance workers being prioritized first. Once a worker is assigned, they are no longer available for other tasks.
-    **Features Used:**
-    - **Worker Data:** 'Worker ID', 'Skill Level (1-10)', 'Experience (Years)', 'Current Performance (%)', 'Task Preference'.
-    - **Task Data:** 'Task ID', 'Required Skill Level (1-10)', 'Estimated Time (hours)', 'Priority'.
-    **Further Predictions/Optimizations:**
-    - **Dynamic Re-allocation:** Predict the need for re-allocating workers based on real-time production changes or unexpected delays.
-    - **Fatigue Prediction:** Use sensor data or historical work patterns to predict worker fatigue and optimize breaks or shift rotations.
-    - **Skill Gap Identification:** Analyze allocation results to identify skill gaps in the workforce and suggest targeted training programs.
+
+    ### ML Algorithms:
+    For real-world worker allocation, this can involve complex optimization algorithms (e.g., Linear Programming, Integer Programming)
+    to find the best assignment of workers to tasks under various constraints. More advanced scenarios might use Reinforcement Learning
+    to dynamically adapt allocations based on real-time feedback. Predictive models (e.g., regression) could estimate task completion times.
+
+    ### How Workers are Allocated (Simulated Logic):
+    In this simulation, workers are assigned to tasks based on a simple matching algorithm. Tasks are prioritized (High > Medium > Low),
+    and then by required skill level. Workers are selected based on meeting or exceeding the required skill level, with higher performance
+    workers being prioritized first. Once a worker is assigned, they are no longer available for other tasks.
+
+    ### Features Used:
+    -   **Worker Data:** 'Worker ID', 'Skill Level (1-10)', 'Experience (Years)', 'Current Performance (%)', 'Task Preference'.
+    -   **Task Data:** 'Task ID', 'Required Skill Level (1-10)', 'Estimated Time (hours)', 'Priority'.
+
+    ### Further Predictions/Optimizations:
+    -   **Dynamic Re-allocation:** Predict the need for re-allocating workers based on real-time production changes or unexpected delays.
+    -   **Fatigue Prediction:** Use sensor data or historical work patterns to predict worker fatigue and optimize breaks or shift rotations.
+    -   **Skill Gap Identification:** Analyze allocation results to identify skill gaps in the workforce and suggest targeted training programs.
     """)
 
-    num_workers = st.slider("Number of Workers", 10, 500, 30)
-    num_tasks = st.slider("Number of Tasks", 5, 100, 15)
+    st.subheader("Simulate Worker Allocation")
 
-    if st.button("Generate Sample Worker Data"):
+    num_workers = st.number_input("Number of Workers", min_value=10, max_value=500, value=50, step=10)
+    num_tasks = st.number_input("Number of Tasks", min_value=5, max_value=100, value=20, step=5)
+
+    if st.button("Run Simulation"):
+        # Generate sample worker data
         worker_data = {
-            'Worker ID': [f'W{i:03d}' for i in range(num_workers)],
-            'Skill Level (1-10)': [random.randint(1, 11) for _ in range(num_workers)],
-            'Experience (Years)': [random.randint(1, 15) for _ in range(num_workers)],
-            'Current Performance (%)': [random.randint(70, 100) for _ in range(num_workers)],
-            'Task Preference': [random.choice(['Cutting', 'Sewing', 'Finishing', 'Quality Control', 'Packing']) for _ in range(num_workers)]
+            'Worker ID': [f'W{i+1:03d}' for i in range(num_workers)],
+            'Skill Level (1-10)': np.random.randint(1, 11, num_workers),
+            'Experience (Years)': np.random.randint(1, 20, num_workers),
+            'Current Performance (%)': np.random.randint(70, 101, num_workers),
+            'Task Preference': np.random.choice(['Cutting', 'Sewing', 'Finishing', 'Packing'], num_workers)
         }
+        df_workers = pd.DataFrame(worker_data)
+
+        # Generate sample task data
         task_data = {
-            'Task ID': [f'T{i:03d}' for i in range(num_tasks)],
-            'Required Skill Level (1-10)': [random.randint(1, 11) for _ in range(num_tasks)],
-            'Estimated Time (hours)': [random.randint(1, 8) for _ in range(num_tasks)],
-            'Priority': [random.choice(['High', 'Medium', 'Low']) for _ in range(num_tasks)]
+            'Task ID': [f'T{i+1:03d}' for i in range(num_tasks)],
+            'Required Skill Level (1-10)': np.random.randint(1, 11, num_tasks),
+            'Estimated Time (hours)': np.round(np.random.uniform(1, 8, num_tasks), 1),
+            'Priority': np.random.choice(['High', 'Medium', 'Low'], num_tasks, p=[0.3, 0.4, 0.3])
         }
+        df_tasks = pd.DataFrame(task_data)
+
+        st.subheader("Generated Worker Data (Sample)")
+        st.dataframe(df_workers.head())
+
+        st.subheader("Generated Task Data (Sample)")
+        st.dataframe(df_tasks.head())
+
+        st.subheader("Worker Allocation Results")
+
+        # Correlation analysis (example)
+        st.subheader("Correlation Analysis of Worker Data")
+        worker_numeric_cols = ['Skill Level (1-10)', 'Experience (Years)', 'Current Performance (%)']
+        if not df_workers[worker_numeric_cols].empty:
+            fig_corr = px.imshow(df_workers[worker_numeric_cols].corr(),
+                                  text_auto=True,
+                                  color_continuous_scale='Viridis',
+                                  title='Worker Data Correlation Heatmap')
+            st.plotly_chart(fig_corr)
+        else:
+            st.info("Not enough data to generate worker correlation heatmap.")
+
+        # Worker Data Distributions
+        st.subheader("Worker Data Distributions")
+        col_w1, col_w2 = st.columns(2)
+        with col_w1:
+            fig_skill_dist = px.histogram(df_workers, x='Skill Level (1-10)', title='Worker Skill Level Distribution')
+            st.plotly_chart(fig_skill_dist)
+        with col_w2:
+            fig_perf_dist = px.histogram(df_workers, x='Current Performance (%)', title='Worker Performance Distribution')
+            st.plotly_chart(fig_perf_dist)
+
+        # Task Data Distributions
+        st.subheader("Task Data Distributions")
+        col_t1, col_t2 = st.columns(2)
+        with col_t1:
+            fig_req_skill_dist = px.histogram(df_tasks, x='Required Skill Level (1-10)', title='Required Skill Level Distribution')
+            st.plotly_chart(fig_req_skill_dist)
+        with col_t2:
+            fig_est_time_dist = px.histogram(df_tasks, x='Estimated Time (hours)', title='Estimated Task Time Distribution')
+            st.plotly_chart(fig_est_time_dist)
         
-        st.session_state['worker_df'] = pd.DataFrame(worker_data)
-        st.session_state['task_df'] = pd.DataFrame(task_data)
-        st.success("Sample data generated!")
+        fig_priority_dist = px.pie(df_tasks, names='Priority', title='Task Priority Distribution')
+        st.plotly_chart(fig_priority_dist)
 
-    if 'worker_df' in st.session_state and 'task_df' in st.session_state:
-        st.subheader("Worker Data")
-        st.dataframe(st.session_state['worker_df'])
+        st.subheader("Detailed ML Algorithms for Worker Allocation")
+        st.markdown("""
+        Beyond the simulated logic, real-world worker allocation can leverage various ML algorithms:
+        -   **Clustering (e.g., K-Means, DBSCAN):** To segment workers into groups based on their skills, experience, and performance.
+            This helps in understanding the workforce composition and identifying natural teams or skill gaps.
+            *Example: Grouping workers with similar skill sets for specialized tasks.*
+        -   **Regression (e.g., Linear Regression, Random Forest Regressor):** To predict task completion times based on task complexity, worker skill, and historical data.
+            This helps in more accurate scheduling and workload balancing.
+            *Example: Predicting how long a specific sewing operation will take based on the assigned worker's skill and experience.*
+        -   **Optimization Algorithms (e.g., Linear Programming, Integer Programming):** While not strictly ML, these are often used in conjunction with ML predictions.
+            They find the optimal assignment of workers to tasks to minimize idle time, maximize output, or balance workload, given various constraints.
+            *Example: Assigning available workers to production lines to meet a daily target while minimizing overtime.*
+        -   **Reinforcement Learning (e.g., Q-Learning, Deep Q-Networks):** For dynamic allocation scenarios where the environment changes (e.g., worker absenteeism, machine breakdown).
+            An RL agent can learn optimal allocation policies through trial and error, adapting to real-time feedback.
+            *Example: Dynamically re-assigning workers when a machine breaks down to minimize disruption and maintain production flow.*
+        """)
 
-        st.subheader("Task Data")
-        st.dataframe(st.session_state['task_df'])
+        st.subheader("Simulated Worker Allocation")
 
-        if st.button("Run Allocation Simulation"):
-            st.subheader("Simulated Worker-Task Allocation")
+        # Sort tasks by priority (High > Medium > Low) and then by required skill level
+        priority_order = {'High': 3, 'Medium': 2, 'Low': 1}
+        df_tasks['Priority_Rank'] = df_tasks['Priority'].map(priority_order)
+        df_tasks = df_tasks.sort_values(by=['Priority_Rank', 'Required Skill Level (1-10)'], ascending=[False, False])
             
             allocated_tasks = []
-            available_workers = st.session_state['worker_df'].copy()
-            available_tasks = st.session_state['task_df'].copy()
+        available_workers = df_workers.copy()
 
-            priority_map = {'High': 3, 'Medium': 2, 'Low': 1}
-            available_tasks['Priority_Rank'] = available_tasks['Priority'].map(priority_map)
-            available_tasks = available_tasks.sort_values(by=['Priority_Rank', 'Required Skill Level (1-10)'], ascending=[False, False])
-
-            for index, task in available_tasks.iterrows():
+        for index, task in df_tasks.iterrows():
                 suitable_workers = available_workers[
-                    available_workers['Skill Level (1-10)'] >= task['Required Skill Level (1-10)']
+                (available_workers['Skill Level (1-10)'] >= task['Required Skill Level (1-10)'])
                 ].sort_values(by='Current Performance (%)', ascending=False)
 
                 if not suitable_workers.empty:
-                    worker_id = suitable_workers.iloc[0]['Worker ID']
+                chosen_worker = suitable_workers.iloc[0]
+                allocated_tasks.append({
+                    'Task ID': task['Task ID'],
+                    'Worker ID': chosen_worker['Worker ID'],
+                    'Task Priority': task['Priority'],
+                    'Task Required Skill': task['Required Skill Level (1-10)'],
+                    'Worker Skill': chosen_worker['Skill Level (1-10)'],
+                    'Worker Performance': chosen_worker['Current Performance (%)'],
+                    'Estimated Time (hours)': task['Estimated Time (hours)']
+                })
+                # Remove allocated worker from available list
+                available_workers = available_workers[available_workers['Worker ID'] != chosen_worker['Worker ID']]
+            else:
                     allocated_tasks.append({
                         'Task ID': task['Task ID'],
-                        'Assigned Worker ID': worker_id,
+                    'Worker ID': 'N/A',
                         'Task Priority': task['Priority'],
-                        'Worker Skill': suitable_workers.iloc[0]['Skill Level (1-10)'],
-                        'Worker Performance': suitable_workers.iloc[0]['Current Performance (%)']
-                    })
-                    available_workers = available_workers[available_workers['Worker ID'] != worker_id]
-                    if available_workers.empty:
+                    'Task Required Skill': task['Required Skill Level (1-10)'],
+                    'Worker Skill': 'N/A',
+                    'Worker Performance': 'N/A',
+                    'Estimated Time (hours)': task['Estimated Time (hours)']
+                })
+
+        df_allocated = pd.DataFrame(allocated_tasks)
+        st.dataframe(df_allocated)
+
+        # Visualization of Allocation Results
+        st.subheader("Allocation Summary")
+        allocated_count = len(df_allocated[df_allocated['Worker ID'] != 'N/A'])
+        unallocated_count = len(df_allocated[df_allocated['Worker ID'] == 'N/A'])
+
+        col_alloc1, col_alloc2 = st.columns(2)
+        with col_alloc1:
+            st.metric("Allocated Tasks", allocated_count)
+        with col_alloc2:
+            st.metric("Unallocated Tasks", unallocated_count)
+
+        fig_allocation = px.bar(df_allocated, x='Task ID', y='Estimated Time (hours)',
+                                color='Worker ID', title='Task Allocation by Worker',
+                                labels={'Worker ID': 'Assigned Worker'})
+        st.plotly_chart(fig_allocation)
+
+        unallocated_tasks = df_allocated[df_allocated['Worker ID'] == 'N/A']
+        if not unallocated_tasks.empty:
+            st.warning(f"{len(unallocated_tasks)} tasks could not be allocated due to insufficient suitable workers.")
+            st.dataframe(unallocated_tasks)
+        else:
+            st.success("All tasks allocated successfully!")
+
+def main():
+    # Load data
+    data = load_csv_data()
+    
+    # Initialize ML predictor
+    ml_predictor = MLPredictor()
+    
+    # Train models if data is available
+    if 'capacity' in data:
+        st.subheader("Training Machine Learning Models...")
+        production_model_trained = False
+        for file, df in data['capacity'].items():
+            if 'Operation tack time' in df.columns:
+                # Check for any of the potential time columns
+                time_cols = ['Cycle Time(CT)', 'SMV', 'Time (min)']
+                found_time_col = False
+                for col in time_cols:
+                    if col in df.columns:
+                        found_time_col = True
                         break
 
-            if allocated_tasks:
-                st.dataframe(pd.DataFrame(allocated_tasks))
+                if found_time_col:
+                    st.info(f"Attempting to train Production Prediction model using {file}...")
+                    score = ml_predictor.train_production_prediction(df)
+                    if score is not None:
+                        st.success(f"Production Prediction model trained successfully with score: {score:.4f}")
+                        production_model_trained = True
+                    else:
+                        st.warning(f"Failed to train Production Prediction model using {file}.")
+                else:
+                    st.warning(f"Required time column (any of {', '.join(time_cols)}) not found in {file} for Production Prediction training.")
             else:
-                st.info("No tasks could be allocated with the current worker and task data.")
+                st.warning(f"Required column 'Operation tack time' not found in {file} for Production Prediction training.")
 
+        if not production_model_trained:
+            st.error("Production Prediction model could not be trained due to missing required data in any capacity file.")
     else:
-        st.info("Generate sample worker and task data to simulate allocation.")
+        st.warning("No capacity data found for Production Prediction model training.")
 
+    # Train quality model if data is available
+    if 'loss_time' in data:
+        quality_model_trained = False
+        for file, df in data['loss_time'].items():
+            # Assuming 'Operation', 'Operator', 'Time', 'Defects' are critical for quality training
+            required_quality_cols = ['Operation', 'Operator', 'Time', 'Defects']
+            if all(col in df.columns for col in required_quality_cols):
+                st.info(f"Attempting to train Quality Prediction model using {file}...")
+                accuracy = ml_predictor.train_quality_prediction(df)
+                if accuracy is not None:
+                    st.success(f"Quality Prediction model trained successfully with accuracy: {accuracy:.4f}")
+                    quality_model_trained = True
+                else:
+                    st.warning(f"Failed to train Quality Prediction model using {file}.")
+            else:
+                st.warning(f"Required columns ({', '.join(required_quality_cols)}) not found in {file} for Quality Prediction training.")
+        
+        if not quality_model_trained:
+            st.error("Quality Prediction model could not be trained due to missing required data in any loss time file.")
+    else:
+        st.warning("No loss time data found for Quality Prediction model training.")
 
-# --- Sidebar and Data Loading Logic ---
-
-# Set up the sidebar navigation (moved to top-level for single rendering)
+    # Navigation
 st.sidebar.title("Navigation")
-pages = {
-    "🏠 Home": home_page,
-    "⚙️ Production Optimization": production_optimization_page,
-    "📉 Loss Time Analysis": loss_time_analysis_page,
-    "✅ Quality Control": quality_control_page,
-    "👕 Product Analysis": product_analysis_page,
-    "🧑‍🏭 Worker Allocation": worker_allocation_page
-}
+    page = st.sidebar.radio("Go to", ["Home", "Live Demos", "Production", "Quality", "Worker Performance", "Worker Allocation"])
+    
+    if page == "Home":
+        st.title("Garment Industry ML Dashboard")
+        st.markdown("""
+        Welcome to the Garment Industry ML Dashboard. This application provides insights and recommendations
+        across various aspects of garment manufacturing using machine learning.
 
-selected_page = st.sidebar.radio("Go to", list(pages.keys()))
-
-@st.cache_resource(ttl=3600) # Cache the loading of analyzers to avoid re-initializing on every rerun
-def load_data():
-    analyzers = {
-        'production': {'data': {},'analyzer': None},
-        'loss_time': {'data': {},'analyzer': None},
-        'quality': {'data': {},'analyzer': None},
-        'product': {'data': {},'analyzer': None}
-    }
-
-    # Production Optimization
-    try:
-        production_optimizer = ProductionOptimizer('Capacity study , Line balancing sheet.xlsx')
-        production_data = production_optimizer.load_data()
-        if production_data:
-            analyzers['production'] = {'data': production_data, 'analyzer': production_optimizer}
-        else:
-            st.warning("Production data loading returned unexpected type (bool). Setting to empty dictionary.")
-            analyzers['production'] = {'data': {}, 'analyzer': None}
-    except Exception as e:
-        st.error(f"Error loading Production Optimization data: {e}")
-        analyzers['production'] = {'data': {}, 'analyzer': None} # Ensure it's a dict on error
-
-    # Loss Time Analysis
-    try:
-        loss_time_analyzer = LossTimeAnalyzer('CCL loss time_.xlsx')
-        loss_time_data = loss_time_analyzer.load_data()
-        if loss_time_data:
-            analyzers['loss_time'] = {'data': loss_time_data, 'analyzer': loss_time_analyzer}
-        else:
-            st.warning("Loss time data loading returned unexpected type (bool). Setting to empty dictionary.")
-            analyzers['loss_time'] = {'data': {}, 'analyzer': None}
-    except Exception as e:
-        st.error(f"Error loading Loss Time Analysis data: {e}")
-        analyzers['loss_time'] = {'data': {}, 'analyzer': None} # Ensure it's a dict on error
-
-    # Quality Control
-    try:
-        quality_controller = QualityController('Stores - Data sets for AI training program.xlsx')
-        quality_data = quality_controller.load_data()
-        if quality_data:
-            analyzers['quality'] = {'data': quality_data, 'analyzer': quality_controller}
-        else:
-            st.warning("Quality control data loading returned unexpected type (bool). Setting to empty dictionary.")
-            analyzers['quality'] = {'data': {}, 'analyzer': None}
-    except Exception as e:
-        st.error(f"Error loading Quality Control data: {e}")
-        analyzers['quality'] = {'data': {}, 'analyzer': None} # Ensure it's a dict on error
-
-    # Product Analysis
-    try:
-        product_analyzer = ProductAnalyzer('Quadrant data - AI.xlsx')
-        product_data = product_analyzer.load_data()
-        if product_data:
-            analyzers['product'] = {'data': product_data, 'analyzer': product_analyzer}
-        else:
-            st.warning("Product data loading returned unexpected type (bool). Setting to empty dictionary.")
-            analyzers['product'] = {'data': {}, 'analyzer': None}
-    except Exception as e:
-        st.error(f"Error loading Product Analysis data: {e}")
-        analyzers['product'] = {'data': {}, 'analyzer': None} # Ensure it's a dict on error
-
-    return analyzers
-
-# --- Main App Logic ---
-def main():
-    analyzers = load_data() 
-
-    # Display the selected page
-    if selected_page == "🏠 Home":
-        home_page()
-    else:
-        pages[selected_page](analyzers)
+        ### Key Features:
+        - **Live Demos:** Interactive demonstrations of ML predictions
+        - **Production Optimization:** Line balancing and efficiency analysis
+        - **Quality Control:** Defect analysis and prediction
+        - **Inventory Management:** Stock level analysis and optimization
+        - **Worker Performance Analysis:** Skill distribution and performance insights
+        - **Worker Allocation:** Optimized worker deployment
+        """)
+    
+    elif page == "Live Demos":
+        st.title("Live Demos")
+        
+        demo_type = st.selectbox("Select Demo Type", ["Production", "Quality", "Inventory"])
+        
+        if demo_type == "Production":
+            production_live_demo(data, ml_predictor)
+        elif demo_type == "Quality":
+            quality_live_demo(data, ml_predictor)
+        elif demo_type == "Inventory":
+            inventory_live_demo(data)
+    
+    elif page == "Production":
+        production_optimization_page(data)
+    
+    elif page == "Quality":
+        quality_control_page(data)
+    
+    elif page == "Worker Performance":
+        worker_performance_page(data)
+    
+    elif page == "Worker Allocation":
+        worker_allocation_page()
 
 if __name__ == "__main__":
     main()

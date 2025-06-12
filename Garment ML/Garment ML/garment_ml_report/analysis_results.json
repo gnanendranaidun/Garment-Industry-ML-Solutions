@@ -1,0 +1,440 @@
+{
+  "CCL loss time_.xlsx_Jkt Feb'25": {
+    "name": "CCL loss time_.xlsx_Jkt Feb'25",
+    "shape": [
+      55,
+      9
+    ],
+    "columns": [
+      "Line ",
+      "Date of Gap",
+      "Check",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6",
+      "Act",
+      "Unnamed: 8"
+    ],
+    "dtypes": {
+      "Line ": "object",
+      "Date of Gap": "datetime64[ns]",
+      "Check": "object",
+      "Unnamed: 3": "object",
+      "Unnamed: 4": "object",
+      "Unnamed: 5": "object",
+      "Unnamed: 6": "object",
+      "Act": "object",
+      "Unnamed: 8": "object"
+    },
+    "missing_values": {
+      "Line ": 3,
+      "Date of Gap": 15,
+      "Check": 11,
+      "Unnamed: 3": 13,
+      "Unnamed: 4": 7,
+      "Unnamed: 5": 53,
+      "Unnamed: 6": 2,
+      "Act": 2,
+      "Unnamed: 8": 2
+    },
+    "missing_percentage": {
+      "Line ": 5.454545454545454,
+      "Date of Gap": 27.27272727272727,
+      "Check": 20.0,
+      "Unnamed: 3": 23.636363636363637,
+      "Unnamed: 4": 12.727272727272727,
+      "Unnamed: 5": 96.36363636363636,
+      "Unnamed: 6": 3.6363636363636362,
+      "Act": 3.6363636363636362,
+      "Unnamed: 8": 3.6363636363636362
+    },
+    "duplicates": "0",
+    "memory_usage": "33027",
+    "sample_data": [
+      {
+        "Line ": NaN,
+        "Date of Gap": "NaT",
+        "Check": " (Target Vs Actual)",
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": "Control point",
+        "Unnamed: 6": NaN,
+        "Act": NaN,
+        "Unnamed: 8": NaN
+      },
+      {
+        "Line ": NaN,
+        "Date of Gap": "NaT",
+        "Check": "MP/CP",
+        "Unnamed: 3": "Target",
+        "Unnamed: 4": "Actual",
+        "Unnamed: 5": "Self Control",
+        "Unnamed: 6": "Other Dept Control",
+        "Act": "Reason for Gap",
+        "Unnamed: 8": "Reason Category\n(Key word from Reason for Gap)"
+      },
+      {
+        "Line ": "Line-1A",
+        "Date of Gap": "2025-02-10 00:00:00",
+        "Check": "Loss time",
+        "Unnamed: 3": 0,
+        "Unnamed: 4": 300,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "Cutting",
+        "Act": "Loading delay from cutting section \nBody section 2 operation idle from 3 to 5.30\n",
+        "Unnamed: 8": "G - No feeding from material "
+      }
+    ],
+    "categorical_summary": {
+      "Line ": {
+        "unique_count": 6,
+        "top_values": {
+          "Line-2B": 20,
+          "Line-3": 14,
+          "Line-1A": 5,
+          "Line-1B": 5,
+          "Line-2A": 4
+        }
+      },
+      "Check": {
+        "unique_count": 4,
+        "top_values": {
+          "Loss time": 41,
+          " (Target Vs Actual)": 1,
+          "MP/CP": 1,
+          "Total Loss time in contracted hours": 1
+        }
+      },
+      "Unnamed: 3": {
+        "unique_count": 2,
+        "top_values": {
+          "0": 41,
+          "Target": 1
+        }
+      },
+      "Unnamed: 4": {
+        "unique_count": 41,
+        "top_values": {
+          "120": 3,
+          "300": 3,
+          "450": 3,
+          "480": 2,
+          "1463": 1
+        }
+      },
+      "Unnamed: 5": {
+        "unique_count": 2,
+        "top_values": {
+          "Control point": 1,
+          "Self Control": 1
+        }
+      },
+      "Unnamed: 6": {
+        "unique_count": 8,
+        "top_values": {
+          "Cutting": 22,
+          "Yes\nCutting": 11,
+          "Yes\nMaintenance": 9,
+          "Maintenance": 5,
+          "Yes\nStore": 3
+        }
+      },
+      "Act": {
+        "unique_count": 51,
+        "top_values": {
+          "\nIn sleeve section\nindexor machine problem for loose thread and button hole Measurement issuses then parts will be change\n11.30 to 1.30=120 mins\n alternate machine arranged  . we can't able to do production level 150 pcs Because Line L2A & L2B combination . Repeated Indexor machine problem.": 2,
+          "In sleeve section\nindexor machine problem for loose thread and button hole Measurement issuses then parts will be change\n9.30 to 5.30 alternate machine arranged  . we can't able to do production level 150 pcs Because Line L2A & L2B combination . Repeated Indexor machine problem.": 2,
+          "Reason for Gap": 1,
+          "In Lining section loading issue (W.O-82130/G.S-AT04) 2.00-2.30=30MINS&5.00-5.30=30 MINS \nTOTAL=60 MINS\n": 1,
+          "In Body section loading issuses\nDart cutting-11.00 to 3.00=240\nDart seam-12.20 to 3.40=240mins\nDart iron-1.00 to 3.45=165mis\nSide panel-2.00 to 3.45=105mins\nCenter back seam-11.20 to 3.30=290mins\nArm hole tape -2.00 to3.50=110mins\nSide panel iron-2.30 to3.55=85mins\nBreast pkt ready -11.00 to 3.00=240mins\nBreast pkt attach-2.30 to 4.15=105mins\nBreast pkt open seam iron-2.45 to 4.20=185mins\nBreast pkt bag close-3.00 to 4.25=85mins\nBreast pkt zigzag-3.30 to 4.10=40mins\nFlap seam-2.35 to 3.00=95mins\nFlap pressing-2.40 to 3.30=130mins\nFlap dummy stitch-3.30 to 4.00=30mins\nFlap matching-3.30 to 4.10=40mins\nPkt lining facing seam-2.30 to 3.30=60mins\n": 1
+        }
+      },
+      "Unnamed: 8": {
+        "unique_count": 4,
+        "top_values": {
+          "G - No feeding from material ": 38,
+          "J - Machine breakdown": 13,
+          "Reason Category\n(Key word from Reason for Gap)": 1,
+          "L - Style change over loss ( Batch setting)": 1
+        }
+      }
+    },
+    "eda": {
+      "correlations": {},
+      "distributions": {},
+      "insights": []
+    }
+  },
+  "CCL loss time_.xlsx_Jkt Mar'25 ": {
+    "name": "CCL loss time_.xlsx_Jkt Mar'25 ",
+    "shape": [
+      56,
+      9
+    ],
+    "columns": [
+      "Line ",
+      "Date of Gap",
+      "Check",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6",
+      "Act",
+      "Unnamed: 8"
+    ],
+    "dtypes": {
+      "Line ": "object",
+      "Date of Gap": "datetime64[ns]",
+      "Check": "object",
+      "Unnamed: 3": "object",
+      "Unnamed: 4": "object",
+      "Unnamed: 5": "object",
+      "Unnamed: 6": "object",
+      "Act": "object",
+      "Unnamed: 8": "object"
+    },
+    "missing_values": {
+      "Line ": 4,
+      "Date of Gap": 14,
+      "Check": 11,
+      "Unnamed: 3": 11,
+      "Unnamed: 4": 11,
+      "Unnamed: 5": 50,
+      "Unnamed: 6": 2,
+      "Act": 2,
+      "Unnamed: 8": 3
+    },
+    "missing_percentage": {
+      "Line ": 7.142857142857142,
+      "Date of Gap": 25.0,
+      "Check": 19.642857142857142,
+      "Unnamed: 3": 19.642857142857142,
+      "Unnamed: 4": 19.642857142857142,
+      "Unnamed: 5": 89.28571428571429,
+      "Unnamed: 6": 3.571428571428571,
+      "Act": 3.571428571428571,
+      "Unnamed: 8": 5.357142857142857
+    },
+    "duplicates": "0",
+    "memory_usage": "34720",
+    "sample_data": [
+      {
+        "Line ": NaN,
+        "Date of Gap": "NaT",
+        "Check": " (Target Vs Actual)",
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": "Control point",
+        "Unnamed: 6": NaN,
+        "Act": NaN,
+        "Unnamed: 8": NaN
+      },
+      {
+        "Line ": NaN,
+        "Date of Gap": "NaT",
+        "Check": "MP/CP",
+        "Unnamed: 3": "Target",
+        "Unnamed: 4": "Actual",
+        "Unnamed: 5": "Self Control",
+        "Unnamed: 6": "Other Dept Control",
+        "Act": "Reason for Gap",
+        "Unnamed: 8": "Reason Category\n(Key word from Reason for Gap)"
+      },
+      {
+        "Line ": "Line-1B",
+        "Date of Gap": "2025-03-04 00:00:00",
+        "Check": "Loss time",
+        "Unnamed: 3": 0,
+        "Unnamed: 4": 60,
+        "Unnamed: 5": "No",
+        "Unnamed: 6": "Maintenance",
+        "Act": "3-3.30( no lining loading),4-4.30(machine problem)Total-60 min loss",
+        "Unnamed: 8": "J - Machine breakdown\nG - No feeding from material "
+      }
+    ],
+    "categorical_summary": {
+      "Line ": {
+        "unique_count": 6,
+        "top_values": {
+          "Line-2A": 15,
+          "Line-2B": 13,
+          "Line-3": 13,
+          "w/c-1": 6,
+          "Line-1B": 4
+        }
+      },
+      "Check": {
+        "unique_count": 4,
+        "top_values": {
+          "Loss time": 42,
+          " (Target Vs Actual)": 1,
+          "MP/CP": 1,
+          "Total Loss time in contracted hours": 1
+        }
+      },
+      "Unnamed: 3": {
+        "unique_count": 2,
+        "top_values": {
+          "0": 44,
+          "Target": 1
+        }
+      },
+      "Unnamed: 4": {
+        "unique_count": 39,
+        "top_values": {
+          "390": 3,
+          "120": 2,
+          "240": 2,
+          "510": 2,
+          "9600": 2
+        }
+      },
+      "Unnamed: 5": {
+        "unique_count": 4,
+        "top_values": {
+          "Yes": 3,
+          "Control point": 1,
+          "Self Control": 1,
+          "No": 1
+        }
+      },
+      "Unnamed: 6": {
+        "unique_count": 17,
+        "top_values": {
+          "Cutting": 15,
+          "Yes\nCutting": 12,
+          "Maintenance": 4,
+          "Yes\n Cutting": 3,
+          "Yes\nMaintenance & Store": 3
+        }
+      },
+      "Act": {
+        "unique_count": 52,
+        "top_values": {
+          "In body section loading issuses\n27 operation idel-3.00 to 5.30=150mins\nIn lining section loading issuses\n20 operation idel-10.00 to 11.00=60mins": 2,
+          "\nIn Lining section, Body welting machine problem(frequently needle down and extra cut ) - 9.30-4.30\nTotal mins loss- 390 mins": 2,
+          "Reason for Gap": 1,
+          "In Body section loading issue (W.O-85990/G.S-VH266)2.30-3.30=60mins\n": 1,
+          "In body section loading issuses\n1.Center back seam-12.10 to 2.10=120mins\n2.Dart seam-3.45 to 4.20=35mins\n3.Dart iron-3.40 to 4.10=30mins\n4.Side panel attach-4.00 to 4.30=30mins\n5.Arm hole stitch-4.00 to 4.30=30mins\n6.Side panel iron-4.45 to 5.15=30mins\n7.Flap seam-1.00 to 2.00=60mins\n8.Flap pressing-3.00 to 3.40=40mins\n9.Flap dummy stitch-3.00  to 3.40=40mins\n10.Flap turn-3.00 to 3.45=45mins": 1
+        }
+      },
+      "Unnamed: 8": {
+        "unique_count": 10,
+        "top_values": {
+          "G - No feeding from material ": 24,
+          "J - Machine breakdown\nG - No feeding from material ": 9,
+          "J - Machine breakdown\n": 5,
+          "\nG - No feeding from material ": 5,
+          "H - No feeding from trims": 4
+        }
+      }
+    },
+    "eda": {
+      "correlations": {},
+      "distributions": {},
+      "insights": []
+    }
+  },
+  "CCL loss time_.xlsx_Jkt April'25 ": {
+    "name": "CCL loss time_.xlsx_Jkt April'25 ",
+    "shape": [
+      26,
+      9
+    ],
+    "columns": [
+      "Line ",
+      "Date of Gap",
+      "Check",
+      "Unnamed: 3",
+      "Unnamed: 4",
+      "Unnamed: 5",
+      "Unnamed: 6",
+      "Act",
+      "Unnamed: 8"
+    ],
+    "dtypes": {
+      "Line ": "object",
+      "Date of Gap": "object",
+      "Check": "object",
+      "Unnamed: 3": "object",
+      "Unnamed: 4": "object",
+      "Unnamed: 5": "object",
+      "Unnamed: 6": "object",
+      "Act": "object",
+      "Unnamed: 8": "object"
+    },
+    "missing_values": {
+      "Line ": 3,
+      "Date of Gap": 4,
+      "Check": 1,
+      "Unnamed: 3": 3,
+      "Unnamed: 4": 1,
+      "Unnamed: 5": 20,
+      "Unnamed: 6": 2,
+      "Act": 2,
+      "Unnamed: 8": 3
+    },
+    "missing_percentage": {
+      "Line ": 11.538461538461538,
+      "Date of Gap": 15.384615384615385,
+      "Check": 3.8461538461538463,
+      "Unnamed: 3": 11.538461538461538,
+      "Unnamed: 4": 3.8461538461538463,
+      "Unnamed: 5": 76.92307692307693,
+      "Unnamed: 6": 7.6923076923076925,
+      "Act": 7.6923076923076925,
+      "Unnamed: 8": 11.538461538461538
+    },
+    "duplicates": "0",
+    "memory_usage": "15755",
+    "sample_data": [
+      {
+        "Line ": NaN,
+        "Date of Gap": NaN,
+        "Check": " (Target Vs Actual)",
+        "Unnamed: 3": NaN,
+        "Unnamed: 4": NaN,
+        "Unnamed: 5": "Control point",
+        "Unnamed: 6": NaN,
+        "Act": NaN,
+        "Unnamed: 8": NaN
+      },
+      {
+        "Line ": NaN,
+        "Date of Gap": NaN,
+        "Check": "MP/CP",
+        "Unnamed: 3": "Target",
+        "Unnamed: 4": "Actual",
+        "Unnamed: 5": "Self Control",
+        "Unnamed: 6": "Other Dept Control",
+        "Act": "Reason for Gap",
+        "Unnamed: 8": "Reason Category\n(Key word from Reason for Gap)"
+      },
+      {
+        "Line ": "Line-1A",
+        "Date of Gap": "02/04/2025",
+        "Check": "Loss time",
+        "Unnamed: 3": 0,
+        "Unnamed: 4": 19680,
+        "Unnamed: 5": NaN,
+        "Unnamed: 6": "Cutting",
+        "Act": "Loading delay\n29/03/2025 from 12.30 to 02/04/2025 to 12 o clock body section idle (23 operators) \n29/03/2025 from 12.00 to 02/04/2025 to 12 o clock lining section idle (18 operators)",
+        "Unnamed: 8": "Loading delay"
+      }
+    ],
+    "categorical_summary": {
+      "Line ": {
+        "unique_count": 6,
+        "top_values": {
+          "Line-2A": 5,
+          "Line-2B": 5,
+          "Line-1B": 4,
+          "Line-3": 4,
+          "Line-4": 3
+        }
+      },
+      "Date of Gap": {
+        "unique_count": 18,
+        "top_values": {
+          

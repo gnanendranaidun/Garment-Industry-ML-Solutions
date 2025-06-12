@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <h2>Garment Industry ML Dashboard</h2>
+        <p class="lead">Welcome to the Garment Industry ML Dashboard. This application provides insights into production performance and defect analysis using machine learning.</p>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Performance Analysis</h5>
+                <p class="card-text">Analyze operator performance metrics, view performance distribution, and predict performance based on various parameters.</p>
+                <a href="/performance" class="btn btn-primary">View Performance Analysis</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Defect Analysis</h5>
+                <p class="card-text">Analyze defect patterns, view defect distribution by temperature and humidity, and predict potential defects.</p>
+                <a href="/defects" class="btn btn-primary">View Defect Analysis</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Features</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Performance classification (High, Medium, Low)</li>
+                    <li class="list-group-item">Defect prediction based on environmental factors</li>
+                    <li class="list-group-item">Interactive visualizations using Plotly</li>
+                    <li class="list-group-item">Real-time performance metrics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
