@@ -17,6 +17,13 @@ def load_and_preprocess_data():
         df = pd.read_csv('data/production_data.csv')
         df['date'] = pd.to_datetime(df['date'])
         
+        # Explicitly convert columns to numeric, coercing errors
+        numeric_cols = ['total_units', 'good_units', 'defect_units', 'quality_score', 
+                        'temperature', 'pressure', 'speed', 'humidity']
+        for col in numeric_cols:
+            if col in df.columns:
+                df[col] = pd.to_numeric(df[col], errors='coerce')
+        
         # Calculate performance column with robust error handling
         # Avoid division by zero and handle potential inf/-inf values
         df['performance'] = (df['good_units'] / df['total_units'] * 100)
@@ -26,20 +33,23 @@ def load_and_preprocess_data():
         df['performance_category'] = pd.cut(df['performance'], 
                                           bins=[0, 70, 85, 100],
                                           labels=['Low', 'Medium', 'High'],
-                                          right=False) # Use right=False to include 100 in High
+                                          right=False, include_lowest=True) # Use right=False to include 100 in High
         
         # Ensure quality_score exists for quality trends
         if 'quality_score' not in df.columns:
             df['quality_score'] = np.random.uniform(0.7, 0.99, len(df)) # Dummy if not present
 
+        print(f"[DEBUG] Data loaded successfully. DataFrame head:\n{df.head()}")
+        print(f"[DEBUG] DataFrame info:\n{df.info()}")
         return df
     except Exception as e:
-        print(f"Error loading and preprocessing data: {str(e)}")
+        print(f"[ERROR] Error loading and preprocessing data: {str(e)}")
         return None
 
 # Performance Classification Model
 def train_performance_model(df):
     if df is None or df.empty:
+        print("[DEBUG] DataFrame for performance model is None or empty. Using hardcoded data.")
         # Hardcoded sample data for performance model if df is empty
         data = {'total_units': [100, 110, 90, 105, 95],
                 'good_units': [90, 100, 80, 95, 88],
@@ -61,7 +71,7 @@ def train_performance_model(df):
     df_cleaned = df.dropna(subset=features + ['performance_category'])
     
     if df_cleaned.empty:
-        print("DataFrame is empty after dropping NaNs for performance model training. Using hardcoded data.")
+        print("[DEBUG] DataFrame is empty after dropping NaNs for performance model training. Using hardcoded data.")
         # Fallback to hardcoded data again if df_cleaned somehow becomes empty after dropna
         data = {'total_units': [100, 110, 90, 105, 95],
                 'good_units': [90, 100, 80, 95, 88],
@@ -80,12 +90,13 @@ def train_performance_model(df):
     
     model = RandomForestClassifier(n_estimators=100, random_state=42)
     model.fit(X, y)
-    
+    print("[DEBUG] Performance model trained.")
     return model, features
 
 # Defect Prediction Model
 def train_defect_model(df):
     if df is None or df.empty:
+        print("[DEBUG] DataFrame for defect model is None or empty. Using hardcoded data.")
         # Hardcoded sample data for defect model if df is empty
         data = {'temperature': [20, 25, 30, 22, 28],
                 'pressure': [1000, 1010, 1005, 1015, 1008],
@@ -98,7 +109,7 @@ def train_defect_model(df):
     df_cleaned = df.dropna(subset=features + ['defect_units'])
     
     if df_cleaned.empty:
-        print("DataFrame is empty after dropping NaNs for defect model training. Using hardcoded data.")
+        print("[DEBUG] DataFrame is empty after dropping NaNs for defect model training. Using hardcoded data.")
         # Fallback to hardcoded data again if df_cleaned somehow becomes empty after dropna
         data = {'temperature': [20, 25, 30, 22, 28],
                 'pressure': [1000, 1010, 1005, 1015, 1008],
@@ -112,23 +123,26 @@ def train_defect_model(df):
     
     model = RandomForestRegressor(n_estimators=100, random_state=42)
     model.fit(X, y)
-    
+    print("[DEBUG] Defect model trained.")
     return model, features
 
 # Generate performance distribution plot
 def generate_performance_plot(df):
     if df is None or df.empty:
+        print("[DEBUG] DataFrame for performance plot is None or empty.")
         return None
     
     fig = px.histogram(df, x='performance', 
                       title='Performance Distribution',
                       labels={'performance': 'Performance %'},
                       nbins=20)
+    print("[DEBUG] Performance plot generated.")
     return fig.to_json()
 
 # Generate defect analysis plot
 def generate_defect_plot(df):
     if df is None or df.empty:
+        print("[DEBUG] DataFrame for defect plot is None or empty.")
         return None
     
     fig = px.scatter(df, x='temperature', y='defect_units',
@@ -137,17 +151,19 @@ def generate_defect_plot(df):
                     labels={'temperature': 'Temperature',
                            'defect_units': 'Number of Defects',
                            'humidity': 'Humidity'})
+    print("[DEBUG] Defect plot generated.")
     return fig.to_json()
 
 # Generate efficiency metrics
 def calculate_efficiency_metrics(df):
     if df is None or df.empty:
+        print("[DEBUG] DataFrame for metrics calculation is None or empty.")
         return None
     
     # Ensure performance column exists and is numeric before calculating mean
     if 'performance' not in df.columns:
-        # This fallback should ideally not be hit if load_and_preprocess_data is robust
         df['performance'] = (df['good_units'] / df['total_units'] * 100).replace([np.inf, -np.inf], np.nan).fillna(0)
+        print("[DEBUG] 'performance' column was missing, calculated it.")
 
     metrics = {
         'efficiency': df['performance'].mean() if not df['performance'].empty else 0.0,
@@ -157,7 +173,9 @@ def calculate_efficiency_metrics(df):
         'quality_score': df['quality_score'].mean() if not df['quality_score'].empty else 0.0
     }
     # Convert numpy types to native Python types for JSON serialization
-    return {k: (v.item() if isinstance(v, (np.float32, np.float64, np.int32, np.int64)) else v) for k, v in metrics.items()}
+    converted_metrics = {k: (v.item() if isinstance(v, (np.float32, np.float64, np.int32, np.int64)) else v) for k, v in metrics.items()}
+    print(f"[DEBUG] Calculated metrics: {converted_metrics}")
+    return converted_metrics
 
 @app.route('/')
 def dashboard():
@@ -166,6 +184,9 @@ def dashboard():
         return render_template('dashboard.html', metrics=None, error="Data not available or empty. Please check production_data.csv")
     
     metrics = calculate_efficiency_metrics(df)
+    if metrics is None:
+        return render_template('dashboard.html', metrics=None, error="Metrics could not be calculated.")
+
     return render_template('dashboard.html', metrics=metrics)
 
 @app.route('/performance')
@@ -196,10 +217,12 @@ def defects():
 def get_quality_metrics():
     df = load_and_preprocess_data()
     if df is None or df.empty:
+        print("[DEBUG] API: Data for quality metrics is None or empty.")
         return jsonify({'error': 'Data not available or empty'}), 500
     
     metrics = calculate_efficiency_metrics(df)
     if metrics is None:
+        print("[DEBUG] API: Metrics could not be calculated for quality metrics.")
         return jsonify({'error': 'Metrics could not be calculated'}), 500
 
     # Ensure quality_score is present in metrics dictionary
@@ -207,28 +230,33 @@ def get_quality_metrics():
     if 'quality_score' not in metrics:
         metrics['quality_score'] = df['quality_score'].mean() if 'quality_score' in df.columns else 0.0 # Fallback
     
+    print(f"[DEBUG] API: Returning quality metrics: {metrics}")
     return jsonify(metrics)
 
 @app.route('/api/production-data')
 def get_production_data():
     df = load_and_preprocess_data()
     if df is None or df.empty:
+        print("[DEBUG] API: Data for production data is None or empty.")
         return jsonify({'error': 'Data not available or empty'}), 500
     
     # Group by date for production trends
     production_trends = df.groupby('date')['total_units'].sum().reset_index()
     production_trends['date'] = production_trends['date'].dt.strftime('%Y-%m-%d')
+    print(f"[DEBUG] API: Returning production trends: {production_trends.head()}")
     return jsonify(production_trends.to_dict(orient='records'))
 
 @app.route('/api/quality-trends')
 def get_quality_trends():
     df = load_and_preprocess_data()
     if df is None or df.empty:
+        print("[DEBUG] API: Data for quality trends is None or empty.")
         return jsonify({'error': 'Data not available or empty'}), 500
     
     # Group by date for quality trends (assuming quality_score exists)
     quality_trends = df.groupby('date')['quality_score'].agg(['mean', 'std']).reset_index()
     quality_trends['date'] = quality_trends['date'].dt.strftime('%Y-%m-%d')
+    print(f"[DEBUG] API: Returning quality trends: {quality_trends.head()}")
     return jsonify(quality_trends.to_dict(orient='records'))
 
 @app.route('/api/predictions', methods=['POST'])
@@ -240,6 +268,7 @@ def get_ml_predictions():
     model, features = train_defect_model(df) # Using defect model for this prediction form
     
     if model is None or df is None or df.empty:
+        print("[DEBUG] API: Model not trained or data not available for ML predictions.")
         return jsonify({'error': 'Model not trained or data not available'}), 500
     
     try:
@@ -249,61 +278,69 @@ def get_ml_predictions():
             float(data['speed']),
             float(data['humidity'])
         ]])
-        
-        predicted_defects = model.predict(input_data)[0]
-        return jsonify({'predicted_defects': round(predicted_defects, 2)})
+        prediction = model.predict(input_data)[0]
+        print(f"[DEBUG] API: ML Prediction result: {prediction}")
+        return jsonify({'predicted_defects': prediction})
     except Exception as e:
-        return jsonify({'error': f'Prediction failed: {str(e)}'}), 400
+        print(f"[ERROR] API: Error during ML prediction: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/predict_performance', methods=['POST'])
 def predict_performance():
     data = request.get_json()
     df = load_and_preprocess_data()
+    model, features = train_performance_model(df)
 
-    performance_model, features = train_performance_model(df)
-    
-    if performance_model is None or df is None or df.empty:
-        return jsonify({'error': 'Performance model not trained or data not available'}), 500
-    
+    if model is None or df is None or df.empty:
+        print("[DEBUG] API: Model not trained or data not available for performance prediction.")
+        return jsonify({'error': 'Model not trained or data not available'}), 500
+
     try:
-        # Ensure all required features are present and converted to float
-        input_data = np.array([[
-            float(data['total_units']),
-            float(data['good_units']),
-            float(data['defect_units']),
-            float(data['temperature']),
-            float(data['pressure']),
-            float(data['speed']),
-            float(data['humidity'])
-        ]])
+        # Ensure input data matches the features used in training
+        input_data = pd.DataFrame([{
+            'total_units': float(data['total_units']),
+            'good_units': float(data['good_units']),
+            'defect_units': float(data['defect_units']),
+            'temperature': float(data['temperature']),
+            'pressure': float(data['pressure']),
+            'speed': float(data['speed']),
+            'humidity': float(data['humidity'])
+        }])
+        # Make sure the order of columns in input_data matches features
+        input_data = input_data[features]
         
-        predicted_category = performance_model.predict(input_data)[0]
-        return jsonify({'prediction': predicted_category})
+        prediction = model.predict(input_data)[0]
+        print(f"[DEBUG] API: Performance prediction result: {prediction}")
+        return jsonify({'prediction': prediction})
     except Exception as e:
-        return jsonify({'error': f'Performance prediction failed: {str(e)}'}), 400
+        print(f"[ERROR] API: Error during performance prediction: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 @app.route('/predict_defects', methods=['POST'])
 def predict_defects():
     data = request.get_json()
     df = load_and_preprocess_data()
+    model, features = train_defect_model(df)
 
-    defect_model, features = train_defect_model(df)
-    
-    if defect_model is None or df is None or df.empty:
-        return jsonify({'error': 'Defect model not trained or data not available'}), 500
-    
+    if model is None or df is None or df.empty:
+        print("[DEBUG] API: Model not trained or data not available for defect prediction.")
+        return jsonify({'error': 'Model not trained or data not available'}), 500
+
     try:
-        input_data = np.array([[
-            float(data['temperature']),
-            float(data['pressure']),
-            float(data['speed']),
-            float(data['humidity'])
-        ]])
-        
-        predicted_defects = defect_model.predict(input_data)[0]
-        return jsonify({'prediction': round(predicted_defects, 2)})
+        input_data = pd.DataFrame([{
+            'temperature': float(data['temperature']),
+            'pressure': float(data['pressure']),
+            'speed': float(data['speed']),
+            'humidity': float(data['humidity'])
+        }])
+        input_data = input_data[features]
+
+        prediction = model.predict(input_data)[0]
+        print(f"[DEBUG] API: Defect prediction result: {prediction}")
+        return jsonify({'prediction': prediction})
     except Exception as e:
-        return jsonify({'error': f'Defect prediction failed: {str(e)}'}), 400
+        print(f"[ERROR] API: Error during defect prediction: {str(e)}")
+        return jsonify({'error': str(e)}), 500
 
 if __name__ == '__main__':
     app.run(debug=True)
