@@ -298,7 +298,7 @@ def show_model_info(model_info):
 
 def production_live_demo(data, ml_predictor):
     st.subheader("Production Time Prediction Demo")
-        st.markdown("""
+    st.markdown("""
     This demo predicts the production time based on operation tack time and required tack time.
     It uses a **Random Forest Regressor** model. The model learns the relationship between
     input features and actual production time from historical data.
@@ -490,7 +490,7 @@ def quality_control_page(data):
         df = data['loss_time'][loss_time_file]
 
         # Show data info
-    st.markdown("""
+        st.markdown("""
         <div class="model-info">
             <h3>Data Information</h3>
             <ul>
@@ -502,7 +502,7 @@ def quality_control_page(data):
             len(df),
             ', '.join(df.columns)
         ), unsafe_allow_html=True)
-        
+
         # Summary metrics
         col1, col2, col3 = st.columns(3)
         with col1:
@@ -516,13 +516,13 @@ def quality_control_page(data):
             if 'Defects' in df.columns:
                 total_defects = df['Defects'].sum()
                 st.metric("Total Defects", total_defects)
-        
+
         # Issue type distribution
         if 'Issue_Type' in df.columns:
             st.subheader("Issue Type Distribution")
             fig = px.pie(df, names='Issue_Type', title='Issue Type Distribution')
             st.plotly_chart(fig)
-        
+
         # Time trend
         if 'Date' in df.columns and 'Time' in df.columns:
             st.subheader("Loss Time Trend")
@@ -530,6 +530,8 @@ def quality_control_page(data):
             time_trend = df.groupby('Date')['Time'].sum().reset_index()
             fig = px.line(time_trend, x='Date', y='Time', title='Loss Time Trend')
             st.plotly_chart(fig)
+    else:
+        st.warning("No loss time data available for quality control analysis.")
 
 def worker_performance_page(data):
     st.title("Worker Performance Analysis")
@@ -696,15 +698,15 @@ def worker_allocation_page():
         df_tasks['Priority_Rank'] = df_tasks['Priority'].map(priority_order)
         df_tasks = df_tasks.sort_values(by=['Priority_Rank', 'Required Skill Level (1-10)'], ascending=[False, False])
             
-            allocated_tasks = []
+        allocated_tasks = []
         available_workers = df_workers.copy()
 
-        for index, task in df_tasks.iterrows():
-                suitable_workers = available_workers[
+        for _, task in df_tasks.iterrows():
+            suitable_workers = available_workers[
                 (available_workers['Skill Level (1-10)'] >= task['Required Skill Level (1-10)'])
-                ].sort_values(by='Current Performance (%)', ascending=False)
+            ].sort_values(by='Current Performance (%)', ascending=False)
 
-                if not suitable_workers.empty:
+            if not suitable_workers.empty:
                 chosen_worker = suitable_workers.iloc[0]
                 allocated_tasks.append({
                     'Task ID': task['Task ID'],
@@ -718,10 +720,10 @@ def worker_allocation_page():
                 # Remove allocated worker from available list
                 available_workers = available_workers[available_workers['Worker ID'] != chosen_worker['Worker ID']]
             else:
-                    allocated_tasks.append({
-                        'Task ID': task['Task ID'],
+                allocated_tasks.append({
+                    'Task ID': task['Task ID'],
                     'Worker ID': 'N/A',
-                        'Task Priority': task['Priority'],
+                    'Task Priority': task['Priority'],
                     'Task Required Skill': task['Required Skill Level (1-10)'],
                     'Worker Skill': 'N/A',
                     'Worker Performance': 'N/A',
@@ -816,9 +818,9 @@ def main():
         st.warning("No loss time data found for Quality Prediction model training.")
 
     # Navigation
-st.sidebar.title("Navigation")
+    st.sidebar.title("Navigation")
     page = st.sidebar.radio("Go to", ["Home", "Live Demos", "Production", "Quality", "Worker Performance", "Worker Allocation"])
-    
+
     if page == "Home":
         st.title("Garment Industry ML Dashboard")
         st.markdown("""
@@ -833,28 +835,28 @@ st.sidebar.title("Navigation")
         - **Worker Performance Analysis:** Skill distribution and performance insights
         - **Worker Allocation:** Optimized worker deployment
         """)
-    
+
     elif page == "Live Demos":
         st.title("Live Demos")
-        
+
         demo_type = st.selectbox("Select Demo Type", ["Production", "Quality", "Inventory"])
-        
+
         if demo_type == "Production":
             production_live_demo(data, ml_predictor)
         elif demo_type == "Quality":
             quality_live_demo(data, ml_predictor)
         elif demo_type == "Inventory":
             inventory_live_demo(data)
-    
+
     elif page == "Production":
         production_optimization_page(data)
-    
+
     elif page == "Quality":
         quality_control_page(data)
-    
+
     elif page == "Worker Performance":
         worker_performance_page(data)
-    
+
     elif page == "Worker Allocation":
         worker_allocation_page()
 

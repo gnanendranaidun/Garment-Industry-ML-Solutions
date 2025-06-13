@@ -137,17 +137,46 @@ class MLPredictor:
     
     def train_production_prediction(self, data):
         try:
+            # Check if data has the required columns
+            required_cols = ['Operation tack time', 'Req.Tack time', 'Time (min)']
+            available_cols = data.columns.tolist()
+
+            # Find alternative column names for time data
+            time_cols = [col for col in available_cols if 'time' in col.lower() or 'min' in col.lower()]
+
+            if not any(col in available_cols for col in required_cols):
+                st.warning(f"Required columns not found. Available columns: {available_cols}")
+                return None
+
+            # Try to find suitable columns
+            feature_cols = [col for col in ['Operation tack time', 'Req.Tack time'] if col in available_cols]
+            target_col = None
+
+            for col in ['Time (min)', 'Time  (min)'] + time_cols:
+                if col in available_cols:
+                    target_col = col
+                    break
+
+            if len(feature_cols) < 2 or target_col is None:
+                st.warning("Insufficient data columns for production prediction training")
+                return None
+
             # Prepare features
-            X = data[['Operation tack time', 'Req.Tack time']].dropna()
-            y = data['Time (min)'].dropna()
-            
-            if len(X) > 0 and len(y) > 0:
+            X = data[feature_cols].dropna()
+            y = data[target_col].dropna()
+
+            # Align X and y indices
+            common_idx = X.index.intersection(y.index)
+            X = X.loc[common_idx]
+            y = y.loc[common_idx]
+
+            if len(X) > 10 and len(y) > 10:
                 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-                
+
                 # Scale features
                 scaler = StandardScaler()
                 X_train_scaled = scaler.fit_transform(X_train)
-                
+
                 # Train model
                 model = RandomForestRegressor(
                     n_estimators=100,
@@ -155,24 +184,24 @@ class MLPredictor:
                     random_state=42
                 )
                 model.fit(X_train_scaled, y_train)
-                
+
                 # Store model and scaler
                 self.models['production'] = model
                 self.scalers['production'] = scaler
-                
+
                 # Calculate and store model info
                 y_pred = model.predict(scaler.transform(X_test))
                 mse = mean_squared_error(y_test, y_pred)
                 feature_importance = dict(zip(X.columns, model.feature_importances_))
-                
+
                 self.model_info['production'] = {
                     'mse': mse,
                     'feature_importance': feature_importance,
                     'n_samples': len(X),
                     'features': list(X.columns),
-                    'target': 'Time (min)'
+                    'target': target_col
                 }
-                
+
                 return model.score(scaler.transform(X_test), y_test)
         except Exception as e:
             st.error(f"Error in production prediction training: {str(e)}")
@@ -300,31 +329,48 @@ def production_live_demo(data, ml_predictor):
 
 def quality_live_demo(data, ml_predictor):
     st.subheader("Quality Prediction Demo")
-    
+
+    st.info("Quality prediction demo - This feature requires training data with Operation, Operator, and Defects columns.")
+
     col1, col2, col3 = st.columns(3)
     with col1:
-        operation = st.selectbox("Operation", data['capacity'].keys())
+        # Get available operations from capacity data
+        operations = ["Sewing", "Cutting", "Pressing", "Finishing"]  # Default options
+        if 'capacity' in data and data['capacity']:
+            for filename, df in data['capacity'].items():
+                if 'Operation' in df.columns:
+                    operations = df['Operation'].dropna().unique().tolist()
+                    break
+        operation = st.selectbox("Operation", operations)
     with col2:
-        operator = st.text_input("Operator ID")
+        operator = st.text_input("Operator ID", value="OP001")
     with col3:
         time = st.number_input("Operation Time (min)", min_value=0.0, value=1.0)
-    
+
     if st.button("Predict Quality"):
-        prediction, model_info = ml_predictor.predict_quality(operation, operator, time)
-        if prediction is not None:
-            st.markdown(f"""
-            <div class="prediction-box">
-                <h3>Predicted Quality: {'Good' if prediction == 1 else 'Needs Improvement'}</h3>
-            </div>
-            """, unsafe_allow_html=True)
-            show_model_info(model_info)
+        if 'quality' in ml_predictor.models:
+            try:
+                prediction, model_info = ml_predictor.predict_quality(operation, operator, time)
+                if prediction is not None:
+                    st.markdown(f"""
+                    <div class="prediction-box">
+                        <h3>Predicted Quality: {'Good' if prediction == 1 else 'Needs Improvement'}</h3>
+                    </div>
+                    """, unsafe_allow_html=True)
+                    show_model_info(model_info)
+                else:
+                    st.warning("Could not generate prediction with current inputs.")
+            except Exception as e:
+                st.error(f"Error during prediction: {str(e)}")
+        else:
+            st.warning("Quality prediction model is not trained. Training requires data with Operation, Operator, Time, and Defects columns.")
 
 def inventory_live_demo(data):
     st.subheader("Inventory Analysis Demo")
-    
-    if 'stock_entry' in data:
+
+    if 'stock_entry' in data and data['stock_entry'] is not None:
         df = data['stock_entry']
-        
+
         # Show data info
         st.markdown("""
         <div class="model-info">
@@ -338,26 +384,57 @@ def inventory_live_demo(data):
             len(df),
             ', '.join(df.columns)
         ), unsafe_allow_html=True)
-        
+
+        # Show data sample
+        st.subheader("Data Sample")
+        st.dataframe(df.head(10))
+
+        # Find suitable columns for visualization
+        categorical_cols = df.select_dtypes(include=['object']).columns.tolist()
+        numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+        date_cols = [col for col in df.columns if 'date' in col.lower()]
+
         # Material type distribution
-        fig = px.pie(df, names='Material Type', title='Material Type Distribution')
-        st.plotly_chart(fig)
-        
+        if categorical_cols:
+            material_col = categorical_cols[0]  # Use first categorical column
+            if 'material' in material_col.lower() or len(categorical_cols) == 1:
+                st.subheader("Material Distribution")
+                fig = px.pie(df, names=material_col, title=f'{material_col} Distribution')
+                st.plotly_chart(fig)
+
         # Stock level trends
-        if 'Date' in df.columns:
-            df['Date'] = pd.to_datetime(df['Date'])
-            stock_trend = df.groupby('Date')['Quantity'].sum().reset_index()
-            fig = px.line(stock_trend, x='Date', y='Quantity', title='Stock Level Trends')
-            st.plotly_chart(fig)
+        if date_cols and numeric_cols:
+            try:
+                st.subheader("Trends Over Time")
+                date_col = date_cols[0]
+                qty_col = numeric_cols[0]  # Use first numeric column as quantity
+
+                df_trend = df.copy()
+                df_trend[date_col] = pd.to_datetime(df_trend[date_col], errors='coerce')
+                df_trend = df_trend.dropna(subset=[date_col])
+
+                if not df_trend.empty:
+                    stock_trend = df_trend.groupby(date_col)[qty_col].sum().reset_index()
+                    fig = px.line(stock_trend, x=date_col, y=qty_col, title=f'{qty_col} Trends Over Time')
+                    st.plotly_chart(fig)
+            except Exception as e:
+                st.info(f"Could not create trend analysis: {str(e)}")
+
+        # Summary statistics
+        if numeric_cols:
+            st.subheader("Summary Statistics")
+            st.dataframe(df[numeric_cols].describe())
+    else:
+        st.warning("No stock entry data available for inventory analysis.")
 
 def production_optimization_page(data):
     st.title("Production Optimization")
-    
-    if 'capacity' in data:
+
+    if 'capacity' in data and data['capacity']:
         # Select capacity study file
         capacity_file = st.selectbox("Select Capacity Study File", list(data['capacity'].keys()))
         df = data['capacity'][capacity_file]
-        
+
         # Show data info
         st.markdown("""
         <div class="model-info">
@@ -371,47 +448,60 @@ def production_optimization_page(data):
             len(df),
             ', '.join(df.columns)
         ), unsafe_allow_html=True)
-        
+
+        # Find numeric columns for analysis
+        numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+        time_related_cols = [col for col in df.columns if 'time' in col.lower() or 'min' in col.lower() or 'cycle' in col.lower()]
+
         # Summary metrics
         col1, col2, col3 = st.columns(3)
         with col1:
             total_operations = len(df)
             st.metric("Total Operations", total_operations)
-        with col2:
-            avg_time = df['Time (min)'].mean()
-            st.metric("Average Time", f"{avg_time:.2f} min")
-        with col3:
-            total_time = df['Time (min)'].sum()
-            st.metric("Total Time", f"{total_time:.2f} min")
-        
-        # Operation time distribution
-        st.subheader("Operation Time Distribution")
-        fig = px.histogram(df, x='Time (min)', title='Operation Time Distribution')
-        st.plotly_chart(fig)
-        
-        # Bottleneck analysis
-        st.subheader("Bottleneck Analysis")
-        bottlenecks = df[df['Time (min)'] > df['Time (min)'].mean() * 1.5]
-        if not bottlenecks.empty:
-            st.dataframe(bottlenecks[['Operation', 'Time (min)']])
+
+        # Try to find time-related data
+        if numeric_cols:
+            with col2:
+                # Use first numeric column as proxy for time data
+                time_col = numeric_cols[0]
+                if time_related_cols:
+                    time_col = time_related_cols[0]
+
+                avg_time = df[time_col].mean()
+                st.metric(f"Average {time_col}", f"{avg_time:.2f}")
+            with col3:
+                total_time = df[time_col].sum()
+                st.metric(f"Total {time_col}", f"{total_time:.2f}")
+
+            # Operation time distribution
+            st.subheader("Time Distribution")
+            fig = px.histogram(df, x=time_col, title=f'{time_col} Distribution')
+            st.plotly_chart(fig)
+
+            # Show data sample
+            st.subheader("Data Sample")
+            st.dataframe(df.head(10))
         else:
-            st.info("No significant bottlenecks identified.")
-        
-        # Line balancing visualization
-        st.subheader("Line Balancing")
-        fig = px.bar(df, x='Operation', y='Time (min)', title='Operation Times')
-        fig.add_hline(y=df['Time (min)'].mean(), line_dash="dash", line_color="red",
-                     annotation_text="Average Time")
-        st.plotly_chart(fig)
+            with col2:
+                st.metric("Numeric Columns", len(numeric_cols))
+            with col3:
+                st.metric("Text Columns", len(df.columns) - len(numeric_cols))
+
+            # Show data sample
+            st.subheader("Data Sample")
+            st.dataframe(df.head(10))
+            st.info("No numeric time data found for detailed analysis.")
+    else:
+        st.warning("No capacity data available for analysis.")
 
 def quality_control_page(data):
     st.title("Quality Control")
-    
-    if 'loss_time' in data:
+
+    if 'loss_time' in data and data['loss_time']:
         # Select loss time file
         loss_time_file = st.selectbox("Select Loss Time File", list(data['loss_time'].keys()))
         df = data['loss_time'][loss_time_file]
-        
+
         # Show data info
         st.markdown("""
         <div class="model-info">
@@ -425,34 +515,60 @@ def quality_control_page(data):
             len(df),
             ', '.join(df.columns)
         ), unsafe_allow_html=True)
-        
+
+        # Find relevant columns
+        numeric_cols = df.select_dtypes(include=[np.number]).columns.tolist()
+        time_cols = [col for col in df.columns if 'time' in col.lower() or 'min' in col.lower()]
+        date_cols = [col for col in df.columns if 'date' in col.lower()]
+
         # Summary metrics
         col1, col2, col3 = st.columns(3)
         with col1:
-            total_issues = len(df)
-            st.metric("Total Issues", total_issues)
-        with col2:
-            if 'Time' in df.columns:
-                total_time = df['Time'].sum()
-                st.metric("Total Loss Time", f"{total_time:.2f} min")
-        with col3:
-            if 'Defects' in df.columns:
-                total_defects = df['Defects'].sum()
-                st.metric("Total Defects", total_defects)
-        
-        # Issue type distribution
-        if 'Issue_Type' in df.columns:
-            st.subheader("Issue Type Distribution")
-            fig = px.pie(df, names='Issue_Type', title='Issue Type Distribution')
+            total_records = len(df)
+            st.metric("Total Records", total_records)
+
+        if time_cols and numeric_cols:
+            with col2:
+                time_col = time_cols[0]
+                if time_col in numeric_cols:
+                    total_time = df[time_col].sum()
+                    st.metric(f"Total {time_col}", f"{total_time:.2f}")
+
+        if numeric_cols:
+            with col3:
+                # Use first numeric column as a metric
+                metric_col = numeric_cols[0]
+                total_value = df[metric_col].sum()
+                st.metric(f"Total {metric_col}", f"{total_value:.2f}")
+
+        # Show data sample
+        st.subheader("Data Sample")
+        st.dataframe(df.head(10))
+
+        # Create visualizations if we have suitable data
+        if numeric_cols:
+            st.subheader("Data Distribution")
+            fig = px.histogram(df, x=numeric_cols[0], title=f'{numeric_cols[0]} Distribution')
             st.plotly_chart(fig)
-        
-        # Time trend
-        if 'Date' in df.columns and 'Time' in df.columns:
-            st.subheader("Loss Time Trend")
-            df['Date'] = pd.to_datetime(df['Date'])
-            time_trend = df.groupby('Date')['Time'].sum().reset_index()
-            fig = px.line(time_trend, x='Date', y='Time', title='Loss Time Trend')
-            st.plotly_chart(fig)
+
+        # Time trend if date column exists
+        if date_cols and numeric_cols:
+            try:
+                st.subheader("Trend Analysis")
+                date_col = date_cols[0]
+                value_col = numeric_cols[0]
+                df_trend = df.copy()
+                df_trend[date_col] = pd.to_datetime(df_trend[date_col], errors='coerce')
+                df_trend = df_trend.dropna(subset=[date_col])
+
+                if not df_trend.empty:
+                    trend_data = df_trend.groupby(date_col)[value_col].sum().reset_index()
+                    fig = px.line(trend_data, x=date_col, y=value_col, title=f'{value_col} Trend Over Time')
+                    st.plotly_chart(fig)
+            except Exception as e:
+                st.info(f"Could not create trend analysis: {str(e)}")
+    else:
+        st.warning("No loss time data available for analysis.")
 
 def main():
     # Load data
@@ -462,10 +578,16 @@ def main():
     ml_predictor = MLPredictor()
     
     # Train models if data is available
-    if 'capacity' in data:
-        for file, df in data['capacity'].items():
-            if 'Operation tack time' in df.columns and 'Time (min)' in df.columns:
-                ml_predictor.train_production_prediction(df)
+    if 'capacity' in data and data['capacity']:
+        for filename, df in data['capacity'].items():
+            # Try to train production prediction with available data
+            try:
+                result = ml_predictor.train_production_prediction(df)
+                if result is not None:
+                    st.success(f"Production model trained successfully with {filename}")
+                    break  # Only train with first successful dataset
+            except Exception as e:
+                continue  # Try next dataset
     
     # Navigation
     st.sidebar.title("Navigation")
