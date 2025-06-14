@@ -1,0 +1,501 @@
+Worker_ID,Skill_Level_Department,Assigned_Task_Order,Production_Target_Units,Machine_Workstation_Assignment,Shift_Duration_Hours,Priority_Level
+W1000,Trainee - Embroidery,ORD-46048 (Polo Shirt),55,Applique Machine AM-04,8.0,Medium
+W1001,Supervisor - Embroidery,ORD-87397 (Blouse),70,Embroidery Machine EM-07,8.5,Critical
+W1002,Supervisor - Packing,ORD-83563 (Polo Shirt),117,Carton Sealer CS-08,9.0,High
+W1003,Senior - Packing,ORD-30926 (Blouse),71,Folding Machine FM-07,7.5,High
+W1004,Trainee - Cutting,JOB-22676 (Trousers),46,Band Knife BK-02,8.0,Medium
+W1005,Supervisor - Pressing,ORD-59615 (Jeans),67,Hand Press HP-19,8.5,Medium
+W1006,Trainee - Embroidery,ORD-96673 (Polo Shirt),64,Embroidery Machine EM-08,8.0,Low
+W1007,Senior - Pressing,JOB-93320 (Trousers),62,Hand Press HP-07,8.0,Urgent
+W1008,Trainee - Finishing,PO-80010 (Polo Shirt),53,Thread Trimmer TT-09,8.0,High
+W1009,Supervisor - Embroidery,PO-99733 (Trousers),84,Embroidery Machine EM-08,8.0,High
+W1010,Senior - Pattern Making,JOB-45093 (Jeans),54,Plotter PLT-07,8.0,Low
+W1011,Expert - Pressing,JOB-28726 (Jacket),42,Hand Press HP-19,9.0,Critical
+W1012,Expert - Packing,WO-38746 (Dress Shirt),96,Packing Table PT-02,8.0,Urgent
+W1013,Junior - Sewing,JOB-88172 (Jeans),46,Button Attach BA-15,8.0,Medium
+W1014,Supervisor - Finishing,ORD-99166 (Jeans),69,Spot Cleaner SC-11,8.0,Medium
+W1015,Expert - Finishing,PO-69470 (T-Shirt),163,Spot Cleaner SC-17,8.5,Medium
+W1016,Trainee - Packing,WO-93748 (Hoodie),30,Folding Machine FM-12,8.5,Medium
+W1017,Supervisor - Packing,ORD-88504 (Trousers),76,Packing Table PT-12,7.5,High
+W1018,Trainee - Sewing,PO-84364 (Jeans),31,Button Hole BH-03,8.0,Medium
+W1019,Junior - Pattern Making,PO-96474 (Skirt),77,Digitizer DIG-09,8.0,Medium
+W1020,Supervisor - Pattern Making,JOB-37760 (Hoodie),59,Digitizer DIG-10,9.0,High
+W1021,Senior - Embroidery,JOB-77839 (Skirt),75,Embroidery Machine EM-03,7.5,Medium
+W1022,Supervisor - Cutting,PO-87128 (Polo Shirt),93,Cutting Table CT-08,8.0,Medium
+W1023,Senior - Cutting,ORD-77391 (Polo Shirt),93,Straight Knife SK-07,8.0,Medium
+W1024,Supervisor - Sewing,JOB-41850 (Skirt),102,Overlock OL-04,8.0,Medium
+W1025,Expert - Embroidery,WO-65519 (Blouse),89,Applique Machine AM-02,8.0,High
+W1026,Trainee - Embroidery,ORD-62772 (Trousers),45,Embroidery Machine EM-08,8.5,Medium
+W1027,Supervisor - Sewing,JOB-28373 (Blouse),74,Button Hole BH-08,8.0,High
+W1028,Supervisor - Pressing,ORD-16630 (Hoodie),60,Steam Press SP-08,8.5,High
+W1029,Expert - Pressing,JOB-38016 (Blouse),100,Vacuum Press VP-13,8.0,Low
+W1030,Senior - Pressing,JOB-47388 (Blouse),79,Tunnel Finisher TF-05,8.5,High
+W1031,Junior - Finishing,ORD-85914 (Hoodie),34,Spot Cleaner SC-02,8.0,Medium
+W1032,Expert - Packing,PO-17455 (Hoodie),52,Folding Machine FM-03,8.0,Low
+W1033,Junior - Cutting,JOB-25713 (Shorts),66,Cutting Table CT-20,8.0,Urgent
+W1034,Supervisor - Pressing,WO-44179 (Polo Shirt),115,Hand Press HP-08,7.5,Critical
+W1035,Junior - Pressing,WO-69929 (Trousers),63,Steam Press SP-01,9.0,Urgent
+W1036,Supervisor - Packing,ORD-19602 (Hoodie),50,Poly Bag Sealer PBS-05,7.5,Medium
+W1037,Junior - Cutting,WO-47353 (Dress Shirt),62,Band Knife BK-20,8.0,Low
+W1038,Trainee - Packing,WO-96951 (Jeans),40,Folding Machine FM-09,8.0,High
+W1039,Supervisor - Cutting,PO-45697 (Jacket),45,Band Knife BK-07,8.0,Medium
+W1040,Senior - Embroidery,JOB-42914 (T-Shirt),105,Sequin Machine SM-09,8.0,Medium
+W1041,Senior - Cutting,PO-93507 (Jacket),35,Straight Knife SK-18,8.0,Medium
+W1042,Supervisor - Pressing,ORD-24663 (Jeans),74,Vacuum Press VP-18,8.0,Low
+W1043,Senior - Pattern Making,PO-66333 (Dress Shirt),69,Plotter PLT-02,7.5,Urgent
+W1044,Junior - Sewing,ORD-56357 (Hoodie),44,Button Hole BH-20,8.0,Medium
+W1045,Junior - Sewing,PO-33206 (Blouse),51,Flatlock FL-14,8.0,High
+W1046,Junior - Pattern Making,WO-30866 (Jeans),46,CAD Station CAD-16,8.5,Medium
+W1047,Expert - Sewing,WO-50001 (Polo Shirt),110,Overlock OL-13,7.5,High
+W1048,Trainee - Finishing,WO-56025 (Hoodie),29,Spot Cleaner SC-01,8.0,High
+W1049,Junior - Finishing,WO-15014 (Jeans),49,Spot Cleaner SC-11,9.0,Medium
+W1050,Supervisor - Packing,ORD-60488 (Shorts),89,Packing Table PT-14,8.0,Critical
+W1051,Supervisor - Packing,PO-57739 (Blouse),71,Poly Bag Sealer PBS-20,7.5,High
+W1052,Trainee - Embroidery,WO-76469 (Jacket),25,Sequin Machine SM-13,8.0,Urgent
+W1053,Supervisor - Finishing,PO-35144 (Blouse),86,Thread Trimmer TT-06,8.0,Urgent
+W1054,Senior - Packing,JOB-81819 (T-Shirt),112,Folding Machine FM-14,8.0,High
+W1055,Senior - Packing,JOB-67905 (Skirt),89,Carton Sealer CS-06,8.0,Urgent
+W1056,Senior - Cutting,WO-22240 (Polo Shirt),105,Fabric Spreader FS-07,8.5,Low
+W1057,Trainee - Cutting,PO-72277 (Shorts),59,Cutting Table CT-15,9.0,Medium
+W1058,Supervisor - Embroidery,PO-60328 (Skirt),90,Embroidery Machine EM-01,8.0,Low
+W1059,Expert - Pattern Making,PO-33053 (Hoodie),59,Digitizer DIG-04,9.0,Medium
+W1060,Expert - Sewing,WO-68008 (Shorts),118,Button Attach BA-14,8.0,Medium
+W1061,Junior - Pressing,JOB-68991 (Jacket),34,Hand Press HP-17,9.0,Medium
+W1062,Junior - Embroidery,WO-67654 (Jeans),51,Embroidery Machine EM-09,7.5,Urgent
+W1063,Supervisor - Finishing,ORD-28136 (Dress Shirt),80,Hand Iron HI-07,8.0,Medium
+W1064,Expert - Pressing,WO-81121 (Skirt),99,Vacuum Press VP-14,9.0,Medium
+W1065,Supervisor - Pattern Making,ORD-85456 (Blouse),81,Plotter PLT-10,9.0,High
+W1066,Expert - Pattern Making,PO-73993 (Polo Shirt),111,Pattern Table PT-01,9.0,Medium
+W1067,Expert - Finishing,PO-71261 (Dress Shirt),109,Steam Press SP-13,8.0,Urgent
+W1068,Trainee - Packing,ORD-94246 (Blouse),40,Carton Sealer CS-06,8.0,Low
+W1069,Expert - Finishing,WO-37742 (Skirt),96,Thread Trimmer TT-09,9.0,Critical
+W1070,Trainee - Finishing,JOB-12540 (Hoodie),25,Spot Cleaner SC-08,8.0,High
+W1071,Trainee - Cutting,ORD-42411 (Polo Shirt),66,Fabric Spreader FS-08,8.5,Medium
+W1072,Trainee - Pressing,PO-70952 (Jacket),25,Vacuum Press VP-20,8.0,Low
+W1073,Trainee - Embroidery,PO-50768 (Jeans),36,Sequin Machine SM-19,8.0,Urgent
+W1074,Expert - Pressing,PO-19961 (Shorts),114,Vacuum Press VP-04,8.0,High
+W1075,Senior - Pattern Making,ORD-84177 (T-Shirt),114,Pattern Table PT-12,8.0,High
+W1076,Senior - Packing,ORD-65057 (Skirt),74,Poly Bag Sealer PBS-15,8.0,High
+W1077,Expert - Sewing,PO-78386 (Jacket),49,Button Attach BA-16,9.0,Low
+W1078,Supervisor - Pressing,WO-52245 (Polo Shirt),120,Steam Press SP-09,9.0,Medium
+W1079,Expert - Sewing,JOB-54092 (T-Shirt),143,Flatlock FL-06,9.0,Medium
+W1080,Senior - Sewing,WO-54608 (Jacket),44,Flatlock FL-18,8.0,Urgent
+W1081,Junior - Packing,ORD-41635 (Blouse),59,Folding Machine FM-16,8.0,High
+W1082,Expert - Embroidery,JOB-12260 (Jeans),67,Sequin Machine SM-08,7.5,Medium
+W1083,Supervisor - Embroidery,WO-72031 (Hoodie),55,Sequin Machine SM-18,7.5,Low
+W1084,Expert - Finishing,WO-50189 (Jacket),44,Hand Iron HI-11,8.0,Medium
+W1085,Supervisor - Embroidery,PO-35105 (Polo Shirt),117,Sequin Machine SM-19,8.0,Medium
+W1086,Senior - Packing,ORD-35443 (Jacket),36,Folding Machine FM-10,8.0,High
+W1087,Supervisor - Embroidery,PO-45954 (T-Shirt),150,Applique Machine AM-10,8.0,High
+W1088,Expert - Sewing,ORD-11607 (Shorts),101,Button Hole BH-15,7.5,Urgent
+W1089,Trainee - Sewing,WO-72616 (Jeans),39,Button Hole BH-16,8.0,Medium
+W1090,Trainee - Packing,PO-29555 (Shorts),61,Packing Table PT-08,8.0,Medium
+W1091,Expert - Packing,PO-78494 (Blouse),88,Carton Sealer CS-10,8.0,High
+W1092,Senior - Pressing,ORD-89905 (Jeans),68,Vacuum Press VP-07,7.5,High
+W1093,Trainee - Embroidery,PO-41439 (Dress Shirt),48,Embroidery Machine EM-01,9.0,High
+W1094,Supervisor - Pressing,JOB-48175 (T-Shirt),121,Hand Press HP-15,8.0,High
+W1095,Junior - Embroidery,WO-91927 (Shorts),75,Embroidery Machine EM-14,8.0,Medium
+W1096,Junior - Packing,PO-44816 (Dress Shirt),55,Folding Machine FM-10,8.0,High
+W1097,Supervisor - Embroidery,WO-67560 (Jeans),65,Sequin Machine SM-13,7.5,Medium
+W1098,Supervisor - Packing,JOB-67377 (Jeans),67,Carton Sealer CS-11,8.0,Low
+W1099,Trainee - Finishing,ORD-40005 (Shorts),55,Steam Press SP-09,8.0,Medium
+W1100,Junior - Cutting,JOB-78021 (Skirt),76,Fabric Spreader FS-19,9.0,Low
+W1101,Expert - Embroidery,ORD-71605 (Trousers),81,Sequin Machine SM-04,8.5,High
+W1102,Expert - Finishing,JOB-47777 (Blouse),98,Steam Press SP-15,8.0,Medium
+W1103,Senior - Finishing,WO-25194 (Blouse),83,Steam Press SP-18,9.0,High
+W1104,Trainee - Pressing,PO-77952 (Trousers),43,Tunnel Finisher TF-15,8.0,Urgent
+W1105,Senior - Sewing,PO-47752 (Skirt),94,Button Hole BH-04,8.0,Medium
+W1106,Supervisor - Embroidery,PO-30758 (Jacket),44,Applique Machine AM-14,8.0,Medium
+W1107,Trainee - Sewing,JOB-25396 (Dress Shirt),47,Flatlock FL-17,8.0,High
+W1108,Expert - Finishing,JOB-71894 (Polo Shirt),118,Hand Iron HI-13,8.5,Medium
+W1109,Supervisor - Packing,PO-19150 (Jacket),47,Carton Sealer CS-11,8.0,Low
+W1110,Trainee - Finishing,WO-49132 (Shorts),55,Thread Trimmer TT-05,9.0,Medium
+W1111,Expert - Packing,WO-53573 (Hoodie),64,Carton Sealer CS-15,7.5,Medium
+W1112,Junior - Pattern Making,PO-84946 (Blouse),55,Pattern Table PT-02,7.5,Urgent
+W1113,Expert - Embroidery,JOB-60604 (Dress Shirt),95,Embroidery Machine EM-05,8.0,Urgent
+W1114,Senior - Packing,ORD-67711 (Jeans),60,Carton Sealer CS-01,8.0,High
+W1115,Expert - Sewing,PO-19807 (Skirt),110,Flatlock FL-11,8.0,Urgent
+W1116,Expert - Embroidery,ORD-53065 (Hoodie),57,Sequin Machine SM-16,8.0,Urgent
+W1117,Supervisor - Cutting,ORD-40771 (Jacket),50,Cutting Table CT-14,8.0,Medium
+W1118,Trainee - Pattern Making,JOB-31805 (Jacket),26,CAD Station CAD-11,8.0,Urgent
+W1119,Senior - Finishing,WO-66450 (Dress Shirt),73,Thread Trimmer TT-19,8.0,High
+W1120,Junior - Pattern Making,PO-32946 (Jeans),49,Pattern Table PT-20,8.0,Urgent
+W1121,Expert - Sewing,PO-40433 (Skirt),106,Button Hole BH-09,8.0,Urgent
+W1122,Expert - Cutting,WO-98815 (Hoodie),53,Straight Knife SK-12,8.0,Medium
+W1123,Expert - Finishing,WO-69878 (Jacket),43,Thread Trimmer TT-16,8.0,Medium
+W1124,Expert - Sewing,WO-85341 (Jacket),55,Flatlock FL-01,8.0,Medium
+W1125,Senior - Pressing,ORD-84177 (T-Shirt),134,Tunnel Finisher TF-10,8.5,Medium
+W1126,Senior - Packing,PO-93442 (Polo Shirt),103,Folding Machine FM-04,8.0,Urgent
+W1127,Trainee - Embroidery,WO-67779 (T-Shirt),73,Applique Machine AM-05,8.0,Urgent
+W1128,Senior - Finishing,JOB-33021 (Polo Shirt),88,Spot Cleaner SC-17,8.0,Low
+W1129,Junior - Finishing,WO-73156 (Jacket),34,Spot Cleaner SC-04,9.0,High
+W1130,Junior - Cutting,PO-98647 (Blouse),68,Band Knife BK-03,9.0,Medium
+W1131,Senior - Cutting,ORD-69609 (Trousers),73,Band Knife BK-19,9.0,Medium
+W1132,Senior - Pattern Making,ORD-98452 (Polo Shirt),99,Plotter PLT-20,8.5,Medium
+W1133,Trainee - Embroidery,JOB-49608 (Blouse),39,Embroidery Machine EM-02,7.5,Medium
+W1134,Trainee - Pressing,ORD-40775 (Hoodie),26,Tunnel Finisher TF-12,8.0,Urgent
+W1135,Supervisor - Embroidery,JOB-86983 (Dress Shirt),98,Applique Machine AM-04,9.0,Medium
+W1136,Expert - Packing,WO-14288 (Trousers),76,Carton Sealer CS-08,7.5,High
+W1137,Senior - Cutting,WO-17936 (Blouse),69,Cutting Table CT-15,8.0,High
+W1138,Junior - Embroidery,ORD-16629 (Trousers),51,Embroidery Machine EM-19,8.5,Medium
+W1139,Supervisor - Cutting,PO-86858 (Polo Shirt),120,Fabric Spreader FS-11,8.5,Critical
+W1140,Supervisor - Pattern Making,ORD-46342 (Dress Shirt),100,Plotter PLT-06,8.0,Critical
+W1141,Trainee - Embroidery,PO-11947 (Trousers),45,Embroidery Machine EM-19,7.5,Medium
+W1142,Junior - Cutting,WO-16868 (Dress Shirt),68,Cutting Table CT-03,9.0,Medium
+W1143,Senior - Pressing,ORD-69245 (Hoodie),45,Steam Press SP-17,7.5,Medium
+W1144,Trainee - Pressing,ORD-72781 (Blouse),44,Steam Press SP-16,8.0,Medium
+W1145,Trainee - Pressing,ORD-52219 (Shorts),48,Vacuum Press VP-09,8.0,Low
+W1146,Supervisor - Embroidery,WO-59925 (Shorts),99,Sequin Machine SM-17,8.0,High
+W1147,Trainee - Pressing,ORD-95814 (Hoodie),31,Vacuum Press VP-14,9.0,High
+W1148,Expert - Sewing,WO-69441 (Blouse),87,Single Needle SN-11,9.0,Low
+W1149,Senior - Finishing,WO-30006 (Skirt),73,Steam Press SP-03,9.0,Medium
+W1150,Senior - Cutting,PO-82924 (T-Shirt),123,Band Knife BK-04,9.0,Urgent
+W1151,Expert - Finishing,ORD-47700 (Shorts),101,Steam Press SP-19,8.0,Medium
+W1152,Junior - Sewing,JOB-39392 (Jeans),45,Button Attach BA-12,8.0,Medium
+W1153,Senior - Pattern Making,PO-66244 (Hoodie),57,CAD Station CAD-20,8.0,Medium
+W1154,Senior - Pattern Making,ORD-33647 (Jacket),42,Plotter PLT-11,7.5,Critical
+W1155,Junior - Cutting,PO-84228 (Blouse),52,Cutting Table CT-03,8.0,Medium
+W1156,Junior - Packing,JOB-65028 (Skirt),64,Poly Bag Sealer PBS-10,8.0,High
+W1157,Supervisor - Finishing,ORD-16895 (Dress Shirt),78,Steam Press SP-03,7.5,High
+W1158,Expert - Pressing,JOB-89570 (Skirt),99,Vacuum Press VP-17,8.0,Medium
+W1159,Expert - Finishing,ORD-47125 (Shorts),107,Spot Cleaner SC-02,8.5,High
+W1160,Supervisor - Pressing,ORD-11007 (Polo Shirt),103,Vacuum Press VP-05,7.5,Medium
+W1161,Senior - Finishing,ORD-11013 (Skirt),91,Hand Iron HI-05,9.0,High
+W1162,Junior - Packing,WO-19447 (Blouse),66,Packing Table PT-14,8.0,High
+W1163,Trainee - Pressing,WO-85465 (Blouse),45,Tunnel Finisher TF-10,8.0,High
+W1164,Trainee - Pressing,WO-32527 (Shorts),53,Hand Press HP-03,9.0,Low
+W1165,Trainee - Pattern Making,PO-67104 (Shorts),52,CAD Station CAD-13,7.5,Urgent
+W1166,Senior - Embroidery,PO-53655 (Dress Shirt),69,Applique Machine AM-04,8.0,Medium
+W1167,Junior - Packing,WO-56019 (Dress Shirt),58,Folding Machine FM-09,8.5,Medium
+W1168,Supervisor - Sewing,PO-95918 (Jeans),59,Button Hole BH-15,8.0,Low
+W1169,Supervisor - Pattern Making,JOB-99277 (Shorts),103,Plotter PLT-11,8.5,High
+W1170,Trainee - Pressing,JOB-67961 (Jacket),26,Steam Press SP-12,8.0,High
+W1171,Senior - Cutting,JOB-69233 (T-Shirt),104,Band Knife BK-03,8.0,Low
+W1172,Trainee - Pattern Making,JOB-70648 (Shorts),54,CAD Station CAD-15,8.0,High
+W1173,Junior - Embroidery,WO-89299 (Skirt),68,Embroidery Machine EM-15,8.0,Medium
+W1174,Senior - Pattern Making,ORD-76132 (Dress Shirt),68,Pattern Table PT-15,8.0,High
+W1175,Supervisor - Packing,PO-57696 (Trousers),86,Carton Sealer CS-14,7.5,Medium
+W1176,Supervisor - Embroidery,ORD-92691 (Trousers),66,Embroidery Machine EM-18,8.0,High
+W1177,Senior - Pressing,WO-96057 (Shorts),100,Hand Press HP-03,8.0,Medium
+W1178,Junior - Embroidery,WO-50662 (Blouse),53,Applique Machine AM-03,7.5,Urgent
+W1179,Expert - Packing,WO-26750 (Hoodie),52,Carton Sealer CS-17,7.5,Medium
+W1180,Senior - Cutting,WO-33627 (Polo Shirt),95,Straight Knife SK-07,8.5,Medium
+W1181,Junior - Sewing,ORD-48770 (Jeans),48,Button Attach BA-17,8.0,Medium
+W1182,Senior - Embroidery,PO-88282 (Blouse),67,Embroidery Machine EM-20,8.5,Urgent
+W1183,Expert - Embroidery,ORD-63852 (Trousers),88,Embroidery Machine EM-15,8.0,Urgent
+W1184,Expert - Finishing,PO-79993 (Polo Shirt),113,Thread Trimmer TT-07,7.5,Medium
+W1185,Supervisor - Embroidery,JOB-70513 (Jacket),47,Applique Machine AM-17,9.0,High
+W1186,Junior - Sewing,PO-42768 (T-Shirt),100,Flatlock FL-18,8.0,Urgent
+W1187,Supervisor - Embroidery,ORD-47363 (Jeans),71,Sequin Machine SM-15,8.0,High
+W1188,Expert - Sewing,ORD-39102 (Skirt),113,Single Needle SN-14,8.0,High
+W1189,Supervisor - Pressing,WO-40903 (Blouse),94,Hand Press HP-08,8.0,Medium
+W1190,Trainee - Finishing,WO-29142 (Dress Shirt),41,Thread Trimmer TT-05,8.0,Low
+W1191,Expert - Pressing,ORD-20384 (T-Shirt),133,Vacuum Press VP-18,8.0,Urgent
+W1192,Supervisor - Packing,JOB-24573 (Jacket),40,Packing Table PT-02,8.5,Urgent
+W1193,Supervisor - Pressing,JOB-18232 (Jeans),72,Tunnel Finisher TF-20,8.0,High
+W1194,Supervisor - Cutting,PO-28818 (Jacket),43,Band Knife BK-08,8.0,Medium
+W1195,Junior - Pressing,ORD-78614 (Trousers),48,Steam Press SP-13,9.0,Medium
+W1196,Expert - Cutting,WO-43246 (T-Shirt),137,Cutting Table CT-12,8.5,High
+W1197,Trainee - Embroidery,WO-27486 (T-Shirt),68,Sequin Machine SM-06,8.0,Urgent
+W1198,Expert - Pressing,PO-27675 (Jeans),76,Tunnel Finisher TF-02,7.5,Urgent
+W1199,Trainee - Sewing,PO-15492 (Trousers),47,Button Attach BA-13,8.0,High
+W1200,Senior - Pressing,ORD-94790 (Polo Shirt),93,Steam Press SP-11,7.5,High
+W1201,Senior - Cutting,JOB-62431 (Skirt),95,Straight Knife SK-11,8.5,Low
+W1202,Expert - Pressing,WO-78062 (Jacket),52,Tunnel Finisher TF-03,9.0,Medium
+W1203,Junior - Packing,WO-52101 (Jeans),41,Poly Bag Sealer PBS-10,9.0,Urgent
+W1204,Expert - Packing,PO-68183 (Trousers),82,Poly Bag Sealer PBS-20,9.0,High
+W1205,Trainee - Finishing,ORD-97973 (Blouse),43,Hand Iron HI-01,8.5,Low
+W1206,Supervisor - Pattern Making,JOB-14561 (Dress Shirt),76,Plotter PLT-12,9.0,Medium
+W1207,Trainee - Packing,PO-99006 (Skirt),57,Poly Bag Sealer PBS-15,8.0,High
+W1208,Junior - Packing,WO-62171 (Trousers),58,Folding Machine FM-04,8.0,Low
+W1209,Junior - Embroidery,JOB-77861 (Blouse),67,Embroidery Machine EM-09,7.5,Medium
+W1210,Expert - Embroidery,PO-90199 (Jacket),50,Sequin Machine SM-07,8.0,High
+W1211,Trainee - Sewing,JOB-32630 (Skirt),58,Flatlock FL-12,8.0,High
+W1212,Supervisor - Cutting,WO-49315 (Dress Shirt),93,Fabric Spreader FS-12,8.0,High
+W1213,Trainee - Sewing,PO-28202 (Polo Shirt),65,Single Needle SN-12,8.0,Medium
+W1214,Senior - Packing,JOB-82305 (Dress Shirt),82,Packing Table PT-03,7.5,High
+W1215,Expert - Pressing,JOB-63665 (Shorts),94,Hand Press HP-03,9.0,Medium
+W1216,Supervisor - Pressing,WO-26821 (Hoodie),57,Vacuum Press VP-05,9.0,Medium
+W1217,Trainee - Packing,ORD-77908 (Dress Shirt),45,Folding Machine FM-11,8.0,High
+W1218,Senior - Sewing,WO-20336 (Jacket),36,Button Attach BA-09,8.5,High
+W1219,Senior - Embroidery,ORD-75873 (Dress Shirt),82,Applique Machine AM-05,8.5,Urgent
+W1220,Supervisor - Embroidery,WO-83874 (T-Shirt),144,Embroidery Machine EM-03,8.0,High
+W1221,Supervisor - Embroidery,WO-95344 (Polo Shirt),118,Sequin Machine SM-20,8.0,High
+W1222,Expert - Cutting,WO-94136 (Jacket),47,Straight Knife SK-10,9.0,Low
+W1223,Trainee - Cutting,PO-67619 (Blouse),44,Fabric Spreader FS-11,8.0,Medium
+W1224,Senior - Sewing,WO-55268 (Blouse),66,Flatlock FL-17,8.0,Medium
+W1225,Senior - Cutting,PO-71141 (Jeans),55,Fabric Spreader FS-05,8.0,Medium
+W1226,Senior - Cutting,JOB-90658 (Blouse),69,Fabric Spreader FS-11,8.0,Critical
+W1227,Senior - Embroidery,PO-30885 (Skirt),97,Sequin Machine SM-16,7.5,Medium
+W1228,Trainee - Pressing,ORD-61543 (Hoodie),29,Vacuum Press VP-07,8.0,Urgent
+W1229,Trainee - Finishing,ORD-46877 (Skirt),52,Thread Trimmer TT-10,8.0,High
+W1230,Trainee - Cutting,JOB-27555 (Jacket),25,Straight Knife SK-12,8.0,High
+W1231,Trainee - Pressing,PO-57516 (Hoodie),28,Tunnel Finisher TF-17,9.0,High
+W1232,Supervisor - Pattern Making,WO-91689 (Shorts),87,CAD Station CAD-13,7.5,High
+W1233,Senior - Pattern Making,WO-28909 (Polo Shirt),103,Pattern Table PT-17,8.0,Medium
+W1234,Trainee - Cutting,PO-53652 (Skirt),51,Fabric Spreader FS-20,8.0,Medium
+W1235,Senior - Sewing,WO-31299 (Blouse),86,Flatlock FL-19,7.5,High
+W1236,Supervisor - Packing,JOB-83783 (Jacket),43,Packing Table PT-12,7.5,Medium
+W1237,Trainee - Embroidery,JOB-86507 (Jacket),26,Applique Machine AM-01,8.0,Low
+W1238,Senior - Pressing,PO-16731 (Shorts),89,Tunnel Finisher TF-05,8.0,High
+W1239,Trainee - Sewing,ORD-35006 (T-Shirt),70,Button Hole BH-05,9.0,Medium
+W1240,Junior - Embroidery,JOB-75774 (Shorts),81,Applique Machine AM-02,8.0,Urgent
+W1241,Supervisor - Sewing,PO-83516 (Trousers),88,Button Hole BH-17,9.0,Critical
+W1242,Junior - Finishing,JOB-79878 (Trousers),56,Spot Cleaner SC-20,9.0,Urgent
+W1243,Junior - Sewing,WO-83149 (Jacket),29,Flatlock FL-10,8.0,Medium
+W1244,Expert - Sewing,WO-72888 (Trousers),85,Flatlock FL-10,8.0,Low
+W1245,Supervisor - Packing,JOB-61712 (Trousers),87,Folding Machine FM-10,8.0,Urgent
+W1246,Trainee - Finishing,WO-67983 (Jacket),25,Hand Iron HI-07,8.0,Medium
+W1247,Supervisor - Finishing,WO-27992 (Jeans),68,Hand Iron HI-08,8.0,Critical
+W1248,Supervisor - Embroidery,PO-93616 (Polo Shirt),95,Sequin Machine SM-11,8.0,Critical
+W1249,Trainee - Pressing,PO-10679 (Hoodie),34,Vacuum Press VP-14,8.0,Urgent
+W1250,Expert - Pressing,PO-47649 (Trousers),78,Steam Press SP-03,8.0,Medium
+W1251,Junior - Packing,ORD-32946 (Blouse),66,Folding Machine FM-02,9.0,Medium
+W1252,Expert - Pattern Making,PO-47941 (T-Shirt),122,CAD Station CAD-11,7.5,Urgent
+W1253,Supervisor - Pressing,JOB-27589 (Hoodie),54,Vacuum Press VP-04,7.5,Medium
+W1254,Expert - Sewing,WO-34405 (T-Shirt),154,Flatlock FL-19,8.0,Medium
+W1255,Junior - Pattern Making,PO-90079 (Blouse),65,Plotter PLT-03,9.0,High
+W1256,Trainee - Embroidery,PO-28430 (Skirt),48,Embroidery Machine EM-01,7.5,Urgent
+W1257,Junior - Pressing,JOB-44995 (Trousers),52,Steam Press SP-09,8.0,High
+W1258,Junior - Finishing,ORD-97528 (Jeans),47,Hand Iron HI-13,8.0,High
+W1259,Senior - Packing,ORD-93717 (Jacket),38,Folding Machine FM-08,8.5,Low
+W1260,Junior - Pressing,JOB-89395 (Trousers),54,Tunnel Finisher TF-18,8.0,High
+W1261,Junior - Pattern Making,PO-99173 (Shorts),80,CAD Station CAD-17,9.0,Critical
+W1262,Senior - Packing,ORD-83946 (Jeans),52,Folding Machine FM-19,8.0,Medium
+W1263,Junior - Sewing,WO-78202 (Skirt),60,Overlock OL-19,9.0,High
+W1264,Supervisor - Cutting,JOB-17292 (Skirt),83,Straight Knife SK-15,8.0,Urgent
+W1265,Supervisor - Cutting,JOB-98181 (Jacket),46,Straight Knife SK-09,8.0,High
+W1266,Junior - Embroidery,ORD-15936 (Blouse),57,Embroidery Machine EM-18,8.0,High
+W1267,Expert - Cutting,ORD-47629 (Blouse),81,Fabric Spreader FS-14,7.5,High
+W1268,Expert - Pressing,JOB-59236 (Jeans),75,Vacuum Press VP-12,8.0,Medium
+W1269,Supervisor - Sewing,JOB-79316 (Dress Shirt),94,Overlock OL-01,8.0,Medium
+W1270,Expert - Finishing,JOB-79721 (Blouse),98,Hand Iron HI-15,7.5,Urgent
+W1271,Senior - Sewing,PO-24790 (T-Shirt),131,Button Hole BH-20,8.0,Urgent
+W1272,Junior - Sewing,ORD-23224 (Shorts),61,Button Attach BA-02,8.5,Urgent
+W1273,Trainee - Embroidery,JOB-67535 (Polo Shirt),60,Embroidery Machine EM-05,8.0,Urgent
+W1274,Junior - Finishing,WO-85690 (Shorts),77,Spot Cleaner SC-08,7.5,High
+W1275,Supervisor - Sewing,PO-64206 (Jacket),41,Button Attach BA-19,8.0,High
+W1276,Expert - Sewing,JOB-16145 (Trousers),95,Button Hole BH-17,7.5,High
+W1277,Expert - Embroidery,JOB-29558 (Jacket),46,Applique Machine AM-16,8.5,High
+W1278,Junior - Pattern Making,WO-28920 (Skirt),76,Pattern Table PT-14,8.0,High
+W1279,Junior - Packing,JOB-41831 (Jacket),29,Packing Table PT-15,7.5,High
+W1280,Supervisor - Cutting,PO-16755 (Jacket),42,Cutting Table CT-03,8.5,Urgent
+W1281,Supervisor - Pattern Making,PO-72835 (Polo Shirt),122,Plotter PLT-10,8.0,Medium
+W1282,Junior - Sewing,ORD-72773 (Polo Shirt),84,Overlock OL-13,8.5,Medium
+W1283,Senior - Packing,WO-59894 (Skirt),85,Poly Bag Sealer PBS-10,7.5,Low
+W1284,Supervisor - Finishing,JOB-71080 (Jeans),71,Thread Trimmer TT-11,8.5,High
+W1285,Senior - Finishing,JOB-15992 (Shorts),99,Hand Iron HI-01,7.5,Low
+W1286,Supervisor - Packing,JOB-48691 (Dress Shirt),79,Folding Machine FM-13,8.0,Medium
+W1287,Junior - Pattern Making,JOB-82173 (Trousers),51,Pattern Table PT-16,9.0,High
+W1288,Senior - Sewing,PO-28344 (Hoodie),49,Button Attach BA-02,8.0,Medium
+W1289,Trainee - Cutting,ORD-10836 (Blouse),40,Fabric Spreader FS-03,8.0,High
+W1290,Trainee - Sewing,PO-76287 (Skirt),49,Button Attach BA-20,9.0,Low
+W1291,Expert - Embroidery,ORD-10866 (Hoodie),60,Embroidery Machine EM-01,8.0,Low
+W1292,Senior - Embroidery,WO-12246 (Hoodie),54,Applique Machine AM-14,8.5,Urgent
+W1293,Trainee - Cutting,PO-41584 (Polo Shirt),62,Band Knife BK-12,7.5,Medium
+W1294,Expert - Pattern Making,ORD-58896 (Blouse),88,Digitizer DIG-08,7.5,Medium
+W1295,Trainee - Embroidery,ORD-22255 (Blouse),43,Applique Machine AM-16,8.0,High
+W1296,Trainee - Embroidery,PO-20837 (Skirt),56,Applique Machine AM-11,8.0,High
+W1297,Trainee - Pattern Making,ORD-40115 (Polo Shirt),67,Pattern Table PT-09,8.0,Medium
+W1298,Senior - Cutting,ORD-33508 (Trousers),59,Fabric Spreader FS-19,8.5,High
+W1299,Expert - Pattern Making,ORD-49226 (Dress Shirt),97,Pattern Table PT-18,7.5,Low
+W1300,Junior - Pressing,ORD-75639 (Trousers),48,Tunnel Finisher TF-08,8.0,Low
+W1301,Supervisor - Finishing,JOB-52778 (T-Shirt),137,Thread Trimmer TT-16,8.5,High
+W1302,Supervisor - Finishing,JOB-66603 (Dress Shirt),92,Thread Trimmer TT-03,8.0,High
+W1303,Junior - Finishing,ORD-20752 (Jacket),28,Hand Iron HI-13,7.5,High
+W1304,Trainee - Finishing,ORD-10680 (Jacket),23,Spot Cleaner SC-04,8.5,High
+W1305,Junior - Cutting,JOB-68830 (Hoodie),40,Straight Knife SK-04,8.0,Critical
+W1306,Senior - Cutting,ORD-88240 (Shorts),97,Straight Knife SK-01,7.5,High
+W1307,Expert - Pressing,ORD-83339 (Polo Shirt),122,Vacuum Press VP-13,8.5,Medium
+W1308,Senior - Sewing,WO-45180 (Skirt),75,Overlock OL-14,7.5,High
+W1309,Senior - Pressing,JOB-20082 (Trousers),64,Vacuum Press VP-16,8.0,Medium
+W1310,Junior - Packing,JOB-24021 (Dress Shirt),60,Carton Sealer CS-11,8.0,Medium
+W1311,Senior - Pressing,JOB-53874 (Blouse),82,Vacuum Press VP-10,7.5,Low
+W1312,Junior - Packing,JOB-51180 (Dress Shirt),72,Poly Bag Sealer PBS-10,8.0,Low
+W1313,Expert - Embroidery,PO-52714 (Blouse),84,Sequin Machine SM-12,8.0,Critical
+W1314,Junior - Packing,PO-99353 (Hoodie),34,Carton Sealer CS-07,9.0,Urgent
+W1315,Senior - Pattern Making,ORD-63627 (Skirt),75,Plotter PLT-08,7.5,High
+W1316,Junior - Embroidery,JOB-59412 (Jeans),47,Applique Machine AM-16,8.0,Medium
+W1317,Supervisor - Pressing,JOB-81256 (T-Shirt),143,Hand Press HP-18,8.0,Medium
+W1318,Trainee - Embroidery,ORD-42536 (Trousers),37,Applique Machine AM-02,8.0,Medium
+W1319,Expert - Embroidery,WO-66420 (Jeans),61,Sequin Machine SM-08,8.0,Medium
+W1320,Supervisor - Embroidery,PO-68429 (Trousers),74,Applique Machine AM-19,8.0,High
+W1321,Junior - Packing,WO-13219 (Skirt),59,Carton Sealer CS-03,8.0,High
+W1322,Junior - Pattern Making,WO-50880 (Trousers),55,Digitizer DIG-17,9.0,High
+W1323,Expert - Finishing,ORD-67431 (Skirt),96,Spot Cleaner SC-02,8.0,Medium
+W1324,Trainee - Cutting,WO-94930 (Jeans),37,Fabric Spreader FS-08,8.0,Critical
+W1325,Supervisor - Sewing,PO-53383 (Hoodie),53,Button Hole BH-08,9.0,High
+W1326,Junior - Embroidery,PO-93948 (Blouse),58,Applique Machine AM-20,8.5,High
+W1327,Supervisor - Pressing,JOB-60965 (T-Shirt),140,Vacuum Press VP-09,8.0,High
+W1328,Trainee - Pattern Making,ORD-80371 (Dress Shirt),46,Digitizer DIG-15,8.0,Medium
+W1329,Expert - Finishing,WO-88246 (Blouse),93,Steam Press SP-12,7.5,Medium
+W1330,Expert - Pattern Making,PO-98288 (Jacket),54,CAD Station CAD-05,7.5,Medium
+W1331,Junior - Cutting,WO-25328 (Dress Shirt),61,Fabric Spreader FS-17,9.0,High
+W1332,Supervisor - Pressing,PO-85340 (Blouse),80,Tunnel Finisher TF-18,8.0,Low
+W1333,Junior - Embroidery,PO-74178 (Jacket),28,Sequin Machine SM-15,8.0,Medium
+W1334,Senior - Cutting,ORD-73518 (Dress Shirt),72,Straight Knife SK-18,8.0,Low
+W1335,Expert - Embroidery,JOB-99744 (Skirt),99,Sequin Machine SM-16,8.5,Low
+W1336,Supervisor - Cutting,ORD-38905 (Jacket),37,Fabric Spreader FS-18,7.5,Urgent
+W1337,Expert - Sewing,JOB-82053 (Hoodie),53,Single Needle SN-09,8.0,High
+W1338,Senior - Pattern Making,ORD-67850 (Hoodie),45,Pattern Table PT-04,8.0,Medium
+W1339,Junior - Pattern Making,WO-14224 (Skirt),63,CAD Station CAD-15,8.0,Low
+W1340,Junior - Pattern Making,PO-87060 (Trousers),62,Pattern Table PT-06,8.0,Medium
+W1341,Junior - Sewing,PO-17780 (Shorts),68,Flatlock FL-20,8.0,Medium
+W1342,Senior - Sewing,WO-47923 (Shorts),83,Button Attach BA-04,8.5,Medium
+W1343,Expert - Pattern Making,ORD-46349 (Dress Shirt),101,Digitizer DIG-08,8.5,Medium
+W1344,Senior - Embroidery,PO-98635 (Blouse),74,Applique Machine AM-09,8.0,Medium
+W1345,Expert - Pressing,JOB-19898 (Jeans),69,Hand Press HP-12,9.0,High
+W1346,Senior - Pressing,ORD-22208 (Skirt),88,Hand Press HP-03,8.0,High
+W1347,Junior - Pressing,JOB-37767 (Skirt),63,Hand Press HP-11,8.0,Low
+W1348,Junior - Packing,JOB-55054 (T-Shirt),82,Carton Sealer CS-01,8.0,Medium
+W1349,Junior - Pattern Making,JOB-69836 (T-Shirt),110,Pattern Table PT-07,8.0,High
+W1350,Senior - Sewing,PO-45916 (Jeans),62,Flatlock FL-03,7.5,High
+W1351,Junior - Embroidery,ORD-61949 (Jacket),34,Embroidery Machine EM-14,8.0,Urgent
+W1352,Trainee - Cutting,ORD-37973 (Skirt),44,Fabric Spreader FS-17,8.0,High
+W1353,Trainee - Pressing,ORD-55032 (Jeans),41,Tunnel Finisher TF-05,9.0,Medium
+W1354,Junior - Cutting,JOB-21708 (Jeans),42,Band Knife BK-10,8.5,Low
+W1355,Junior - Pressing,PO-18966 (Hoodie),40,Vacuum Press VP-15,7.5,High
+W1356,Junior - Embroidery,PO-63963 (Shorts),76,Embroidery Machine EM-03,8.0,Low
+W1357,Trainee - Sewing,JOB-56076 (Blouse),42,Overlock OL-08,7.5,High
+W1358,Trainee - Embroidery,PO-82534 (Shorts),55,Applique Machine AM-10,8.0,Urgent
+W1359,Senior - Cutting,PO-77862 (Shorts),90,Straight Knife SK-10,8.0,High
+W1360,Junior - Cutting,JOB-60578 (Jeans),44,Cutting Table CT-17,8.0,Medium
+W1361,Senior - Finishing,PO-60703 (Shorts),87,Hand Iron HI-16,8.0,High
+W1362,Supervisor - Cutting,ORD-11807 (Jacket),40,Cutting Table CT-13,8.0,Medium
+W1363,Supervisor - Finishing,JOB-65518 (Blouse),72,Hand Iron HI-09,8.0,High
+W1364,Trainee - Finishing,PO-30365 (Hoodie),28,Steam Press SP-10,8.0,Urgent
+W1365,Junior - Pressing,ORD-42044 (Jeans),54,Steam Press SP-15,8.0,Medium
+W1366,Trainee - Packing,WO-97304 (Dress Shirt),42,Folding Machine FM-01,8.5,Critical
+W1367,Senior - Pressing,WO-31884 (Trousers),62,Hand Press HP-04,8.0,Urgent
+W1368,Expert - Finishing,WO-78662 (Jeans),66,Steam Press SP-16,9.0,Medium
+W1369,Senior - Packing,ORD-75484 (Shorts),81,Folding Machine FM-09,8.0,Low
+W1370,Trainee - Packing,PO-76692 (T-Shirt),62,Packing Table PT-08,8.0,Medium
+W1371,Senior - Pressing,JOB-29671 (Dress Shirt),90,Steam Press SP-18,8.0,Low
+W1372,Expert - Embroidery,PO-52179 (Polo Shirt),116,Applique Machine AM-11,7.5,Low
+W1373,Trainee - Pattern Making,WO-25650 (Hoodie),31,CAD Station CAD-06,8.5,High
+W1374,Supervisor - Pattern Making,ORD-62550 (Jeans),73,Plotter PLT-10,7.5,Low
+W1375,Supervisor - Cutting,JOB-11044 (Trousers),70,Band Knife BK-20,8.5,Medium
+W1376,Senior - Pressing,JOB-35614 (Hoodie),53,Vacuum Press VP-05,8.0,Urgent
+W1377,Trainee - Pressing,PO-80981 (Trousers),43,Steam Press SP-11,8.0,Low
+W1378,Expert - Pattern Making,WO-23624 (Polo Shirt),121,Digitizer DIG-14,9.0,Urgent
+W1379,Junior - Cutting,WO-22193 (T-Shirt),108,Straight Knife SK-12,9.0,Medium
+W1380,Trainee - Embroidery,ORD-76247 (Dress Shirt),49,Sequin Machine SM-03,8.0,Medium
+W1381,Trainee - Packing,JOB-96827 (Dress Shirt),44,Poly Bag Sealer PBS-11,9.0,High
+W1382,Senior - Embroidery,WO-69343 (Jacket),36,Embroidery Machine EM-05,8.0,High
+W1383,Junior - Cutting,ORD-31544 (Skirt),67,Straight Knife SK-04,8.0,Urgent
+W1384,Junior - Finishing,JOB-50410 (Skirt),63,Steam Press SP-03,8.5,High
+W1385,Senior - Pattern Making,ORD-38183 (Trousers),62,Digitizer DIG-12,9.0,Urgent
+W1386,Trainee - Packing,WO-44100 (Dress Shirt),41,Carton Sealer CS-15,8.0,Medium
+W1387,Supervisor - Embroidery,PO-22415 (Skirt),82,Embroidery Machine EM-04,8.0,Medium
+W1388,Junior - Cutting,PO-35969 (Blouse),57,Cutting Table CT-19,8.0,High
+W1389,Trainee - Finishing,ORD-18450 (Polo Shirt),67,Thread Trimmer TT-05,8.0,Urgent
+W1390,Senior - Pattern Making,ORD-15596 (Skirt),73,Pattern Table PT-13,9.0,Critical
+W1391,Expert - Cutting,JOB-32650 (Trousers),76,Fabric Spreader FS-09,7.5,Medium
+W1392,Junior - Pressing,ORD-90492 (Shorts),74,Hand Press HP-16,9.0,Medium
+W1393,Expert - Packing,ORD-21497 (Jacket),46,Carton Sealer CS-07,8.0,High
+W1394,Supervisor - Pattern Making,PO-92674 (Hoodie),59,Pattern Table PT-12,9.0,Medium
+W1395,Expert - Packing,WO-84141 (Hoodie),56,Poly Bag Sealer PBS-06,8.0,Urgent
+W1396,Supervisor - Finishing,PO-13840 (Jacket),38,Thread Trimmer TT-17,7.5,Urgent
+W1397,Supervisor - Pattern Making,PO-30922 (Jeans),61,Digitizer DIG-09,8.0,Medium
+W1398,Trainee - Pattern Making,PO-85457 (Blouse),43,Digitizer DIG-06,8.5,High
+W1399,Senior - Packing,WO-87537 (T-Shirt),127,Poly Bag Sealer PBS-19,8.0,High
+W1400,Supervisor - Sewing,PO-74517 (Hoodie),51,Button Hole BH-02,8.0,Medium
+W1401,Junior - Cutting,PO-12612 (Hoodie),39,Band Knife BK-20,8.5,Urgent
+W1402,Junior - Pattern Making,WO-33260 (Trousers),48,Digitizer DIG-19,8.0,High
+W1403,Trainee - Sewing,WO-19506 (Trousers),44,Button Hole BH-19,8.0,Urgent
+W1404,Senior - Finishing,WO-27884 (Dress Shirt),85,Thread Trimmer TT-16,8.0,Medium
+W1405,Junior - Finishing,WO-39260 (Shorts),78,Thread Trimmer TT-10,8.0,Urgent
+W1406,Senior - Embroidery,PO-33292 (T-Shirt),136,Applique Machine AM-13,8.0,Medium
+W1407,Junior - Cutting,WO-90134 (Polo Shirt),83,Cutting Table CT-16,8.5,Low
+W1408,Trainee - Finishing,PO-55457 (Trousers),37,Steam Press SP-11,9.0,Urgent
+W1409,Senior - Cutting,PO-42707 (Jeans),57,Cutting Table CT-01,8.0,Low
+W1410,Expert - Pressing,JOB-31802 (Blouse),89,Tunnel Finisher TF-12,8.0,Medium
+W1411,Trainee - Pressing,JOB-85766 (Polo Shirt),53,Steam Press SP-02,7.5,Critical
+W1412,Senior - Cutting,WO-23726 (Jeans),57,Straight Knife SK-06,8.0,Critical
+W1413,Supervisor - Cutting,ORD-54295 (Shorts),113,Straight Knife SK-01,9.0,High
+W1414,Junior - Embroidery,JOB-30591 (T-Shirt),84,Embroidery Machine EM-07,9.0,High
+W1415,Supervisor - Embroidery,WO-96585 (Jacket),41,Embroidery Machine EM-02,9.0,Medium
+W1416,Supervisor - Packing,JOB-30131 (T-Shirt),126,Carton Sealer CS-03,7.5,Medium
+W1417,Supervisor - Pattern Making,JOB-36171 (Jeans),56,Digitizer DIG-10,8.0,Medium
+W1418,Trainee - Pressing,WO-62096 (Skirt),50,Hand Press HP-03,8.0,High
+W1419,Expert - Packing,PO-58630 (Blouse),86,Carton Sealer CS-02,7.5,High
+W1420,Expert - Pressing,WO-39654 (Jacket),48,Vacuum Press VP-04,8.0,High
+W1421,Senior - Embroidery,JOB-87296 (Polo Shirt),101,Sequin Machine SM-17,9.0,High
+W1422,Expert - Packing,PO-72424 (Jacket),41,Packing Table PT-17,8.0,Low
+W1423,Supervisor - Packing,PO-25765 (Skirt),84,Folding Machine FM-07,8.5,Medium
+W1424,Trainee - Sewing,JOB-20271 (Blouse),40,Overlock OL-20,7.5,Low
+W1425,Trainee - Finishing,ORD-60868 (Hoodie),29,Spot Cleaner SC-09,8.0,High
+W1426,Trainee - Pressing,JOB-24748 (Blouse),40,Steam Press SP-04,8.0,Medium
+W1427,Trainee - Pattern Making,WO-80206 (Trousers),46,Plotter PLT-13,8.0,Urgent
+W1428,Supervisor - Pressing,JOB-14910 (Dress Shirt),82,Vacuum Press VP-20,8.0,Medium
+W1429,Expert - Embroidery,ORD-61877 (Trousers),88,Embroidery Machine EM-16,7.5,Medium
+W1430,Trainee - Finishing,WO-49722 (Jacket),22,Thread Trimmer TT-04,8.5,Medium
+W1431,Senior - Sewing,JOB-52056 (Jacket),42,Button Attach BA-03,8.5,High
+W1432,Junior - Pressing,JOB-73499 (Hoodie),44,Steam Press SP-17,8.5,High
+W1433,Senior - Cutting,JOB-27779 (Hoodie),55,Cutting Table CT-06,8.5,Medium
+W1434,Junior - Pattern Making,ORD-42701 (T-Shirt),94,Plotter PLT-07,7.5,Low
+W1435,Expert - Finishing,JOB-93284 (Jeans),75,Hand Iron HI-12,9.0,High
+W1436,Expert - Packing,PO-72204 (Shorts),109,Poly Bag Sealer PBS-06,7.5,Low
+W1437,Trainee - Embroidery,WO-13597 (Blouse),38,Applique Machine AM-07,8.5,Urgent
+W1438,Junior - Embroidery,PO-45269 (Blouse),60,Applique Machine AM-01,9.0,High
+W1439,Junior - Sewing,ORD-39329 (Jacket),33,Flatlock FL-09,9.0,Low
+W1440,Senior - Pressing,JOB-43029 (Polo Shirt),99,Tunnel Finisher TF-19,8.0,Low
+W1441,Supervisor - Cutting,WO-83591 (Shorts),102,Band Knife BK-04,9.0,Critical
+W1442,Senior - Cutting,WO-93964 (Trousers),77,Band Knife BK-10,8.5,Medium
+W1443,Supervisor - Sewing,PO-17441 (Shorts),96,Flatlock FL-05,8.0,Medium
+W1444,Expert - Cutting,WO-44003 (Blouse),87,Cutting Table CT-19,8.0,Urgent
+W1445,Junior - Packing,WO-39145 (Hoodie),41,Carton Sealer CS-12,8.0,Urgent
+W1446,Junior - Finishing,PO-48506 (Jeans),47,Spot Cleaner SC-18,8.5,Critical
+W1447,Senior - Embroidery,ORD-39131 (Trousers),64,Sequin Machine SM-14,7.5,High
+W1448,Senior - Finishing,WO-70786 (Jeans),59,Steam Press SP-16,8.5,Medium
+W1449,Trainee - Packing,JOB-79446 (Jacket),23,Folding Machine FM-05,8.5,Low
+W1450,Expert - Finishing,JOB-28772 (Trousers),93,Hand Iron HI-03,9.0,High
+W1451,Junior - Finishing,WO-93165 (T-Shirt),81,Spot Cleaner SC-07,8.5,High
+W1452,Junior - Packing,JOB-21539 (Dress Shirt),66,Carton Sealer CS-13,9.0,Medium
+W1453,Expert - Pressing,ORD-14944 (Hoodie),54,Hand Press HP-01,7.5,Urgent
+W1454,Supervisor - Pattern Making,PO-12348 (T-Shirt),137,Digitizer DIG-08,8.0,Medium
+W1455,Senior - Finishing,PO-23462 (Blouse),75,Spot Cleaner SC-06,8.0,Medium
+W1456,Trainee - Pattern Making,WO-48119 (Skirt),54,Plotter PLT-14,8.0,Low
+W1457,Senior - Sewing,JOB-57087 (Polo Shirt),89,Button Hole BH-01,8.5,Medium
+W1458,Junior - Sewing,PO-12872 (Shorts),72,Single Needle SN-12,8.0,Low
+W1459,Trainee - Embroidery,JOB-93928 (Jacket),25,Applique Machine AM-02,8.0,Medium
+W1460,Trainee - Cutting,ORD-16322 (Jeans),35,Straight Knife SK-04,8.0,Medium
+W1461,Expert - Finishing,PO-36934 (T-Shirt),135,Steam Press SP-17,7.5,High
+W1462,Supervisor - Packing,PO-64896 (Jeans),66,Packing Table PT-10,8.0,High
+W1463,Trainee - Pattern Making,JOB-36037 (Shorts),49,Plotter PLT-17,8.5,High
+W1464,Expert - Finishing,WO-31020 (T-Shirt),146,Hand Iron HI-16,7.5,Critical
+W1465,Trainee - Sewing,ORD-98032 (Jeans),40,Button Attach BA-16,8.5,Medium
+W1466,Supervisor - Cutting,ORD-23276 (Jacket),45,Straight Knife SK-10,7.5,Medium
+W1467,Trainee - Pressing,ORD-32898 (T-Shirt),79,Hand Press HP-11,9.0,Urgent
+W1468,Trainee - Embroidery,ORD-16014 (T-Shirt),79,Applique Machine AM-06,7.5,Medium
+W1469,Expert - Finishing,WO-22183 (Trousers),91,Hand Iron HI-04,9.0,Critical
+W1470,Expert - Pressing,WO-60556 (Skirt),111,Vacuum Press VP-04,8.5,Low
+W1471,Trainee - Embroidery,PO-23593 (Blouse),50,Sequin Machine SM-19,8.0,Critical
+W1472,Junior - Pressing,JOB-57002 (Shorts),61,Vacuum Press VP-16,9.0,Low
+W1473,Expert - Cutting,JOB-16025 (Jeans),66,Band Knife BK-01,8.0,Urgent
+W1474,Supervisor - Pattern Making,PO-97797 (Trousers),77,CAD Station CAD-14,8.0,High
+W1475,Junior - Embroidery,JOB-55318 (Blouse),53,Applique Machine AM-20,8.0,Critical
+W1476,Junior - Cutting,JOB-74990 (Dress Shirt),55,Straight Knife SK-11,8.5,Low
+W1477,Senior - Finishing,ORD-76444 (Polo Shirt),101,Thread Trimmer TT-13,8.5,High
+W1478,Expert - Cutting,JOB-85108 (Skirt),89,Straight Knife SK-15,7.5,Critical
+W1479,Expert - Cutting,ORD-23453 (Blouse),87,Cutting Table CT-03,8.0,High
+W1480,Senior - Packing,PO-95799 (Skirt),96,Poly Bag Sealer PBS-02,8.5,High
+W1481,Expert - Pattern Making,WO-83420 (Shorts),111,Plotter PLT-15,8.0,High
+W1482,Junior - Cutting,ORD-54742 (Trousers),61,Band Knife BK-18,8.0,Medium
+W1483,Trainee - Finishing,ORD-31516 (Skirt),45,Thread Trimmer TT-04,7.5,High
+W1484,Junior - Packing,PO-25826 (Blouse),54,Folding Machine FM-11,8.0,High
+W1485,Expert - Pattern Making,ORD-93000 (Shorts),95,Pattern Table PT-15,8.0,Urgent
+W1486,Supervisor - Packing,PO-75382 (T-Shirt),133,Packing Table PT-18,9.0,Low
+W1487,Supervisor - Pattern Making,JOB-76628 (Dress Shirt),93,Digitizer DIG-05,8.0,Medium
+W1488,Supervisor - Pressing,WO-76074 (Blouse),80,Vacuum Press VP-09,9.0,Critical
+W1489,Senior - Finishing,JOB-27481 (Dress Shirt),77,Spot Cleaner SC-18,7.5,Urgent
+W1490,Supervisor - Embroidery,PO-36330 (Polo Shirt),114,Sequin Machine SM-12,8.0,Medium
+W1491,Junior - Sewing,WO-25126 (Trousers),57,Button Attach BA-19,8.0,High
+W1492,Expert - Embroidery,WO-65363 (T-Shirt),144,Embroidery Machine EM-13,8.5,Medium
+W1493,Trainee - Cutting,PO-44993 (Dress Shirt),54,Band Knife BK-05,8.0,Medium
+W1494,Senior - Embroidery,PO-80932 (T-Shirt),114,Sequin Machine SM-04,8.0,Medium
+W1495,Supervisor - Pattern Making,PO-94819 (Hoodie),53,Plotter PLT-02,9.0,Medium
+W1496,Expert - Pressing,WO-82368 (T-Shirt),122,Hand Press HP-07,8.0,High
+W1497,Expert - Pattern Making,PO-93071 (Trousers),90,Digitizer DIG-07,7.5,Low
+W1498,Junior - Pressing,ORD-34507 (Dress Shirt),68,Steam Press SP-13,8.0,Critical
+W1499,Senior - Pressing,WO-27048 (Dress Shirt),82,Hand Press HP-01,7.5,Critical

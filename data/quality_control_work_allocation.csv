@@ -1,0 +1,501 @@
+Inspector_ID,QC_Department,Inspection_Type_Order,Quality_Target,Workstation_Assignment,Shift_Time,Urgency_Level
+QC2000,QC Inspector - Trim QC,Batch-430 | Seam Quality Check (Order: 30146),Defect Rate < 4%,Fabric Testing FT-08,10:00-19:00,Priority
+QC2001,Senior QC - Packing QC,Batch-638 | Measurement Check (Order: 51662),Inspection Quota 97 pieces,Inspection Booth IB-13,10:00-19:00,Priority
+QC2002,QC Supervisor - Final QC,Batch-513 | Trim Quality Check (Order: 80390),Defect Rate < 1.5%,Light Box LB-15,15:00-23:00,Standard
+QC2003,Senior QC - Pre-Production QC,Batch-400 | Label Verification (Order: 57290),Inspection Quota 185 pieces,Photo Studio PS-09,07:00-15:00,Urgent
+QC2004,Senior QC - Inline QC,Batch-757 | Final Audit (Order: 41502),Inspection Quota 60 pieces,Wash Test WT-07,07:00-15:00,Priority
+QC2005,Senior QC - Trim QC,Batch-125 | Trim Quality Check (Order: 47070),Accuracy Target 96%,Photo Studio PS-08,07:00-15:00,Standard
+QC2006,QC Inspector - Fabric QC,Batch-184 | Label Verification (Order: 77357),Defect Rate < 3%,QC Table QT-11,07:00-15:00,Urgent
+QC2007,QC Inspector - Final QC,Batch-534 | Fit Check (Order: 99837),Defect Rate < 3%,Audit Station AS-11,07:00-15:00,Urgent
+QC2008,QC Inspector - Pre-Production QC,Batch-834 | Seam Quality Check (Order: 70191),Accuracy Target 95%,Inspection Booth IB-02,07:00-15:00,Urgent
+QC2009,Senior QC - Final QC,Batch-688 | Trim Quality Check (Order: 19232),Inspection Quota 116 pieces,Audit Station AS-07,09:00-18:00,Priority
+QC2010,QC Supervisor - Pre-Production QC,Batch-117 | Packaging Inspection (Order: 51471),Throughput Target 63 pieces/hour,Inspection Booth IB-09,07:00-15:00,Priority
+QC2011,QC Manager - Pre-Production QC,Batch-146 | Measurement Check (Order: 86756),Defect Rate < 1.5%,Inspection Booth IB-05,08:00-17:00,Standard
+QC2012,QC Trainee - Packing QC,Batch-490 | Button/Zipper Function (Order: 67367),Throughput Target 72 pieces/hour,QC Table QT-08,15:00-23:00,Urgent
+QC2013,QC Inspector - Packing QC,Batch-915 | Color Matching (Order: 61248),Accuracy Target 98%,Fabric Testing FT-11,08:00-17:00,Urgent
+QC2014,QC Manager - Inline QC,Batch-244 | Fit Check (Order: 82754),Defect Rate < 2%,QC Table QT-10,10:00-19:00,Routine
+QC2015,QC Manager - Trim QC,Batch-412 | Trim Quality Check (Order: 21157),Inspection Quota 138 pieces,Light Box LB-07,10:00-19:00,Routine
+QC2016,QC Inspector - Final QC,Batch-731 | Color Matching (Order: 38939),Accuracy Target 98%,Inspection Booth IB-03,10:00-19:00,Standard
+QC2017,QC Trainee - AQL Inspection,Batch-572 | Fit Check (Order: 81939),Defect Rate < 1.5%,Inspection Booth IB-05,07:00-15:00,Urgent
+QC2018,QC Manager - Final QC,Batch-465 | Final Audit (Order: 53365),Inspection Quota 110 pieces,Inspection Booth IB-05,10:00-19:00,Critical
+QC2019,QC Inspector - Inline QC,Batch-561 | Label Verification (Order: 73682),Accuracy Target 96%,Fabric Testing FT-12,10:00-19:00,Standard
+QC2020,QC Manager - Final QC,Batch-927 | Embroidery Quality (Order: 57774),Accuracy Target 97%,Measurement Station MS-01,08:00-17:00,Priority
+QC2021,QC Inspector - Final QC,Batch-546 | Washing Test (Order: 93995),Accuracy Target 99%,Measurement Station MS-11,08:00-17:00,Standard
+QC2022,QC Supervisor - Trim QC,Batch-893 | Final Audit (Order: 57020),Accuracy Target 97%,Inspection Booth IB-03,10:00-19:00,Critical
+QC2023,Senior QC - Inline QC,Batch-651 | Fit Check (Order: 28350),Inspection Quota 117 pieces,Inspection Booth IB-12,07:00-15:00,Urgent
+QC2024,QC Manager - Inline QC,Batch-932 | Print Quality Check (Order: 14088),Throughput Target 69 pieces/hour,Light Box LB-15,07:00-15:00,Urgent
+QC2025,Senior QC - Packing QC,Batch-583 | Trim Quality Check (Order: 80736),Inspection Quota 143 pieces,Audit Station AS-04,10:00-19:00,Standard
+QC2026,Senior QC - Pre-Production QC,Batch-613 | Color Matching (Order: 70909),Defect Rate < 2.5%,Wash Test WT-09,07:00-15:00,Standard
+QC2027,QC Inspector - Pre-Production QC,Batch-800 | Fit Check (Order: 90482),Inspection Quota 181 pieces,Measurement Station MS-08,15:00-23:00,Standard
+QC2028,QC Manager - Final QC,Batch-993 | Embroidery Quality (Order: 96430),Inspection Quota 173 pieces,Wash Test WT-01,15:00-23:00,Routine
+QC2029,QC Supervisor - AQL Inspection,Batch-370 | Fabric Defect Check (Order: 18239),Accuracy Target 98%,QC Table QT-11,15:00-23:00,Urgent
+QC2030,Senior QC - Packing QC,Batch-565 | Packaging Inspection (Order: 71561),Defect Rate < 2%,Wash Test WT-02,10:00-19:00,Urgent
+QC2031,Senior QC - Pre-Production QC,Batch-692 | Fit Check (Order: 44513),Inspection Quota 146 pieces,Audit Station AS-06,10:00-19:00,Critical
+QC2032,QC Trainee - Pre-Production QC,Batch-485 | Trim Quality Check (Order: 42975),Inspection Quota 182 pieces,Audit Station AS-06,08:00-17:00,Critical
+QC2033,QC Supervisor - Trim QC,Batch-106 | Appearance Check (Order: 89195),Inspection Quota 162 pieces,Measurement Station MS-04,07:00-15:00,Priority
+QC2034,Senior QC - Packing QC,Batch-291 | Fabric Defect Check (Order: 29692),Inspection Quota 142 pieces,Inspection Booth IB-11,15:00-23:00,Priority
+QC2035,Senior QC - Trim QC,Batch-593 | Washing Test (Order: 24855),Throughput Target 50 pieces/hour,Light Box LB-10,15:00-23:00,Urgent
+QC2036,QC Supervisor - Pre-Production QC,Batch-144 | Seam Quality Check (Order: 41938),Inspection Quota 196 pieces,Measurement Station MS-03,10:00-19:00,Urgent
+QC2037,QC Manager - Inline QC,Batch-270 | Color Matching (Order: 17328),Accuracy Target 98%,Audit Station AS-10,10:00-19:00,Standard
+QC2038,QC Trainee - Pre-Production QC,Batch-941 | Appearance Check (Order: 96736),Accuracy Target 95%,Light Box LB-08,10:00-19:00,Standard
+QC2039,QC Supervisor - Trim QC,Batch-950 | Color Matching (Order: 38752),Throughput Target 58 pieces/hour,Measurement Station MS-13,10:00-19:00,Routine
+QC2040,QC Inspector - AQL Inspection,Batch-623 | Embroidery Quality (Order: 96461),Accuracy Target 98%,Wash Test WT-15,09:00-18:00,Critical
+QC2041,QC Manager - Packing QC,Batch-487 | Measurement Check (Order: 40122),Throughput Target 28 pieces/hour,Inspection Booth IB-01,15:00-23:00,Priority
+QC2042,QC Manager - Packing QC,Batch-946 | Print Quality Check (Order: 65023),Inspection Quota 74 pieces,Measurement Station MS-08,10:00-19:00,Standard
+QC2043,QC Trainee - Packing QC,Batch-615 | Appearance Check (Order: 79655),Defect Rate < 2%,Photo Studio PS-11,15:00-23:00,Priority
+QC2044,QC Manager - Packing QC,Batch-893 | Fit Check (Order: 10157),Throughput Target 53 pieces/hour,Audit Station AS-06,07:00-15:00,Priority
+QC2045,QC Manager - Pre-Production QC,Batch-921 | Packaging Inspection (Order: 40079),Throughput Target 70 pieces/hour,Audit Station AS-06,10:00-19:00,Standard
+QC2046,QC Manager - AQL Inspection,Batch-237 | Measurement Check (Order: 65769),Accuracy Target 97%,Light Box LB-15,07:00-15:00,Routine
+QC2047,QC Manager - Fabric QC,Batch-518 | Appearance Check (Order: 81267),Accuracy Target 98%,QC Table QT-12,07:00-15:00,Priority
+QC2048,QC Manager - Packing QC,Batch-107 | Measurement Check (Order: 78126),Throughput Target 61 pieces/hour,Light Box LB-12,08:00-17:00,Priority
+QC2049,Senior QC - Trim QC,Batch-536 | Measurement Check (Order: 30287),Accuracy Target 99%,Audit Station AS-10,08:00-17:00,Priority
+QC2050,Senior QC - Packing QC,Batch-873 | Print Quality Check (Order: 62095),Inspection Quota 155 pieces,Photo Studio PS-03,08:00-17:00,Priority
+QC2051,QC Manager - Packing QC,Batch-414 | Final Audit (Order: 43263),Accuracy Target 97%,Measurement Station MS-14,07:00-15:00,Urgent
+QC2052,QC Inspector - Pre-Production QC,Batch-202 | Final Audit (Order: 31206),Inspection Quota 180 pieces,Audit Station AS-13,08:00-17:00,Priority
+QC2053,QC Manager - AQL Inspection,Batch-823 | Embroidery Quality (Order: 99727),Defect Rate < 3%,Audit Station AS-11,07:00-15:00,Priority
+QC2054,QC Trainee - AQL Inspection,Batch-582 | Fit Check (Order: 29048),Throughput Target 25 pieces/hour,Inspection Booth IB-05,15:00-23:00,Urgent
+QC2055,QC Trainee - Fabric QC,Batch-841 | Embroidery Quality (Order: 14948),Throughput Target 79 pieces/hour,Audit Station AS-10,10:00-19:00,Standard
+QC2056,QC Manager - Fabric QC,Batch-755 | Seam Quality Check (Order: 32973),Throughput Target 48 pieces/hour,QC Table QT-04,10:00-19:00,Routine
+QC2057,QC Inspector - Fabric QC,Batch-622 | Seam Quality Check (Order: 88579),Inspection Quota 93 pieces,QC Table QT-06,15:00-23:00,Routine
+QC2058,QC Trainee - Pre-Production QC,Batch-382 | Color Matching (Order: 21382),Throughput Target 42 pieces/hour,Audit Station AS-07,10:00-19:00,Priority
+QC2059,QC Manager - Final QC,Batch-192 | Seam Quality Check (Order: 18993),Accuracy Target 96%,Wash Test WT-06,08:00-17:00,Priority
+QC2060,QC Manager - Final QC,Batch-513 | Fabric Defect Check (Order: 69606),Defect Rate < 1.5%,Measurement Station MS-07,10:00-19:00,Priority
+QC2061,QC Manager - Inline QC,Batch-401 | Measurement Check (Order: 75951),Accuracy Target 95%,Fabric Testing FT-15,10:00-19:00,Standard
+QC2062,QC Manager - AQL Inspection,Batch-486 | Button/Zipper Function (Order: 68034),Throughput Target 69 pieces/hour,Light Box LB-13,08:00-17:00,Routine
+QC2063,QC Supervisor - AQL Inspection,Batch-700 | Print Quality Check (Order: 70387),Defect Rate < 2.5%,Inspection Booth IB-05,07:00-15:00,Routine
+QC2064,QC Inspector - Trim QC,Batch-919 | Print Quality Check (Order: 40137),Accuracy Target 97%,Wash Test WT-09,10:00-19:00,Standard
+QC2065,Senior QC - Inline QC,Batch-195 | Fabric Defect Check (Order: 47655),Throughput Target 63 pieces/hour,Wash Test WT-02,10:00-19:00,Priority
+QC2066,QC Supervisor - Final QC,Batch-323 | Label Verification (Order: 56338),Accuracy Target 98%,Light Box LB-08,15:00-23:00,Standard
+QC2067,QC Inspector - Final QC,Batch-311 | Fit Check (Order: 44787),Inspection Quota 101 pieces,Light Box LB-14,10:00-19:00,Standard
+QC2068,QC Inspector - Fabric QC,Batch-222 | Durability Test (Order: 23983),Defect Rate < 2.5%,QC Table QT-13,10:00-19:00,Urgent
+QC2069,QC Supervisor - Inline QC,Batch-422 | Label Verification (Order: 91352),Throughput Target 77 pieces/hour,Fabric Testing FT-08,15:00-23:00,Standard
+QC2070,QC Manager - AQL Inspection,Batch-327 | Button/Zipper Function (Order: 62150),Inspection Quota 63 pieces,Audit Station AS-08,10:00-19:00,Priority
+QC2071,QC Manager - Inline QC,Batch-981 | Label Verification (Order: 61605),Inspection Quota 167 pieces,Inspection Booth IB-12,10:00-19:00,Priority
+QC2072,Senior QC - Trim QC,Batch-112 | Washing Test (Order: 11103),Inspection Quota 147 pieces,Inspection Booth IB-06,08:00-17:00,Standard
+QC2073,Senior QC - Packing QC,Batch-369 | Color Matching (Order: 81901),Inspection Quota 118 pieces,Photo Studio PS-10,08:00-17:00,Priority
+QC2074,QC Inspector - Fabric QC,Batch-315 | Final Audit (Order: 65567),Throughput Target 64 pieces/hour,Wash Test WT-06,09:00-18:00,Urgent
+QC2075,QC Supervisor - Fabric QC,Batch-234 | Color Matching (Order: 84895),Inspection Quota 75 pieces,Fabric Testing FT-13,15:00-23:00,Urgent
+QC2076,QC Supervisor - Packing QC,Batch-300 | Fit Check (Order: 59923),Inspection Quota 88 pieces,Photo Studio PS-13,07:00-15:00,Routine
+QC2077,QC Supervisor - Final QC,Batch-969 | Final Audit (Order: 27625),Accuracy Target 97%,Fabric Testing FT-05,10:00-19:00,Urgent
+QC2078,QC Manager - AQL Inspection,Batch-201 | Seam Quality Check (Order: 62219),Inspection Quota 65 pieces,Light Box LB-14,08:00-17:00,Standard
+QC2079,QC Trainee - Trim QC,Batch-366 | Final Audit (Order: 53864),Accuracy Target 99%,Fabric Testing FT-06,07:00-15:00,Standard
+QC2080,QC Trainee - Trim QC,Batch-720 | Label Verification (Order: 99074),Inspection Quota 197 pieces,Measurement Station MS-13,08:00-17:00,Standard
+QC2081,Senior QC - Fabric QC,Batch-599 | Print Quality Check (Order: 76904),Throughput Target 76 pieces/hour,Inspection Booth IB-07,10:00-19:00,Critical
+QC2082,QC Supervisor - Fabric QC,Batch-989 | Print Quality Check (Order: 28985),Inspection Quota 136 pieces,Audit Station AS-11,10:00-19:00,Standard
+QC2083,QC Supervisor - Packing QC,Batch-181 | Fit Check (Order: 19351),Inspection Quota 137 pieces,Light Box LB-06,08:00-17:00,Standard
+QC2084,Senior QC - Pre-Production QC,Batch-719 | Washing Test (Order: 45058),Throughput Target 37 pieces/hour,Photo Studio PS-13,08:00-17:00,Priority
+QC2085,QC Manager - Pre-Production QC,Batch-523 | Trim Quality Check (Order: 69020),Inspection Quota 97 pieces,QC Table QT-03,15:00-23:00,Standard
+QC2086,Senior QC - Pre-Production QC,Batch-315 | Washing Test (Order: 20494),Inspection Quota 151 pieces,Inspection Booth IB-02,07:00-15:00,Routine
+QC2087,QC Manager - Trim QC,Batch-889 | Seam Quality Check (Order: 13455),Throughput Target 53 pieces/hour,Inspection Booth IB-02,08:00-17:00,Routine
+QC2088,QC Inspector - Packing QC,Batch-499 | Measurement Check (Order: 95830),Accuracy Target 98%,Light Box LB-12,08:00-17:00,Routine
+QC2089,QC Inspector - Trim QC,Batch-958 | Color Matching (Order: 79041),Inspection Quota 57 pieces,QC Table QT-11,08:00-17:00,Standard
+QC2090,Senior QC - AQL Inspection,Batch-578 | Fit Check (Order: 72410),Accuracy Target 96%,Photo Studio PS-03,10:00-19:00,Routine
+QC2091,QC Manager - Final QC,Batch-746 | Embroidery Quality (Order: 69840),Throughput Target 53 pieces/hour,Fabric Testing FT-15,08:00-17:00,Priority
+QC2092,QC Manager - Trim QC,Batch-552 | Fabric Defect Check (Order: 21738),Accuracy Target 99%,Audit Station AS-05,15:00-23:00,Standard
+QC2093,QC Trainee - Fabric QC,Batch-934 | Seam Quality Check (Order: 78592),Inspection Quota 138 pieces,Fabric Testing FT-08,10:00-19:00,Standard
+QC2094,QC Supervisor - Inline QC,Batch-406 | Durability Test (Order: 72530),Defect Rate < 2.5%,Fabric Testing FT-10,15:00-23:00,Urgent
+QC2095,QC Trainee - AQL Inspection,Batch-293 | Trim Quality Check (Order: 58974),Throughput Target 76 pieces/hour,Audit Station AS-07,15:00-23:00,Standard
+QC2096,QC Supervisor - Final QC,Batch-325 | Fit Check (Order: 59592),Accuracy Target 95%,Audit Station AS-11,15:00-23:00,Priority
+QC2097,QC Manager - Packing QC,Batch-378 | Durability Test (Order: 99737),Accuracy Target 96%,Fabric Testing FT-07,15:00-23:00,Standard
+QC2098,QC Trainee - AQL Inspection,Batch-396 | Color Matching (Order: 27907),Defect Rate < 2.5%,Photo Studio PS-05,10:00-19:00,Standard
+QC2099,QC Inspector - Trim QC,Batch-255 | Label Verification (Order: 12542),Defect Rate < 4%,QC Table QT-03,07:00-15:00,Routine
+QC2100,Senior QC - Fabric QC,Batch-844 | Color Matching (Order: 67464),Defect Rate < 3%,Inspection Booth IB-03,07:00-15:00,Standard
+QC2101,QC Inspector - Trim QC,Batch-419 | Label Verification (Order: 65082),Throughput Target 43 pieces/hour,Photo Studio PS-12,07:00-15:00,Standard
+QC2102,QC Trainee - Fabric QC,Batch-157 | Fit Check (Order: 29148),Accuracy Target 97%,Inspection Booth IB-09,09:00-18:00,Standard
+QC2103,QC Inspector - Final QC,Batch-936 | Appearance Check (Order: 42778),Throughput Target 73 pieces/hour,QC Table QT-02,15:00-23:00,Routine
+QC2104,QC Supervisor - Trim QC,Batch-303 | Fabric Defect Check (Order: 14392),Throughput Target 67 pieces/hour,Inspection Booth IB-09,15:00-23:00,Routine
+QC2105,QC Supervisor - Trim QC,Batch-430 | Print Quality Check (Order: 50908),Inspection Quota 60 pieces,Inspection Booth IB-05,09:00-18:00,Standard
+QC2106,Senior QC - Pre-Production QC,Batch-153 | Fabric Defect Check (Order: 57241),Inspection Quota 78 pieces,Light Box LB-11,09:00-18:00,Standard
+QC2107,QC Trainee - Fabric QC,Batch-698 | Color Matching (Order: 46188),Defect Rate < 2.5%,Light Box LB-01,07:00-15:00,Standard
+QC2108,QC Supervisor - Packing QC,Batch-258 | Washing Test (Order: 88146),Accuracy Target 95%,Light Box LB-03,09:00-18:00,Priority
+QC2109,QC Manager - Inline QC,Batch-161 | Label Verification (Order: 91937),Defect Rate < 1.5%,Measurement Station MS-12,10:00-19:00,Priority
+QC2110,QC Trainee - AQL Inspection,Batch-338 | Color Matching (Order: 73942),Accuracy Target 96%,Wash Test WT-13,09:00-18:00,Routine
+QC2111,QC Inspector - Pre-Production QC,Batch-466 | Seam Quality Check (Order: 59514),Inspection Quota 114 pieces,QC Table QT-08,09:00-18:00,Priority
+QC2112,Senior QC - Packing QC,Batch-294 | Trim Quality Check (Order: 74237),Inspection Quota 189 pieces,Wash Test WT-06,09:00-18:00,Priority
+QC2113,QC Manager - Fabric QC,Batch-264 | Appearance Check (Order: 82682),Defect Rate < 4%,Measurement Station MS-08,08:00-17:00,Routine
+QC2114,Senior QC - AQL Inspection,Batch-564 | Trim Quality Check (Order: 58118),Defect Rate < 4%,Audit Station AS-12,15:00-23:00,Urgent
+QC2115,QC Manager - Inline QC,Batch-894 | Fit Check (Order: 57720),Inspection Quota 132 pieces,Inspection Booth IB-11,10:00-19:00,Urgent
+QC2116,QC Supervisor - AQL Inspection,Batch-799 | Fabric Defect Check (Order: 78690),Throughput Target 69 pieces/hour,Measurement Station MS-10,08:00-17:00,Routine
+QC2117,QC Supervisor - Fabric QC,Batch-213 | Print Quality Check (Order: 52208),Defect Rate < 4%,Inspection Booth IB-01,15:00-23:00,Standard
+QC2118,QC Trainee - Final QC,Batch-597 | Fabric Defect Check (Order: 24031),Inspection Quota 75 pieces,QC Table QT-10,09:00-18:00,Urgent
+QC2119,QC Supervisor - Pre-Production QC,Batch-818 | Trim Quality Check (Order: 91785),Accuracy Target 95%,Wash Test WT-04,10:00-19:00,Priority
+QC2120,QC Trainee - Pre-Production QC,Batch-771 | Seam Quality Check (Order: 37359),Throughput Target 79 pieces/hour,Inspection Booth IB-08,07:00-15:00,Standard
+QC2121,QC Manager - Fabric QC,Batch-941 | Washing Test (Order: 64519),Accuracy Target 95%,Fabric Testing FT-09,07:00-15:00,Standard
+QC2122,QC Trainee - Pre-Production QC,Batch-179 | Fit Check (Order: 49833),Inspection Quota 182 pieces,Inspection Booth IB-02,15:00-23:00,Standard
+QC2123,QC Supervisor - Packing QC,Batch-638 | Fabric Defect Check (Order: 35312),Inspection Quota 195 pieces,Measurement Station MS-09,10:00-19:00,Standard
+QC2124,QC Trainee - Trim QC,Batch-690 | Durability Test (Order: 93705),Accuracy Target 97%,Audit Station AS-15,07:00-15:00,Priority
+QC2125,QC Inspector - Final QC,Batch-616 | Trim Quality Check (Order: 62632),Accuracy Target 98%,Photo Studio PS-15,08:00-17:00,Standard
+QC2126,QC Manager - Fabric QC,Batch-522 | Label Verification (Order: 58722),Throughput Target 72 pieces/hour,Wash Test WT-10,15:00-23:00,Standard
+QC2127,QC Manager - Packing QC,Batch-884 | Fabric Defect Check (Order: 59160),Accuracy Target 99%,Photo Studio PS-08,09:00-18:00,Priority
+QC2128,QC Trainee - Inline QC,Batch-116 | Button/Zipper Function (Order: 88087),Inspection Quota 127 pieces,QC Table QT-05,15:00-23:00,Routine
+QC2129,Senior QC - Final QC,Batch-666 | Seam Quality Check (Order: 46170),Inspection Quota 74 pieces,QC Table QT-08,08:00-17:00,Standard
+QC2130,QC Inspector - Final QC,Batch-696 | Button/Zipper Function (Order: 58114),Inspection Quota 109 pieces,Fabric Testing FT-13,08:00-17:00,Priority
+QC2131,QC Manager - Inline QC,Batch-322 | Packaging Inspection (Order: 84588),Defect Rate < 1.5%,Photo Studio PS-03,09:00-18:00,Urgent
+QC2132,QC Manager - AQL Inspection,Batch-709 | Fit Check (Order: 22499),Accuracy Target 95%,Audit Station AS-02,07:00-15:00,Priority
+QC2133,Senior QC - AQL Inspection,Batch-526 | Label Verification (Order: 66925),Defect Rate < 3%,QC Table QT-11,09:00-18:00,Priority
+QC2134,Senior QC - Inline QC,Batch-426 | Trim Quality Check (Order: 15397),Inspection Quota 133 pieces,Light Box LB-03,07:00-15:00,Routine
+QC2135,QC Supervisor - Pre-Production QC,Batch-689 | Final Audit (Order: 88005),Defect Rate < 3%,Audit Station AS-05,09:00-18:00,Standard
+QC2136,QC Inspector - Final QC,Batch-587 | Label Verification (Order: 20819),Defect Rate < 4%,Audit Station AS-05,07:00-15:00,Priority
+QC2137,QC Manager - Trim QC,Batch-880 | Packaging Inspection (Order: 27088),Inspection Quota 173 pieces,Light Box LB-08,09:00-18:00,Standard
+QC2138,QC Manager - Pre-Production QC,Batch-730 | Fabric Defect Check (Order: 83553),Inspection Quota 112 pieces,Inspection Booth IB-05,09:00-18:00,Standard
+QC2139,QC Manager - Fabric QC,Batch-787 | Measurement Check (Order: 24749),Throughput Target 47 pieces/hour,Wash Test WT-06,15:00-23:00,Standard
+QC2140,Senior QC - Fabric QC,Batch-124 | Embroidery Quality (Order: 95905),Accuracy Target 98%,Wash Test WT-10,09:00-18:00,Routine
+QC2141,QC Inspector - Packing QC,Batch-937 | Final Audit (Order: 15882),Inspection Quota 101 pieces,Wash Test WT-03,07:00-15:00,Standard
+QC2142,QC Trainee - Inline QC,Batch-251 | Fabric Defect Check (Order: 91396),Accuracy Target 95%,Wash Test WT-12,07:00-15:00,Standard
+QC2143,QC Supervisor - Fabric QC,Batch-439 | Final Audit (Order: 12981),Inspection Quota 187 pieces,Light Box LB-04,10:00-19:00,Standard
+QC2144,Senior QC - Packing QC,Batch-737 | Trim Quality Check (Order: 73311),Inspection Quota 54 pieces,Audit Station AS-10,10:00-19:00,Routine
+QC2145,Senior QC - Inline QC,Batch-390 | Color Matching (Order: 17878),Inspection Quota 119 pieces,QC Table QT-08,07:00-15:00,Urgent
+QC2146,QC Supervisor - Inline QC,Batch-778 | Print Quality Check (Order: 45561),Accuracy Target 95%,QC Table QT-05,09:00-18:00,Priority
+QC2147,QC Supervisor - Final QC,Batch-423 | Trim Quality Check (Order: 23055),Throughput Target 75 pieces/hour,Inspection Booth IB-03,15:00-23:00,Priority
+QC2148,QC Supervisor - Packing QC,Batch-140 | Trim Quality Check (Order: 12816),Inspection Quota 185 pieces,Fabric Testing FT-06,09:00-18:00,Priority
+QC2149,QC Inspector - Trim QC,Batch-800 | Seam Quality Check (Order: 55453),Accuracy Target 99%,Fabric Testing FT-04,10:00-19:00,Standard
+QC2150,QC Trainee - Fabric QC,Batch-999 | Print Quality Check (Order: 43774),Throughput Target 76 pieces/hour,QC Table QT-09,08:00-17:00,Routine
+QC2151,QC Inspector - Final QC,Batch-772 | Label Verification (Order: 61491),Inspection Quota 72 pieces,Audit Station AS-09,10:00-19:00,Priority
+QC2152,QC Inspector - AQL Inspection,Batch-686 | Packaging Inspection (Order: 41504),Inspection Quota 159 pieces,Fabric Testing FT-15,10:00-19:00,Priority
+QC2153,QC Supervisor - Fabric QC,Batch-311 | Trim Quality Check (Order: 27271),Inspection Quota 198 pieces,Light Box LB-14,15:00-23:00,Priority
+QC2154,QC Manager - Fabric QC,Batch-540 | Appearance Check (Order: 27727),Inspection Quota 194 pieces,Measurement Station MS-06,07:00-15:00,Standard
+QC2155,QC Manager - Packing QC,Batch-288 | Washing Test (Order: 25517),Accuracy Target 98%,QC Table QT-13,08:00-17:00,Routine
+QC2156,QC Supervisor - Trim QC,Batch-863 | Button/Zipper Function (Order: 68065),Accuracy Target 98%,Light Box LB-02,15:00-23:00,Standard
+QC2157,QC Trainee - Final QC,Batch-731 | Durability Test (Order: 90213),Accuracy Target 96%,Light Box LB-10,15:00-23:00,Standard
+QC2158,QC Trainee - Final QC,Batch-804 | Label Verification (Order: 20417),Throughput Target 28 pieces/hour,Photo Studio PS-12,08:00-17:00,Priority
+QC2159,QC Supervisor - Final QC,Batch-240 | Final Audit (Order: 72108),Inspection Quota 99 pieces,Light Box LB-01,09:00-18:00,Priority
+QC2160,QC Trainee - AQL Inspection,Batch-522 | Appearance Check (Order: 45370),Inspection Quota 101 pieces,Light Box LB-02,15:00-23:00,Standard
+QC2161,QC Manager - Trim QC,Batch-987 | Final Audit (Order: 52584),Throughput Target 76 pieces/hour,Light Box LB-07,09:00-18:00,Critical
+QC2162,QC Trainee - AQL Inspection,Batch-837 | Embroidery Quality (Order: 59856),Accuracy Target 97%,QC Table QT-09,07:00-15:00,Priority
+QC2163,QC Supervisor - Trim QC,Batch-998 | Fit Check (Order: 15559),Inspection Quota 182 pieces,Audit Station AS-12,07:00-15:00,Standard
+QC2164,QC Supervisor - Packing QC,Batch-150 | Trim Quality Check (Order: 92660),Inspection Quota 124 pieces,Photo Studio PS-07,08:00-17:00,Routine
+QC2165,Senior QC - AQL Inspection,Batch-532 | Final Audit (Order: 31821),Accuracy Target 96%,QC Table QT-12,10:00-19:00,Standard
+QC2166,QC Supervisor - Final QC,Batch-562 | Fit Check (Order: 94685),Defect Rate < 4%,Inspection Booth IB-03,10:00-19:00,Standard
+QC2167,QC Manager - Pre-Production QC,Batch-523 | Color Matching (Order: 61520),Accuracy Target 97%,QC Table QT-03,09:00-18:00,Standard
+QC2168,QC Inspector - Packing QC,Batch-192 | Appearance Check (Order: 69596),Accuracy Target 99%,Measurement Station MS-12,07:00-15:00,Standard
+QC2169,QC Trainee - Inline QC,Batch-749 | Washing Test (Order: 68903),Accuracy Target 95%,Audit Station AS-12,10:00-19:00,Standard
+QC2170,QC Inspector - Packing QC,Batch-489 | Packaging Inspection (Order: 82134),Defect Rate < 3%,Wash Test WT-10,15:00-23:00,Standard
+QC2171,QC Inspector - Final QC,Batch-529 | Color Matching (Order: 16725),Accuracy Target 99%,Photo Studio PS-05,15:00-23:00,Urgent
+QC2172,QC Inspector - Inline QC,Batch-737 | Fabric Defect Check (Order: 10463),Accuracy Target 95%,Photo Studio PS-08,09:00-18:00,Routine
+QC2173,QC Trainee - Packing QC,Batch-343 | Embroidery Quality (Order: 74679),Inspection Quota 200 pieces,Photo Studio PS-08,09:00-18:00,Priority
+QC2174,QC Trainee - Trim QC,Batch-106 | Embroidery Quality (Order: 88656),Inspection Quota 190 pieces,Fabric Testing FT-10,10:00-19:00,Standard
+QC2175,QC Inspector - AQL Inspection,Batch-251 | Seam Quality Check (Order: 34227),Defect Rate < 1.5%,QC Table QT-03,07:00-15:00,Critical
+QC2176,QC Manager - Pre-Production QC,Batch-405 | Fit Check (Order: 89073),Accuracy Target 95%,QC Table QT-02,09:00-18:00,Routine
+QC2177,QC Inspector - Final QC,Batch-725 | Print Quality Check (Order: 47274),Inspection Quota 166 pieces,Wash Test WT-15,07:00-15:00,Standard
+QC2178,Senior QC - Inline QC,Batch-488 | Label Verification (Order: 58309),Defect Rate < 2.5%,Inspection Booth IB-05,09:00-18:00,Critical
+QC2179,QC Trainee - Final QC,Batch-437 | Washing Test (Order: 45968),Throughput Target 53 pieces/hour,Light Box LB-12,15:00-23:00,Urgent
+QC2180,QC Trainee - Packing QC,Batch-847 | Measurement Check (Order: 84890),Defect Rate < 2.5%,Fabric Testing FT-07,10:00-19:00,Urgent
+QC2181,Senior QC - AQL Inspection,Batch-688 | Button/Zipper Function (Order: 78864),Accuracy Target 98%,Photo Studio PS-09,09:00-18:00,Standard
+QC2182,QC Inspector - Trim QC,Batch-338 | Appearance Check (Order: 89876),Accuracy Target 98%,QC Table QT-02,07:00-15:00,Standard
+QC2183,QC Trainee - Trim QC,Batch-918 | Washing Test (Order: 37175),Throughput Target 46 pieces/hour,QC Table QT-06,08:00-17:00,Priority
+QC2184,QC Inspector - Packing QC,Batch-306 | Seam Quality Check (Order: 93967),Accuracy Target 99%,Inspection Booth IB-05,08:00-17:00,Urgent
+QC2185,QC Manager - Packing QC,Batch-216 | Label Verification (Order: 10803),Accuracy Target 99%,Audit Station AS-12,10:00-19:00,Priority
+QC2186,QC Trainee - Packing QC,Batch-298 | Fit Check (Order: 33020),Accuracy Target 99%,Photo Studio PS-15,09:00-18:00,Priority
+QC2187,QC Trainee - AQL Inspection,Batch-593 | Print Quality Check (Order: 27793),Inspection Quota 167 pieces,Wash Test WT-08,09:00-18:00,Standard
+QC2188,QC Trainee - Pre-Production QC,Batch-406 | Fit Check (Order: 78298),Accuracy Target 96%,QC Table QT-04,10:00-19:00,Priority
+QC2189,Senior QC - Pre-Production QC,Batch-167 | Durability Test (Order: 56346),Inspection Quota 121 pieces,QC Table QT-06,09:00-18:00,Standard
+QC2190,QC Manager - Pre-Production QC,Batch-684 | Fit Check (Order: 31753),Throughput Target 31 pieces/hour,Inspection Booth IB-14,08:00-17:00,Standard
+QC2191,Senior QC - Pre-Production QC,Batch-378 | Washing Test (Order: 14145),Throughput Target 25 pieces/hour,Photo Studio PS-15,15:00-23:00,Standard
+QC2192,QC Supervisor - Fabric QC,Batch-321 | Fit Check (Order: 49666),Accuracy Target 98%,Inspection Booth IB-06,07:00-15:00,Priority
+QC2193,QC Inspector - AQL Inspection,Batch-554 | Appearance Check (Order: 22137),Defect Rate < 2.5%,Measurement Station MS-04,08:00-17:00,Standard
+QC2194,QC Manager - Trim QC,Batch-246 | Button/Zipper Function (Order: 52904),Defect Rate < 4%,Measurement Station MS-04,07:00-15:00,Routine
+QC2195,QC Supervisor - Trim QC,Batch-218 | Washing Test (Order: 78464),Defect Rate < 1.5%,QC Table QT-11,10:00-19:00,Priority
+QC2196,QC Trainee - AQL Inspection,Batch-147 | Label Verification (Order: 71194),Defect Rate < 4%,Fabric Testing FT-01,10:00-19:00,Standard
+QC2197,Senior QC - AQL Inspection,Batch-428 | Print Quality Check (Order: 37504),Inspection Quota 99 pieces,Fabric Testing FT-05,10:00-19:00,Priority
+QC2198,QC Supervisor - Fabric QC,Batch-379 | Print Quality Check (Order: 25420),Inspection Quota 90 pieces,Fabric Testing FT-02,07:00-15:00,Standard
+QC2199,QC Manager - Packing QC,Batch-311 | Trim Quality Check (Order: 23418),Accuracy Target 96%,Wash Test WT-05,15:00-23:00,Standard
+QC2200,Senior QC - Pre-Production QC,Batch-275 | Embroidery Quality (Order: 42089),Defect Rate < 1.5%,Wash Test WT-09,09:00-18:00,Priority
+QC2201,QC Inspector - Inline QC,Batch-791 | Seam Quality Check (Order: 71700),Defect Rate < 2%,Audit Station AS-01,07:00-15:00,Routine
+QC2202,QC Supervisor - Trim QC,Batch-706 | Color Matching (Order: 88134),Throughput Target 59 pieces/hour,Wash Test WT-05,08:00-17:00,Standard
+QC2203,QC Inspector - AQL Inspection,Batch-928 | Washing Test (Order: 97932),Defect Rate < 2.5%,Measurement Station MS-02,09:00-18:00,Routine
+QC2204,QC Supervisor - Inline QC,Batch-759 | Button/Zipper Function (Order: 99715),Throughput Target 50 pieces/hour,Light Box LB-04,15:00-23:00,Routine
+QC2205,QC Manager - AQL Inspection,Batch-501 | Button/Zipper Function (Order: 57638),Inspection Quota 134 pieces,Wash Test WT-08,09:00-18:00,Critical
+QC2206,QC Trainee - Inline QC,Batch-459 | Final Audit (Order: 24796),Throughput Target 49 pieces/hour,Measurement Station MS-05,08:00-17:00,Standard
+QC2207,QC Manager - Packing QC,Batch-205 | Color Matching (Order: 76577),Throughput Target 72 pieces/hour,Inspection Booth IB-06,10:00-19:00,Urgent
+QC2208,QC Trainee - Pre-Production QC,Batch-645 | Durability Test (Order: 49599),Throughput Target 45 pieces/hour,Audit Station AS-04,10:00-19:00,Standard
+QC2209,QC Manager - Final QC,Batch-493 | Color Matching (Order: 73225),Defect Rate < 1.5%,Light Box LB-14,10:00-19:00,Priority
+QC2210,QC Supervisor - Trim QC,Batch-657 | Embroidery Quality (Order: 54852),Inspection Quota 94 pieces,Inspection Booth IB-12,10:00-19:00,Priority
+QC2211,QC Supervisor - AQL Inspection,Batch-710 | Measurement Check (Order: 87616),Throughput Target 40 pieces/hour,Inspection Booth IB-14,09:00-18:00,Priority
+QC2212,Senior QC - Final QC,Batch-712 | Packaging Inspection (Order: 19123),Defect Rate < 4%,Audit Station AS-06,09:00-18:00,Standard
+QC2213,QC Trainee - Pre-Production QC,Batch-936 | Measurement Check (Order: 38522),Inspection Quota 198 pieces,QC Table QT-13,15:00-23:00,Standard
+QC2214,QC Inspector - Pre-Production QC,Batch-398 | Final Audit (Order: 79632),Throughput Target 59 pieces/hour,Photo Studio PS-04,15:00-23:00,Standard
+QC2215,Senior QC - Pre-Production QC,Batch-913 | Button/Zipper Function (Order: 84747),Accuracy Target 97%,Wash Test WT-02,10:00-19:00,Urgent
+QC2216,QC Manager - Inline QC,Batch-967 | Trim Quality Check (Order: 62978),Inspection Quota 125 pieces,QC Table QT-06,10:00-19:00,Urgent
+QC2217,QC Trainee - Inline QC,Batch-940 | Washing Test (Order: 83404),Accuracy Target 95%,Fabric Testing FT-14,07:00-15:00,Critical
+QC2218,QC Supervisor - Final QC,Batch-503 | Washing Test (Order: 87353),Accuracy Target 97%,Audit Station AS-07,09:00-18:00,Routine
+QC2219,QC Inspector - Packing QC,Batch-586 | Print Quality Check (Order: 32729),Inspection Quota 98 pieces,Audit Station AS-14,08:00-17:00,Priority
+QC2220,QC Supervisor - AQL Inspection,Batch-993 | Color Matching (Order: 47810),Inspection Quota 84 pieces,QC Table QT-02,07:00-15:00,Urgent
+QC2221,QC Supervisor - Final QC,Batch-239 | Print Quality Check (Order: 67243),Defect Rate < 3%,Audit Station AS-14,09:00-18:00,Standard
+QC2222,QC Manager - AQL Inspection,Batch-738 | Appearance Check (Order: 65797),Inspection Quota 166 pieces,Audit Station AS-09,09:00-18:00,Routine
+QC2223,Senior QC - Trim QC,Batch-534 | Fabric Defect Check (Order: 34352),Defect Rate < 4%,Photo Studio PS-14,15:00-23:00,Priority
+QC2224,QC Manager - Pre-Production QC,Batch-659 | Button/Zipper Function (Order: 63849),Accuracy Target 95%,QC Table QT-10,09:00-18:00,Priority
+QC2225,Senior QC - Pre-Production QC,Batch-593 | Measurement Check (Order: 86056),Defect Rate < 3%,Fabric Testing FT-08,10:00-19:00,Urgent
+QC2226,QC Manager - Inline QC,Batch-190 | Appearance Check (Order: 89963),Inspection Quota 170 pieces,Inspection Booth IB-11,10:00-19:00,Routine
+QC2227,QC Manager - AQL Inspection,Batch-154 | Button/Zipper Function (Order: 90352),Accuracy Target 96%,QC Table QT-08,09:00-18:00,Priority
+QC2228,QC Supervisor - Packing QC,Batch-531 | Embroidery Quality (Order: 53452),Accuracy Target 99%,Fabric Testing FT-03,07:00-15:00,Standard
+QC2229,QC Manager - Pre-Production QC,Batch-844 | Washing Test (Order: 49855),Accuracy Target 95%,Photo Studio PS-10,15:00-23:00,Standard
+QC2230,QC Trainee - Packing QC,Batch-928 | Print Quality Check (Order: 48240),Defect Rate < 1.5%,Photo Studio PS-02,15:00-23:00,Standard
+QC2231,QC Trainee - Packing QC,Batch-358 | Fit Check (Order: 46418),Inspection Quota 121 pieces,Fabric Testing FT-14,08:00-17:00,Urgent
+QC2232,QC Trainee - Inline QC,Batch-705 | Embroidery Quality (Order: 32886),Inspection Quota 164 pieces,Wash Test WT-13,15:00-23:00,Priority
+QC2233,QC Inspector - Fabric QC,Batch-918 | Final Audit (Order: 33699),Defect Rate < 1.5%,Inspection Booth IB-03,10:00-19:00,Priority
+QC2234,QC Inspector - AQL Inspection,Batch-870 | Fit Check (Order: 75004),Throughput Target 69 pieces/hour,Audit Station AS-04,09:00-18:00,Standard
+QC2235,QC Inspector - Pre-Production QC,Batch-851 | Fabric Defect Check (Order: 85727),Accuracy Target 95%,Fabric Testing FT-13,07:00-15:00,Urgent
+QC2236,QC Inspector - Inline QC,Batch-587 | Final Audit (Order: 62264),Accuracy Target 97%,Light Box LB-07,09:00-18:00,Standard
+QC2237,Senior QC - Trim QC,Batch-991 | Color Matching (Order: 79526),Throughput Target 20 pieces/hour,Fabric Testing FT-15,09:00-18:00,Urgent
+QC2238,Senior QC - Trim QC,Batch-142 | Trim Quality Check (Order: 99505),Defect Rate < 4%,Wash Test WT-14,09:00-18:00,Standard
+QC2239,Senior QC - Packing QC,Batch-373 | Label Verification (Order: 45432),Defect Rate < 1.5%,Audit Station AS-08,15:00-23:00,Standard
+QC2240,QC Manager - Pre-Production QC,Batch-632 | Durability Test (Order: 35549),Accuracy Target 98%,Wash Test WT-09,07:00-15:00,Standard
+QC2241,QC Trainee - Pre-Production QC,Batch-112 | Fit Check (Order: 18906),Throughput Target 26 pieces/hour,Inspection Booth IB-11,09:00-18:00,Standard
+QC2242,QC Inspector - Fabric QC,Batch-357 | Washing Test (Order: 47132),Inspection Quota 58 pieces,QC Table QT-10,07:00-15:00,Priority
+QC2243,QC Manager - Inline QC,Batch-713 | Print Quality Check (Order: 38419),Defect Rate < 2%,Inspection Booth IB-14,10:00-19:00,Priority
+QC2244,QC Supervisor - Final QC,Batch-679 | Print Quality Check (Order: 94922),Inspection Quota 78 pieces,Measurement Station MS-05,08:00-17:00,Standard
+QC2245,QC Trainee - Trim QC,Batch-383 | Print Quality Check (Order: 69433),Throughput Target 64 pieces/hour,Wash Test WT-05,15:00-23:00,Urgent
+QC2246,QC Trainee - AQL Inspection,Batch-491 | Button/Zipper Function (Order: 18177),Throughput Target 41 pieces/hour,QC Table QT-05,08:00-17:00,Standard
+QC2247,QC Supervisor - Final QC,Batch-305 | Measurement Check (Order: 74450),Throughput Target 31 pieces/hour,Photo Studio PS-02,15:00-23:00,Priority
+QC2248,QC Supervisor - Packing QC,Batch-758 | Fabric Defect Check (Order: 90473),Defect Rate < 2.5%,Fabric Testing FT-02,07:00-15:00,Urgent
+QC2249,QC Trainee - Inline QC,Batch-895 | Embroidery Quality (Order: 42846),Throughput Target 21 pieces/hour,Photo Studio PS-03,07:00-15:00,Priority
+QC2250,QC Supervisor - Inline QC,Batch-816 | Button/Zipper Function (Order: 29871),Accuracy Target 97%,QC Table QT-09,09:00-18:00,Routine
+QC2251,QC Supervisor - Trim QC,Batch-653 | Packaging Inspection (Order: 19188),Inspection Quota 50 pieces,Audit Station AS-12,09:00-18:00,Urgent
+QC2252,QC Manager - Inline QC,Batch-441 | Trim Quality Check (Order: 57044),Accuracy Target 97%,QC Table QT-11,07:00-15:00,Priority
+QC2253,QC Manager - Fabric QC,Batch-182 | Fit Check (Order: 54572),Throughput Target 68 pieces/hour,Fabric Testing FT-11,15:00-23:00,Standard
+QC2254,QC Manager - Final QC,Batch-776 | Seam Quality Check (Order: 60353),Inspection Quota 126 pieces,Audit Station AS-15,07:00-15:00,Routine
+QC2255,Senior QC - Pre-Production QC,Batch-747 | Final Audit (Order: 21123),Throughput Target 67 pieces/hour,Light Box LB-03,07:00-15:00,Priority
+QC2256,QC Trainee - Final QC,Batch-344 | Washing Test (Order: 87718),Throughput Target 44 pieces/hour,Inspection Booth IB-13,10:00-19:00,Priority
+QC2257,Senior QC - Pre-Production QC,Batch-954 | Final Audit (Order: 79984),Throughput Target 21 pieces/hour,QC Table QT-06,07:00-15:00,Priority
+QC2258,QC Trainee - Fabric QC,Batch-316 | Packaging Inspection (Order: 25491),Throughput Target 80 pieces/hour,Measurement Station MS-12,10:00-19:00,Urgent
+QC2259,QC Trainee - Final QC,Batch-600 | Seam Quality Check (Order: 28558),Defect Rate < 2.5%,QC Table QT-04,15:00-23:00,Priority
+QC2260,QC Inspector - Inline QC,Batch-414 | Print Quality Check (Order: 16548),Defect Rate < 2.5%,Measurement Station MS-14,10:00-19:00,Standard
+QC2261,QC Trainee - Inline QC,Batch-709 | Measurement Check (Order: 75161),Inspection Quota 66 pieces,Light Box LB-07,08:00-17:00,Standard
+QC2262,QC Supervisor - AQL Inspection,Batch-800 | Label Verification (Order: 25833),Inspection Quota 132 pieces,Light Box LB-13,07:00-15:00,Standard
+QC2263,QC Inspector - Packing QC,Batch-223 | Label Verification (Order: 18286),Accuracy Target 98%,Audit Station AS-03,08:00-17:00,Priority
+QC2264,QC Inspector - Packing QC,Batch-695 | Final Audit (Order: 41934),Defect Rate < 3%,Inspection Booth IB-13,10:00-19:00,Routine
+QC2265,QC Inspector - Trim QC,Batch-182 | Seam Quality Check (Order: 73827),Defect Rate < 2%,Measurement Station MS-15,07:00-15:00,Priority
+QC2266,QC Manager - Pre-Production QC,Batch-526 | Appearance Check (Order: 47189),Throughput Target 64 pieces/hour,Measurement Station MS-04,15:00-23:00,Priority
+QC2267,Senior QC - Pre-Production QC,Batch-521 | Trim Quality Check (Order: 69037),Inspection Quota 94 pieces,QC Table QT-10,15:00-23:00,Urgent
+QC2268,QC Supervisor - Pre-Production QC,Batch-742 | Embroidery Quality (Order: 21537),Accuracy Target 99%,Audit Station AS-01,10:00-19:00,Standard
+QC2269,QC Inspector - Final QC,Batch-197 | Measurement Check (Order: 79494),Accuracy Target 96%,Light Box LB-08,15:00-23:00,Urgent
+QC2270,QC Trainee - Fabric QC,Batch-915 | Fabric Defect Check (Order: 24769),Inspection Quota 171 pieces,Photo Studio PS-03,15:00-23:00,Routine
+QC2271,QC Trainee - Pre-Production QC,Batch-472 | Seam Quality Check (Order: 94523),Accuracy Target 98%,Audit Station AS-05,08:00-17:00,Urgent
+QC2272,QC Supervisor - Packing QC,Batch-858 | Seam Quality Check (Order: 23686),Defect Rate < 4%,Measurement Station MS-03,07:00-15:00,Routine
+QC2273,QC Manager - Trim QC,Batch-340 | Measurement Check (Order: 19287),Throughput Target 57 pieces/hour,Wash Test WT-07,15:00-23:00,Standard
+QC2274,Senior QC - Pre-Production QC,Batch-433 | Fabric Defect Check (Order: 24435),Inspection Quota 75 pieces,Light Box LB-12,09:00-18:00,Priority
+QC2275,QC Inspector - AQL Inspection,Batch-175 | Packaging Inspection (Order: 38922),Throughput Target 57 pieces/hour,Photo Studio PS-01,09:00-18:00,Routine
+QC2276,QC Inspector - Final QC,Batch-565 | Appearance Check (Order: 89879),Inspection Quota 149 pieces,Wash Test WT-03,09:00-18:00,Standard
+QC2277,QC Inspector - Pre-Production QC,Batch-376 | Print Quality Check (Order: 57001),Inspection Quota 135 pieces,Measurement Station MS-01,10:00-19:00,Priority
+QC2278,Senior QC - Inline QC,Batch-972 | Color Matching (Order: 24563),Throughput Target 49 pieces/hour,Audit Station AS-03,08:00-17:00,Priority
+QC2279,Senior QC - Final QC,Batch-908 | Embroidery Quality (Order: 30550),Inspection Quota 197 pieces,Light Box LB-02,09:00-18:00,Priority
+QC2280,QC Manager - AQL Inspection,Batch-705 | Final Audit (Order: 38369),Throughput Target 73 pieces/hour,Photo Studio PS-05,07:00-15:00,Priority
+QC2281,QC Supervisor - Pre-Production QC,Batch-353 | Washing Test (Order: 42329),Accuracy Target 97%,Light Box LB-15,10:00-19:00,Priority
+QC2282,QC Manager - Final QC,Batch-527 | Appearance Check (Order: 10665),Defect Rate < 2%,Photo Studio PS-12,10:00-19:00,Standard
+QC2283,QC Supervisor - Inline QC,Batch-590 | Trim Quality Check (Order: 61684),Defect Rate < 2.5%,Photo Studio PS-04,07:00-15:00,Standard
+QC2284,QC Trainee - Packing QC,Batch-323 | Washing Test (Order: 63296),Inspection Quota 141 pieces,Fabric Testing FT-04,07:00-15:00,Standard
+QC2285,QC Supervisor - Inline QC,Batch-265 | Print Quality Check (Order: 49955),Throughput Target 74 pieces/hour,QC Table QT-08,09:00-18:00,Urgent
+QC2286,QC Inspector - AQL Inspection,Batch-289 | Fit Check (Order: 63131),Accuracy Target 97%,QC Table QT-14,07:00-15:00,Priority
+QC2287,Senior QC - Trim QC,Batch-403 | Trim Quality Check (Order: 14287),Throughput Target 68 pieces/hour,Fabric Testing FT-12,10:00-19:00,Standard
+QC2288,QC Manager - Packing QC,Batch-906 | Durability Test (Order: 37151),Defect Rate < 4%,Wash Test WT-12,07:00-15:00,Standard
+QC2289,Senior QC - Packing QC,Batch-213 | Appearance Check (Order: 16758),Throughput Target 43 pieces/hour,Photo Studio PS-10,07:00-15:00,Urgent
+QC2290,Senior QC - Fabric QC,Batch-672 | Color Matching (Order: 94957),Defect Rate < 4%,Light Box LB-03,08:00-17:00,Standard
+QC2291,QC Manager - Final QC,Batch-589 | Measurement Check (Order: 95070),Inspection Quota 107 pieces,Wash Test WT-06,08:00-17:00,Priority
+QC2292,QC Supervisor - Packing QC,Batch-164 | Button/Zipper Function (Order: 17138),Accuracy Target 99%,Photo Studio PS-08,10:00-19:00,Priority
+QC2293,QC Trainee - Packing QC,Batch-794 | Final Audit (Order: 79717),Accuracy Target 97%,Wash Test WT-13,07:00-15:00,Priority
+QC2294,QC Supervisor - Final QC,Batch-500 | Measurement Check (Order: 20508),Inspection Quota 123 pieces,Inspection Booth IB-02,15:00-23:00,Routine
+QC2295,QC Trainee - Fabric QC,Batch-608 | Washing Test (Order: 29392),Inspection Quota 102 pieces,QC Table QT-05,09:00-18:00,Urgent
+QC2296,QC Manager - Pre-Production QC,Batch-585 | Appearance Check (Order: 27305),Accuracy Target 97%,Photo Studio PS-12,07:00-15:00,Urgent
+QC2297,QC Inspector - Fabric QC,Batch-992 | Measurement Check (Order: 12888),Inspection Quota 183 pieces,Wash Test WT-07,10:00-19:00,Priority
+QC2298,Senior QC - Fabric QC,Batch-781 | Final Audit (Order: 87772),Throughput Target 49 pieces/hour,Fabric Testing FT-10,15:00-23:00,Priority
+QC2299,Senior QC - AQL Inspection,Batch-332 | Color Matching (Order: 44079),Throughput Target 43 pieces/hour,Fabric Testing FT-13,07:00-15:00,Urgent
+QC2300,Senior QC - Final QC,Batch-270 | Button/Zipper Function (Order: 69759),Inspection Quota 187 pieces,Fabric Testing FT-03,15:00-23:00,Priority
+QC2301,QC Inspector - AQL Inspection,Batch-219 | Color Matching (Order: 41182),Defect Rate < 1.5%,Measurement Station MS-08,08:00-17:00,Standard
+QC2302,QC Inspector - Fabric QC,Batch-824 | Fabric Defect Check (Order: 83726),Defect Rate < 1.5%,Wash Test WT-03,08:00-17:00,Priority
+QC2303,QC Manager - Trim QC,Batch-408 | Color Matching (Order: 79945),Defect Rate < 2%,Audit Station AS-15,09:00-18:00,Priority
+QC2304,QC Inspector - AQL Inspection,Batch-259 | Final Audit (Order: 51971),Defect Rate < 4%,Wash Test WT-11,08:00-17:00,Standard
+QC2305,Senior QC - Trim QC,Batch-782 | Durability Test (Order: 85199),Inspection Quota 194 pieces,Photo Studio PS-06,07:00-15:00,Priority
+QC2306,QC Supervisor - Pre-Production QC,Batch-242 | Appearance Check (Order: 15253),Defect Rate < 1.5%,QC Table QT-07,10:00-19:00,Urgent
+QC2307,QC Inspector - AQL Inspection,Batch-194 | Final Audit (Order: 56844),Accuracy Target 95%,Light Box LB-10,10:00-19:00,Urgent
+QC2308,Senior QC - Final QC,Batch-185 | Fabric Defect Check (Order: 12955),Throughput Target 63 pieces/hour,Inspection Booth IB-09,09:00-18:00,Standard
+QC2309,QC Supervisor - Final QC,Batch-719 | Label Verification (Order: 89058),Defect Rate < 1.5%,Audit Station AS-03,09:00-18:00,Routine
+QC2310,QC Supervisor - Fabric QC,Batch-391 | Label Verification (Order: 11597),Accuracy Target 99%,Fabric Testing FT-08,10:00-19:00,Critical
+QC2311,QC Inspector - Inline QC,Batch-859 | Washing Test (Order: 68224),Throughput Target 71 pieces/hour,Photo Studio PS-05,15:00-23:00,Urgent
+QC2312,QC Supervisor - AQL Inspection,Batch-242 | Washing Test (Order: 64289),Defect Rate < 3%,Light Box LB-05,09:00-18:00,Routine
+QC2313,QC Manager - AQL Inspection,Batch-704 | Label Verification (Order: 18665),Throughput Target 25 pieces/hour,QC Table QT-07,08:00-17:00,Urgent
+QC2314,QC Inspector - Trim QC,Batch-827 | Trim Quality Check (Order: 70570),Inspection Quota 101 pieces,Measurement Station MS-14,09:00-18:00,Urgent
+QC2315,QC Manager - Fabric QC,Batch-942 | Final Audit (Order: 15535),Accuracy Target 96%,Fabric Testing FT-08,10:00-19:00,Priority
+QC2316,QC Supervisor - Pre-Production QC,Batch-910 | Fabric Defect Check (Order: 13517),Defect Rate < 3%,Fabric Testing FT-05,09:00-18:00,Priority
+QC2317,Senior QC - Inline QC,Batch-603 | Packaging Inspection (Order: 33510),Inspection Quota 57 pieces,Inspection Booth IB-13,08:00-17:00,Standard
+QC2318,QC Trainee - Trim QC,Batch-695 | Embroidery Quality (Order: 57416),Throughput Target 56 pieces/hour,Audit Station AS-14,08:00-17:00,Routine
+QC2319,QC Supervisor - Pre-Production QC,Batch-482 | Washing Test (Order: 25674),Defect Rate < 1.5%,Measurement Station MS-10,07:00-15:00,Standard
+QC2320,Senior QC - Final QC,Batch-465 | Final Audit (Order: 27759),Inspection Quota 63 pieces,Fabric Testing FT-06,09:00-18:00,Urgent
+QC2321,Senior QC - Pre-Production QC,Batch-398 | Seam Quality Check (Order: 47992),Defect Rate < 4%,Light Box LB-13,15:00-23:00,Routine
+QC2322,QC Trainee - AQL Inspection,Batch-656 | Embroidery Quality (Order: 31906),Accuracy Target 99%,Fabric Testing FT-05,08:00-17:00,Standard
+QC2323,QC Manager - Inline QC,Batch-943 | Embroidery Quality (Order: 56088),Inspection Quota 53 pieces,Measurement Station MS-09,08:00-17:00,Standard
+QC2324,QC Supervisor - Fabric QC,Batch-266 | Packaging Inspection (Order: 54605),Defect Rate < 3%,Measurement Station MS-09,15:00-23:00,Priority
+QC2325,QC Inspector - AQL Inspection,Batch-728 | Durability Test (Order: 83224),Defect Rate < 2.5%,Photo Studio PS-15,07:00-15:00,Urgent
+QC2326,QC Inspector - Inline QC,Batch-591 | Appearance Check (Order: 12277),Accuracy Target 99%,Wash Test WT-03,09:00-18:00,Standard
+QC2327,QC Manager - Packing QC,Batch-276 | Durability Test (Order: 54832),Accuracy Target 95%,Inspection Booth IB-04,15:00-23:00,Standard
+QC2328,QC Inspector - AQL Inspection,Batch-414 | Washing Test (Order: 39697),Inspection Quota 103 pieces,Measurement Station MS-02,09:00-18:00,Priority
+QC2329,QC Trainee - Pre-Production QC,Batch-893 | Measurement Check (Order: 12464),Throughput Target 68 pieces/hour,Audit Station AS-01,15:00-23:00,Standard
+QC2330,QC Trainee - Inline QC,Batch-625 | Durability Test (Order: 96479),Defect Rate < 2.5%,Inspection Booth IB-15,08:00-17:00,Standard
+QC2331,QC Trainee - Inline QC,Batch-110 | Button/Zipper Function (Order: 97501),Defect Rate < 2%,Light Box LB-10,15:00-23:00,Standard
+QC2332,Senior QC - Final QC,Batch-249 | Seam Quality Check (Order: 21898),Accuracy Target 96%,Wash Test WT-06,15:00-23:00,Routine
+QC2333,QC Manager - AQL Inspection,Batch-347 | Durability Test (Order: 90341),Defect Rate < 2%,QC Table QT-09,15:00-23:00,Standard
+QC2334,QC Inspector - Pre-Production QC,Batch-872 | Button/Zipper Function (Order: 32514),Defect Rate < 2%,Light Box LB-15,10:00-19:00,Standard
+QC2335,QC Supervisor - AQL Inspection,Batch-289 | Label Verification (Order: 87251),Throughput Target 63 pieces/hour,Inspection Booth IB-03,08:00-17:00,Standard
+QC2336,QC Supervisor - Trim QC,Batch-333 | Fabric Defect Check (Order: 77403),Throughput Target 27 pieces/hour,Wash Test WT-02,09:00-18:00,Urgent
+QC2337,QC Manager - Inline QC,Batch-880 | Color Matching (Order: 74987),Accuracy Target 99%,QC Table QT-02,08:00-17:00,Standard
+QC2338,QC Trainee - Trim QC,Batch-567 | Packaging Inspection (Order: 47173),Accuracy Target 97%,Light Box LB-09,09:00-18:00,Priority
+QC2339,QC Supervisor - Fabric QC,Batch-961 | Fabric Defect Check (Order: 19123),Throughput Target 80 pieces/hour,Wash Test WT-03,07:00-15:00,Priority
+QC2340,QC Supervisor - Pre-Production QC,Batch-505 | Print Quality Check (Order: 23785),Throughput Target 53 pieces/hour,Inspection Booth IB-02,15:00-23:00,Routine
+QC2341,QC Supervisor - Trim QC,Batch-204 | Washing Test (Order: 87405),Inspection Quota 66 pieces,Wash Test WT-04,08:00-17:00,Priority
+QC2342,QC Manager - Final QC,Batch-225 | Fit Check (Order: 62990),Inspection Quota 158 pieces,Photo Studio PS-05,10:00-19:00,Standard
+QC2343,Senior QC - Packing QC,Batch-509 | Durability Test (Order: 94388),Accuracy Target 97%,Audit Station AS-08,10:00-19:00,Critical
+QC2344,QC Inspector - Fabric QC,Batch-210 | Durability Test (Order: 69589),Defect Rate < 1.5%,Photo Studio PS-08,15:00-23:00,Routine
+QC2345,QC Inspector - Pre-Production QC,Batch-855 | Seam Quality Check (Order: 23055),Defect Rate < 2%,Photo Studio PS-11,07:00-15:00,Standard
+QC2346,QC Supervisor - Final QC,Batch-434 | Embroidery Quality (Order: 99024),Inspection Quota 127 pieces,Inspection Booth IB-13,07:00-15:00,Routine
+QC2347,QC Manager - Pre-Production QC,Batch-911 | Durability Test (Order: 74512),Throughput Target 32 pieces/hour,Fabric Testing FT-11,09:00-18:00,Critical
+QC2348,QC Manager - Trim QC,Batch-451 | Button/Zipper Function (Order: 81098),Defect Rate < 2%,Audit Station AS-15,07:00-15:00,Priority
+QC2349,QC Supervisor - Trim QC,Batch-553 | Label Verification (Order: 59327),Throughput Target 22 pieces/hour,QC Table QT-03,10:00-19:00,Priority
+QC2350,Senior QC - Pre-Production QC,Batch-603 | Appearance Check (Order: 31514),Throughput Target 28 pieces/hour,Fabric Testing FT-12,09:00-18:00,Routine
+QC2351,QC Trainee - Trim QC,Batch-602 | Embroidery Quality (Order: 98476),Throughput Target 50 pieces/hour,Measurement Station MS-09,07:00-15:00,Priority
+QC2352,Senior QC - Trim QC,Batch-486 | Final Audit (Order: 87469),Accuracy Target 99%,Wash Test WT-01,07:00-15:00,Standard
+QC2353,QC Trainee - Packing QC,Batch-457 | Color Matching (Order: 58026),Defect Rate < 1.5%,Audit Station AS-02,09:00-18:00,Urgent
+QC2354,Senior QC - Fabric QC,Batch-157 | Packaging Inspection (Order: 56041),Inspection Quota 113 pieces,Light Box LB-11,08:00-17:00,Standard
+QC2355,QC Trainee - Packing QC,Batch-989 | Appearance Check (Order: 18585),Accuracy Target 95%,Wash Test WT-03,07:00-15:00,Standard
+QC2356,Senior QC - Packing QC,Batch-773 | Seam Quality Check (Order: 70412),Throughput Target 56 pieces/hour,Audit Station AS-05,07:00-15:00,Routine
+QC2357,QC Supervisor - Pre-Production QC,Batch-424 | Embroidery Quality (Order: 12914),Throughput Target 56 pieces/hour,Audit Station AS-06,10:00-19:00,Standard
+QC2358,QC Supervisor - Inline QC,Batch-310 | Measurement Check (Order: 98488),Accuracy Target 97%,Wash Test WT-03,10:00-19:00,Priority
+QC2359,Senior QC - Fabric QC,Batch-608 | Packaging Inspection (Order: 36444),Defect Rate < 4%,Light Box LB-05,08:00-17:00,Routine
+QC2360,Senior QC - Inline QC,Batch-923 | Embroidery Quality (Order: 62694),Inspection Quota 73 pieces,Inspection Booth IB-10,08:00-17:00,Priority
+QC2361,QC Trainee - Fabric QC,Batch-586 | Embroidery Quality (Order: 79607),Throughput Target 33 pieces/hour,Wash Test WT-13,07:00-15:00,Standard
+QC2362,Senior QC - Pre-Production QC,Batch-543 | Trim Quality Check (Order: 49309),Accuracy Target 98%,Audit Station AS-07,08:00-17:00,Priority
+QC2363,QC Manager - Packing QC,Batch-881 | Final Audit (Order: 98022),Inspection Quota 54 pieces,Measurement Station MS-10,09:00-18:00,Standard
+QC2364,QC Supervisor - Final QC,Batch-645 | Button/Zipper Function (Order: 93614),Throughput Target 79 pieces/hour,QC Table QT-09,15:00-23:00,Standard
+QC2365,QC Supervisor - Fabric QC,Batch-254 | Color Matching (Order: 41506),Accuracy Target 97%,Audit Station AS-06,07:00-15:00,Priority
+QC2366,QC Inspector - Pre-Production QC,Batch-373 | Fit Check (Order: 64059),Accuracy Target 98%,Fabric Testing FT-11,10:00-19:00,Standard
+QC2367,QC Supervisor - Final QC,Batch-253 | Fabric Defect Check (Order: 24884),Inspection Quota 57 pieces,Light Box LB-13,08:00-17:00,Standard
+QC2368,QC Supervisor - Trim QC,Batch-532 | Trim Quality Check (Order: 67164),Defect Rate < 3%,Measurement Station MS-05,15:00-23:00,Urgent
+QC2369,Senior QC - Inline QC,Batch-774 | Durability Test (Order: 46408),Inspection Quota 60 pieces,Photo Studio PS-13,07:00-15:00,Urgent
+QC2370,QC Trainee - Inline QC,Batch-405 | Label Verification (Order: 88852),Defect Rate < 2.5%,Wash Test WT-11,07:00-15:00,Standard
+QC2371,QC Inspector - Trim QC,Batch-684 | Fabric Defect Check (Order: 24671),Defect Rate < 4%,Fabric Testing FT-08,07:00-15:00,Standard
+QC2372,QC Manager - Final QC,Batch-437 | Measurement Check (Order: 51079),Throughput Target 71 pieces/hour,Light Box LB-15,09:00-18:00,Priority
+QC2373,QC Inspector - Final QC,Batch-319 | Measurement Check (Order: 32957),Accuracy Target 97%,Audit Station AS-05,10:00-19:00,Standard
+QC2374,QC Supervisor - Inline QC,Batch-816 | Trim Quality Check (Order: 59113),Defect Rate < 1.5%,Audit Station AS-08,15:00-23:00,Routine
+QC2375,QC Inspector - Fabric QC,Batch-832 | Label Verification (Order: 72288),Accuracy Target 99%,QC Table QT-11,10:00-19:00,Standard
+QC2376,QC Trainee - Inline QC,Batch-345 | Washing Test (Order: 98027),Accuracy Target 96%,Audit Station AS-05,08:00-17:00,Priority
+QC2377,QC Trainee - AQL Inspection,Batch-978 | Trim Quality Check (Order: 40983),Throughput Target 44 pieces/hour,QC Table QT-15,09:00-18:00,Priority
+QC2378,Senior QC - Fabric QC,Batch-404 | Measurement Check (Order: 40862),Inspection Quota 91 pieces,Photo Studio PS-11,08:00-17:00,Routine
+QC2379,QC Supervisor - AQL Inspection,Batch-380 | Durability Test (Order: 14440),Defect Rate < 2.5%,Photo Studio PS-12,09:00-18:00,Standard
+QC2380,Senior QC - AQL Inspection,Batch-997 | Washing Test (Order: 65360),Defect Rate < 3%,Fabric Testing FT-09,07:00-15:00,Standard
+QC2381,QC Supervisor - Fabric QC,Batch-855 | Embroidery Quality (Order: 81791),Accuracy Target 97%,QC Table QT-13,07:00-15:00,Priority
+QC2382,QC Inspector - Pre-Production QC,Batch-910 | Print Quality Check (Order: 68117),Inspection Quota 50 pieces,Audit Station AS-04,08:00-17:00,Routine
+QC2383,QC Manager - Fabric QC,Batch-261 | Measurement Check (Order: 24526),Inspection Quota 182 pieces,Measurement Station MS-14,10:00-19:00,Routine
+QC2384,QC Supervisor - Pre-Production QC,Batch-562 | Durability Test (Order: 51864),Throughput Target 75 pieces/hour,Measurement Station MS-05,15:00-23:00,Priority
+QC2385,QC Manager - Pre-Production QC,Batch-918 | Fit Check (Order: 52936),Accuracy Target 98%,Inspection Booth IB-07,08:00-17:00,Standard
+QC2386,QC Supervisor - Final QC,Batch-954 | Appearance Check (Order: 59456),Inspection Quota 55 pieces,QC Table QT-15,10:00-19:00,Priority
+QC2387,QC Manager - Pre-Production QC,Batch-191 | Print Quality Check (Order: 39977),Throughput Target 32 pieces/hour,Fabric Testing FT-12,15:00-23:00,Standard
+QC2388,QC Supervisor - Inline QC,Batch-714 | Embroidery Quality (Order: 66217),Accuracy Target 98%,Inspection Booth IB-06,15:00-23:00,Routine
+QC2389,QC Trainee - Packing QC,Batch-545 | Seam Quality Check (Order: 78922),Throughput Target 72 pieces/hour,Photo Studio PS-02,15:00-23:00,Standard
+QC2390,QC Inspector - Pre-Production QC,Batch-394 | Fabric Defect Check (Order: 44891),Throughput Target 44 pieces/hour,Measurement Station MS-07,15:00-23:00,Priority
+QC2391,QC Inspector - Packing QC,Batch-844 | Fit Check (Order: 47089),Inspection Quota 157 pieces,Measurement Station MS-07,15:00-23:00,Urgent
+QC2392,Senior QC - Inline QC,Batch-732 | Button/Zipper Function (Order: 40865),Throughput Target 78 pieces/hour,Light Box LB-06,10:00-19:00,Urgent
+QC2393,QC Supervisor - Pre-Production QC,Batch-580 | Measurement Check (Order: 11352),Inspection Quota 132 pieces,Audit Station AS-11,15:00-23:00,Standard
+QC2394,QC Supervisor - Pre-Production QC,Batch-853 | Washing Test (Order: 65481),Accuracy Target 95%,Inspection Booth IB-09,07:00-15:00,Priority
+QC2395,Senior QC - Inline QC,Batch-582 | Appearance Check (Order: 40781),Accuracy Target 96%,QC Table QT-01,08:00-17:00,Standard
+QC2396,QC Manager - Packing QC,Batch-504 | Packaging Inspection (Order: 49650),Accuracy Target 98%,QC Table QT-10,15:00-23:00,Standard
+QC2397,QC Inspector - Fabric QC,Batch-447 | Trim Quality Check (Order: 74597),Throughput Target 28 pieces/hour,Inspection Booth IB-06,10:00-19:00,Urgent
+QC2398,QC Inspector - Trim QC,Batch-420 | Button/Zipper Function (Order: 25314),Defect Rate < 3%,Photo Studio PS-14,08:00-17:00,Routine
+QC2399,Senior QC - Pre-Production QC,Batch-389 | Appearance Check (Order: 66372),Accuracy Target 96%,Fabric Testing FT-09,08:00-17:00,Routine
+QC2400,QC Inspector - Trim QC,Batch-882 | Label Verification (Order: 74392),Inspection Quota 192 pieces,Photo Studio PS-01,15:00-23:00,Standard
+QC2401,QC Trainee - Final QC,Batch-136 | Fabric Defect Check (Order: 34004),Throughput Target 36 pieces/hour,Measurement Station MS-12,09:00-18:00,Routine
+QC2402,QC Trainee - Trim QC,Batch-141 | Appearance Check (Order: 74868),Throughput Target 42 pieces/hour,Photo Studio PS-08,09:00-18:00,Standard
+QC2403,QC Inspector - Inline QC,Batch-195 | Measurement Check (Order: 55823),Inspection Quota 122 pieces,Measurement Station MS-14,15:00-23:00,Priority
+QC2404,QC Manager - Pre-Production QC,Batch-676 | Fit Check (Order: 45755),Inspection Quota 199 pieces,QC Table QT-09,10:00-19:00,Standard
+QC2405,QC Supervisor - Final QC,Batch-352 | Appearance Check (Order: 20070),Throughput Target 63 pieces/hour,Inspection Booth IB-15,08:00-17:00,Urgent
+QC2406,Senior QC - Inline QC,Batch-224 | Print Quality Check (Order: 99212),Throughput Target 43 pieces/hour,Inspection Booth IB-14,08:00-17:00,Urgent
+QC2407,QC Trainee - Final QC,Batch-950 | Measurement Check (Order: 70323),Throughput Target 49 pieces/hour,Fabric Testing FT-10,07:00-15:00,Standard
+QC2408,QC Trainee - Fabric QC,Batch-563 | Print Quality Check (Order: 91574),Accuracy Target 96%,Measurement Station MS-04,07:00-15:00,Standard
+QC2409,Senior QC - AQL Inspection,Batch-861 | Label Verification (Order: 17279),Defect Rate < 4%,Audit Station AS-02,09:00-18:00,Standard
+QC2410,QC Inspector - Fabric QC,Batch-191 | Fabric Defect Check (Order: 62286),Defect Rate < 3%,Measurement Station MS-07,09:00-18:00,Priority
+QC2411,QC Inspector - Fabric QC,Batch-602 | Measurement Check (Order: 49131),Throughput Target 67 pieces/hour,Fabric Testing FT-15,10:00-19:00,Standard
+QC2412,Senior QC - Final QC,Batch-952 | Print Quality Check (Order: 22597),Accuracy Target 96%,Light Box LB-08,09:00-18:00,Priority
+QC2413,QC Supervisor - Trim QC,Batch-714 | Button/Zipper Function (Order: 83801),Throughput Target 25 pieces/hour,Audit Station AS-13,08:00-17:00,Standard
+QC2414,QC Inspector - Packing QC,Batch-536 | Packaging Inspection (Order: 92665),Defect Rate < 2%,Wash Test WT-08,15:00-23:00,Priority
+QC2415,QC Inspector - Pre-Production QC,Batch-639 | Appearance Check (Order: 74922),Defect Rate < 1.5%,Photo Studio PS-07,07:00-15:00,Standard
+QC2416,QC Supervisor - AQL Inspection,Batch-230 | Button/Zipper Function (Order: 29478),Accuracy Target 98%,Audit Station AS-05,10:00-19:00,Standard
+QC2417,QC Manager - Inline QC,Batch-625 | Measurement Check (Order: 15910),Defect Rate < 4%,Audit Station AS-07,07:00-15:00,Urgent
+QC2418,QC Manager - Trim QC,Batch-463 | Fit Check (Order: 43211),Accuracy Target 96%,Inspection Booth IB-13,10:00-19:00,Priority
+QC2419,QC Trainee - Inline QC,Batch-573 | Washing Test (Order: 96714),Inspection Quota 96 pieces,Audit Station AS-01,07:00-15:00,Routine
+QC2420,Senior QC - Trim QC,Batch-841 | Label Verification (Order: 86966),Throughput Target 68 pieces/hour,Photo Studio PS-10,08:00-17:00,Urgent
+QC2421,QC Inspector - Fabric QC,Batch-180 | Fabric Defect Check (Order: 34259),Accuracy Target 95%,Audit Station AS-09,07:00-15:00,Standard
+QC2422,QC Supervisor - Inline QC,Batch-275 | Measurement Check (Order: 11743),Throughput Target 49 pieces/hour,Audit Station AS-14,10:00-19:00,Urgent
+QC2423,QC Supervisor - Pre-Production QC,Batch-932 | Button/Zipper Function (Order: 91067),Accuracy Target 97%,Fabric Testing FT-02,15:00-23:00,Priority
+QC2424,QC Trainee - Final QC,Batch-935 | Fabric Defect Check (Order: 24668),Defect Rate < 3%,QC Table QT-04,09:00-18:00,Standard
+QC2425,QC Inspector - Pre-Production QC,Batch-546 | Print Quality Check (Order: 41690),Inspection Quota 72 pieces,Fabric Testing FT-13,09:00-18:00,Routine
+QC2426,QC Supervisor - Final QC,Batch-219 | Packaging Inspection (Order: 12859),Inspection Quota 89 pieces,Photo Studio PS-08,09:00-18:00,Standard
+QC2427,QC Supervisor - Inline QC,Batch-306 | Embroidery Quality (Order: 41801),Accuracy Target 96%,Audit Station AS-01,08:00-17:00,Priority
+QC2428,QC Trainee - Inline QC,Batch-525 | Print Quality Check (Order: 66595),Throughput Target 67 pieces/hour,Fabric Testing FT-01,09:00-18:00,Priority
+QC2429,QC Supervisor - Trim QC,Batch-842 | Trim Quality Check (Order: 87468),Throughput Target 34 pieces/hour,QC Table QT-09,07:00-15:00,Standard
+QC2430,QC Manager - Trim QC,Batch-165 | Label Verification (Order: 82516),Accuracy Target 97%,Photo Studio PS-02,09:00-18:00,Routine
+QC2431,Senior QC - Packing QC,Batch-121 | Final Audit (Order: 67177),Inspection Quota 123 pieces,Light Box LB-08,08:00-17:00,Urgent
+QC2432,QC Inspector - Trim QC,Batch-701 | Trim Quality Check (Order: 38796),Accuracy Target 96%,Photo Studio PS-03,08:00-17:00,Critical
+QC2433,QC Supervisor - Pre-Production QC,Batch-768 | Packaging Inspection (Order: 98225),Accuracy Target 97%,Measurement Station MS-10,15:00-23:00,Priority
+QC2434,QC Trainee - Fabric QC,Batch-232 | Print Quality Check (Order: 73293),Inspection Quota 101 pieces,Measurement Station MS-10,09:00-18:00,Standard
+QC2435,QC Supervisor - Inline QC,Batch-340 | Final Audit (Order: 49800),Inspection Quota 192 pieces,QC Table QT-01,08:00-17:00,Standard
+QC2436,Senior QC - Fabric QC,Batch-278 | Print Quality Check (Order: 30788),Defect Rate < 2%,Wash Test WT-07,07:00-15:00,Routine
+QC2437,QC Inspector - Packing QC,Batch-329 | Measurement Check (Order: 83660),Throughput Target 36 pieces/hour,Wash Test WT-13,08:00-17:00,Urgent
+QC2438,QC Trainee - AQL Inspection,Batch-373 | Durability Test (Order: 83010),Inspection Quota 181 pieces,Inspection Booth IB-12,07:00-15:00,Routine
+QC2439,QC Supervisor - Trim QC,Batch-208 | Fit Check (Order: 24539),Defect Rate < 4%,QC Table QT-09,07:00-15:00,Priority
+QC2440,QC Trainee - Final QC,Batch-470 | Fit Check (Order: 36920),Inspection Quota 124 pieces,Photo Studio PS-13,10:00-19:00,Standard
+QC2441,QC Trainee - Trim QC,Batch-472 | Color Matching (Order: 94815),Accuracy Target 98%,Inspection Booth IB-14,15:00-23:00,Priority
+QC2442,QC Supervisor - Trim QC,Batch-351 | Durability Test (Order: 10863),Throughput Target 41 pieces/hour,Fabric Testing FT-09,15:00-23:00,Priority
+QC2443,Senior QC - Inline QC,Batch-469 | Label Verification (Order: 64396),Inspection Quota 88 pieces,Audit Station AS-13,15:00-23:00,Urgent
+QC2444,QC Supervisor - Final QC,Batch-569 | Packaging Inspection (Order: 63648),Accuracy Target 95%,Photo Studio PS-03,07:00-15:00,Standard
+QC2445,QC Manager - Pre-Production QC,Batch-446 | Measurement Check (Order: 21112),Accuracy Target 97%,Measurement Station MS-07,07:00-15:00,Routine
+QC2446,QC Trainee - Trim QC,Batch-254 | Print Quality Check (Order: 94078),Defect Rate < 4%,Fabric Testing FT-07,09:00-18:00,Routine
+QC2447,QC Manager - Pre-Production QC,Batch-838 | Fit Check (Order: 49888),Accuracy Target 99%,QC Table QT-14,08:00-17:00,Urgent
+QC2448,QC Manager - Packing QC,Batch-817 | Appearance Check (Order: 29249),Throughput Target 48 pieces/hour,Light Box LB-15,10:00-19:00,Urgent
+QC2449,QC Manager - Packing QC,Batch-814 | Print Quality Check (Order: 67952),Accuracy Target 97%,Light Box LB-15,08:00-17:00,Priority
+QC2450,QC Trainee - Inline QC,Batch-499 | Trim Quality Check (Order: 53842),Inspection Quota 183 pieces,Fabric Testing FT-04,07:00-15:00,Priority
+QC2451,QC Manager - Packing QC,Batch-448 | Button/Zipper Function (Order: 78332),Inspection Quota 55 pieces,QC Table QT-15,10:00-19:00,Priority
+QC2452,Senior QC - Packing QC,Batch-843 | Fabric Defect Check (Order: 49838),Throughput Target 52 pieces/hour,Inspection Booth IB-12,07:00-15:00,Standard
+QC2453,Senior QC - AQL Inspection,Batch-619 | Button/Zipper Function (Order: 92180),Accuracy Target 95%,QC Table QT-13,07:00-15:00,Urgent
+QC2454,Senior QC - Trim QC,Batch-564 | Embroidery Quality (Order: 10683),Accuracy Target 98%,Light Box LB-06,08:00-17:00,Standard
+QC2455,QC Manager - Fabric QC,Batch-831 | Print Quality Check (Order: 28346),Throughput Target 53 pieces/hour,Light Box LB-02,08:00-17:00,Standard
+QC2456,QC Manager - Packing QC,Batch-565 | Fabric Defect Check (Order: 57352),Defect Rate < 3%,Audit Station AS-14,09:00-18:00,Priority
+QC2457,QC Trainee - Inline QC,Batch-233 | Seam Quality Check (Order: 65690),Throughput Target 33 pieces/hour,Photo Studio PS-02,08:00-17:00,Routine
+QC2458,QC Manager - Pre-Production QC,Batch-672 | Packaging Inspection (Order: 87101),Throughput Target 75 pieces/hour,Fabric Testing FT-10,09:00-18:00,Standard
+QC2459,QC Supervisor - Pre-Production QC,Batch-849 | Final Audit (Order: 74165),Throughput Target 72 pieces/hour,Measurement Station MS-03,10:00-19:00,Priority
+QC2460,QC Supervisor - Final QC,Batch-232 | Washing Test (Order: 69993),Defect Rate < 3%,Photo Studio PS-08,07:00-15:00,Routine
+QC2461,QC Inspector - Pre-Production QC,Batch-221 | Trim Quality Check (Order: 58409),Throughput Target 27 pieces/hour,Inspection Booth IB-06,10:00-19:00,Priority
+QC2462,QC Trainee - Fabric QC,Batch-220 | Trim Quality Check (Order: 30093),Accuracy Target 99%,Wash Test WT-05,08:00-17:00,Standard
+QC2463,QC Trainee - Trim QC,Batch-245 | Durability Test (Order: 28726),Throughput Target 23 pieces/hour,Fabric Testing FT-15,08:00-17:00,Standard
+QC2464,QC Inspector - Final QC,Batch-102 | Fit Check (Order: 74067),Defect Rate < 4%,Wash Test WT-02,07:00-15:00,Standard
+QC2465,QC Supervisor - Trim QC,Batch-679 | Embroidery Quality (Order: 50593),Throughput Target 77 pieces/hour,Wash Test WT-13,09:00-18:00,Standard
+QC2466,QC Manager - Trim QC,Batch-616 | Color Matching (Order: 28156),Throughput Target 68 pieces/hour,Photo Studio PS-11,09:00-18:00,Priority
+QC2467,Senior QC - Final QC,Batch-780 | Measurement Check (Order: 91889),Throughput Target 44 pieces/hour,Light Box LB-15,09:00-18:00,Standard
+QC2468,QC Manager - Fabric QC,Batch-553 | Seam Quality Check (Order: 97876),Accuracy Target 95%,Measurement Station MS-12,07:00-15:00,Priority
+QC2469,Senior QC - Packing QC,Batch-226 | Trim Quality Check (Order: 94562),Defect Rate < 3%,QC Table QT-10,10:00-19:00,Standard
+QC2470,QC Supervisor - Final QC,Batch-223 | Trim Quality Check (Order: 12446),Inspection Quota 54 pieces,Fabric Testing FT-13,15:00-23:00,Priority
+QC2471,QC Manager - Final QC,Batch-926 | Final Audit (Order: 21094),Accuracy Target 97%,QC Table QT-08,07:00-15:00,Urgent
+QC2472,QC Supervisor - Fabric QC,Batch-124 | Color Matching (Order: 64386),Accuracy Target 97%,Fabric Testing FT-02,07:00-15:00,Priority
+QC2473,QC Manager - Inline QC,Batch-247 | Color Matching (Order: 47401),Inspection Quota 115 pieces,Inspection Booth IB-03,08:00-17:00,Standard
+QC2474,QC Inspector - Trim QC,Batch-433 | Seam Quality Check (Order: 90540),Inspection Quota 56 pieces,QC Table QT-05,09:00-18:00,Routine
+QC2475,Senior QC - Inline QC,Batch-431 | Color Matching (Order: 64109),Accuracy Target 97%,Inspection Booth IB-01,15:00-23:00,Standard
+QC2476,QC Manager - Final QC,Batch-604 | Embroidery Quality (Order: 40997),Throughput Target 80 pieces/hour,Inspection Booth IB-05,07:00-15:00,Priority
+QC2477,QC Supervisor - Fabric QC,Batch-167 | Trim Quality Check (Order: 63356),Throughput Target 21 pieces/hour,Audit Station AS-11,15:00-23:00,Routine
+QC2478,Senior QC - Inline QC,Batch-791 | Trim Quality Check (Order: 86830),Defect Rate < 3%,Measurement Station MS-05,10:00-19:00,Standard
+QC2479,QC Supervisor - Trim QC,Batch-612 | Measurement Check (Order: 93335),Inspection Quota 86 pieces,Wash Test WT-09,15:00-23:00,Priority
+QC2480,QC Inspector - AQL Inspection,Batch-668 | Trim Quality Check (Order: 65542),Throughput Target 22 pieces/hour,QC Table QT-14,09:00-18:00,Standard
+QC2481,QC Manager - AQL Inspection,Batch-271 | Button/Zipper Function (Order: 95597),Defect Rate < 2%,Photo Studio PS-05,10:00-19:00,Priority
+QC2482,QC Supervisor - Fabric QC,Batch-317 | Label Verification (Order: 92864),Accuracy Target 95%,Measurement Station MS-12,10:00-19:00,Routine
+QC2483,QC Trainee - Packing QC,Batch-504 | Button/Zipper Function (Order: 21759),Defect Rate < 3%,Fabric Testing FT-15,09:00-18:00,Routine
+QC2484,QC Manager - Final QC,Batch-798 | Trim Quality Check (Order: 51720),Accuracy Target 99%,Photo Studio PS-05,15:00-23:00,Priority
+QC2485,Senior QC - Pre-Production QC,Batch-570 | Label Verification (Order: 37606),Accuracy Target 95%,Measurement Station MS-11,07:00-15:00,Standard
+QC2486,QC Supervisor - Packing QC,Batch-788 | Seam Quality Check (Order: 11255),Inspection Quota 155 pieces,Photo Studio PS-13,09:00-18:00,Priority
+QC2487,QC Trainee - Packing QC,Batch-766 | Durability Test (Order: 95078),Defect Rate < 4%,QC Table QT-15,09:00-18:00,Standard
+QC2488,QC Trainee - Pre-Production QC,Batch-947 | Label Verification (Order: 59332),Accuracy Target 97%,Measurement Station MS-14,07:00-15:00,Standard
+QC2489,QC Supervisor - Inline QC,Batch-555 | Label Verification (Order: 35295),Defect Rate < 3%,QC Table QT-13,08:00-17:00,Urgent
+QC2490,Senior QC - Pre-Production QC,Batch-935 | Fabric Defect Check (Order: 21792),Accuracy Target 98%,Light Box LB-08,08:00-17:00,Priority
+QC2491,Senior QC - Inline QC,Batch-314 | Final Audit (Order: 89433),Defect Rate < 3%,Audit Station AS-02,08:00-17:00,Priority
+QC2492,QC Manager - Packing QC,Batch-665 | Final Audit (Order: 32344),Inspection Quota 194 pieces,Measurement Station MS-02,10:00-19:00,Standard
+QC2493,QC Trainee - Final QC,Batch-683 | Color Matching (Order: 44029),Inspection Quota 183 pieces,Fabric Testing FT-04,07:00-15:00,Priority
+QC2494,QC Manager - Pre-Production QC,Batch-797 | Embroidery Quality (Order: 43150),Throughput Target 20 pieces/hour,Audit Station AS-11,07:00-15:00,Standard
+QC2495,Senior QC - AQL Inspection,Batch-380 | Packaging Inspection (Order: 63330),Defect Rate < 4%,Photo Studio PS-08,08:00-17:00,Routine
+QC2496,QC Trainee - Packing QC,Batch-148 | Appearance Check (Order: 39431),Accuracy Target 97%,Photo Studio PS-06,07:00-15:00,Urgent
+QC2497,QC Inspector - Trim QC,Batch-685 | Label Verification (Order: 20722),Defect Rate < 3%,Audit Station AS-02,15:00-23:00,Routine
+QC2498,QC Inspector - Final QC,Batch-164 | Label Verification (Order: 50737),Defect Rate < 2%,Photo Studio PS-07,07:00-15:00,Critical
+QC2499,Senior QC - Packing QC,Batch-353 | Fit Check (Order: 42821),Defect Rate < 2.5%,Light Box LB-06,07:00-15:00,Standard
